@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{086DBA7B-9D25-47EF-8371-0E4CE295FD3F}</ProjectGuid>
+    <RootNamespace>k_observer_srv</RootNamespace>
+    <ProjectName>hallyu_server</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Workplace\libs\wbenny-ziplib\Source\ZipLib;C:\Workplace\libs\openssl-master;C:\Workplace\libs\openssl-master\output\include;C:\Workplace\libs\lua-5.3.1\luabind;C:\Workplace\libs\lua-5.3.1\src;C:/Workplace/GPS/mysql-connector-c-6.1.5-src/out-win/include;C:/Workplace/GPS/mysql-connector-c-6.1.5-src/include;C:/Workplace/GPS/mysql-connector-c++-1.1.4;C:/Workplace/libs/boost_1_59_0;../../jni/network</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32_WINNT=0x0501;MYSQLCLIENT_STATIC_BINDING;CPPCONN_LIB_BUILD;_SCL_SECURE_NO_WARNINGS;OPENSSL_NO_SSL2;OPENSSL_USE_DEPRECATED;ZIP_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Workplace\libs\openssl-master\output\lib;C:/Workplace/libs/boost_1_59_0/stage/lib;C:\Workplace\GPS\mysql-connector-c-6.1.5-src\out-win\libmysql\Debug;C:/Workplace/GPS/mysql-connector-c++-1.1.4/out-win/driver/Debug;C:\Workplace\libs\lua-5.3.1\Lua-windows\Debug;C:\Workplace\libs\zlib-1.2.8\Debug;C:\Workplace\libs\wbenny-ziplib\Bin\x86\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lzma.lib;bzip2.lib;ZipLib.lib;ssleay32.lib;libeay32.lib;Lua-windows.lib;mysqlclient.lib;mysqlcppconn-static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>C:\Workplace\libs\wbenny-ziplib\Source\ZipLib;C:\Workplace\libs\openssl-master;C:\Workplace\libs\openssl-master\output\include;C:\Workplace\libs\lua-5.3.1\luabind;C:\Workplace\libs\lua-5.3.1\src;C:/Workplace/GPS/mysql-connector-c-6.1.5-src/out-win/include;C:/Workplace/GPS/mysql-connector-c-6.1.5-src/include;C:/Workplace/GPS/mysql-connector-c++-1.1.4;C:/Workplace/boost_1_57_0;../../jni/network</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32_WINNT=0x0501;MYSQLCLIENT_STATIC_BINDING;CPPCONN_LIB_BUILD;_SCL_SECURE_NO_WARNINGS;OPENSSL_NO_SSL2;OPENSSL_USE_DEPRECATED;ZIP_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Workplace\libs\openssl-master\output\lib;C:/Workplace/boost_1_57_0/stage/lib;C:\Workplace\GPS\mysql-connector-c-6.1.5-src\out-win\libmysql\Release;C:/Workplace/GPS/mysql-connector-c++-1.1.4/out-win/driver/Release;C:\Workplace\libs\lua-5.3.1\Lua-windows\Release;C:\Workplace\libs\zlib-1.2.8\Release;C:\Workplace\libs\wbenny-ziplib\Bin\x86\Release</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lzma.lib;bzip2.lib;ZipLib.lib;ssleay32.lib;libeay32.lib;Lua-windows.lib;mysqlclient.lib;mysqlcppconn-static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="inner_base64.cpp" />
+    <ClCompile Include="HangulDictionary.cpp" />
+    <ClCompile Include="HangulProcessor.cpp" />
+    <ClCompile Include="ImageDownloader.cpp" />
+    <ClCompile Include="linux_stuff.cpp" />
+    <ClCompile Include="LuaHelper.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MySqlConnector.cpp" />
+    <ClCompile Include="NumbersProcessor.cpp" />
+    <ClCompile Include="SE\misc.cpp" />
+    <ClCompile Include="SE\Network.cpp" />
+    <ClCompile Include="SE\Server.cpp" />
+    <ClCompile Include="socket_server.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inner_base64.h" />
+    <ClInclude Include="HangulDictionary.h" />
+    <ClInclude Include="HangulInterfaces.h" />
+    <ClInclude Include="HangulProcessor.h" />
+    <ClInclude Include="ImageDownloader.h" />
+    <ClInclude Include="linux_stuff.h" />
+    <ClInclude Include="LuaHelper.h" />
+    <ClInclude Include="lunar.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="MySqlConnector.h" />
+    <ClInclude Include="NumbersProcessor.h" />
+    <ClInclude Include="SE\misc.h" />
+    <ClInclude Include="SE\Network.h" />
+    <ClInclude Include="SE\Server.h" />
+    <ClInclude Include="SE\SignalSender.h" />
+    <ClInclude Include="socket_server.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
