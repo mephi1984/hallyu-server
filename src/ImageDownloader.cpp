@@ -10,7 +10,7 @@ TImageDownloader::TImageDownloader(boost::asio::io_service& ioService)
 std::string TImageDownloader::getFilePath()
 {
 #ifdef _WIN32
-	std::string filePath = "C:/Workplace/Apache2.4/htdocs/hallyu/";
+	std::string filePath = "./";
 #else
 	std::string filePath = "/home/hallyu-http/hallyu.ru/http/";
 #endif

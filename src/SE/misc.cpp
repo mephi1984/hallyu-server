@@ -20,7 +20,7 @@ namespace SE
 
 		std::ofstream ofs;
 #ifdef _WIN32
-		ofs.open("C:/Workplace/Projects/hallyu/hallyu_server/hallyu_log2.txt", std::ofstream::out | std::ofstream::app);
+		ofs.open("hallyu_log2.txt", std::ofstream::out | std::ofstream::app);
 #else
 		ofs.open("/home/devuser/hallyu_log2.txt", std::ofstream::out | std::ofstream::app);
 #endif

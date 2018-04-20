@@ -839,7 +839,7 @@ void THangulDictionary::LoadVerbFromFile(const std::string& fileName)
 	try
 	{
 #ifdef _WIN32
-		std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/" + fileName);
+		std::ifstream f("../scripts/" + fileName);
 
 #else
 		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);
@@ -887,7 +887,7 @@ void THangulDictionary::LoadNounFromFile(const std::string& fileName)
 	{
 
 #ifdef _WIN32
-		std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/" + fileName);
+		std::ifstream f("../scripts/" + fileName);
 
 #else
 		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);
@@ -935,7 +935,7 @@ void THangulDictionary::LoadSpecialFromFile(const std::string& fileName)
 	try
 	{
 #ifdef _WIN32
-		std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/" + fileName);
+		std::ifstream f("../scripts/" + fileName);
 
 #else
 		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);

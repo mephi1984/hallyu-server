@@ -16,24 +16,9 @@
 //For SHA1
 #include <openssl/sha.h>
 
-/*
-template<typename TInputIter>
-std::string make_hex_string(TInputIter first, TInputIter last, bool use_uppercase = true, bool insert_spaces = false)
-{
-	std::ostringstream ss;
-	ss << std::hex << std::setfill('0');
-	if (use_uppercase)
-		ss << std::uppercase;
-	while (first != last)
-	{
-		ss << std::setw(2) << static_cast<int>(*first++);
-		if (insert_spaces && first != last)
-			ss << " ";
-	}
-	return ss.str();
-}*/
 
 const int CONST_DICTIONARY_CURRENT_VERSION = 1;
+
 
 std::string CalcVkCheckCode(const std::string& vkLogin)
 {
@@ -47,8 +32,6 @@ std::string CalcVkCheckCode(const std::string& vkLogin)
 	unsigned char* byteResult = SHA1(reinterpret_cast<const unsigned char*>(str.c_str()), str.size(), &out[0]);
 
 	const unsigned char* uOut = reinterpret_cast<const unsigned char*>(&out[0]);
-
-	//std::string result = make_hex_string(out.begin(), out.end(), false);
 
 	std::string result = B::base64_encode(&out[0], out.size());
 	
@@ -69,13 +52,14 @@ std::string CalcPurchaseCheckCode(int purchaseId, const std::string& username)
 
 	const unsigned char* uOut = reinterpret_cast<const unsigned char*>(&out[0]);
 
-	//std::string result = make_hex_string(out.begin(), out.end(), false);
-
 	std::string result = B::base64_encode(&out[0], out.size());
 
 	return result;
 
 }
+
+
+#ifdef USE_MYSQL
 
 void TUser::InnerStartReadBinary(boost::property_tree::ptree binaryTree)
 {
@@ -86,16 +70,22 @@ void TUser::InnerStartReadBinary(boost::property_tree::ptree binaryTree)
 	boost::asio::async_read(Socket, boost::asio::buffer(Data), std::bind(&TUser::HandleReadBinaryData, shared_from_this(), binaryTree, std::placeholders::_1));
 }
 
+#endif
+
 void TUser::BeforeStartRead()
 {
 	Address = Socket.lowest_layer().remote_endpoint().address().to_string();
 
+	DataReadSignalMap.AddSlot("RequestWordTranslation", std::bind(&TUser::OnReceive_RequestWordTranslation, this, std::placeholders::_1));
+
+	DataReadSignalMap.AddSlot("RequestCard", std::bind(&TUser::OnReceive_RequestCard, this, std::placeholders::_1));
+	DataReadSignalMap.AddSlot("RequestChineseNumberRecognize", std::bind(&TUser::OnReceive_RequestChineseNumberRecognize, this, std::placeholders::_1));
+
+#ifdef USE_MYSQL
+
 		DataReadSignalMap.AddSlot("GetFeed", std::bind(&TUser::OnReceive_GetFeed, this, std::placeholders::_1));
 		DataReadSignalMap.AddSlot("GetFeedList", std::bind(&TUser::OnReceive_GetFeedList, this, std::placeholders::_1));
-		DataReadSignalMap.AddSlot("RequestWordTranslation", std::bind(&TUser::OnReceive_RequestWordTranslation, this, std::placeholders::_1));
 		DataReadSignalMap.AddSlot("RegisterViaVk", std::bind(&TUser::OnReceive_RegisterViaVk, this, std::placeholders::_1));
-		DataReadSignalMap.AddSlot("RequestCard", std::bind(&TUser::OnReceive_RequestCard, this, std::placeholders::_1));
-		DataReadSignalMap.AddSlot("RequestChineseNumberRecognize", std::bind(&TUser::OnReceive_RequestChineseNumberRecognize, this, std::placeholders::_1));
 		DataReadSignalMap.AddSlot("GetUser", std::bind(&TUser::OnReceive_GetUser, this, std::placeholders::_1));
 		DataReadSignalMap.AddSlot("AddPost", std::bind(&TUser::OnReceive_AddPost, this, std::placeholders::_1));
 		DataReadSignalMap.AddSlot("AddComment", std::bind(&TUser::OnReceive_AddComment, this, std::placeholders::_1));
@@ -106,6 +96,8 @@ void TUser::BeforeStartRead()
 		DataReadSignalMap.AddSlot("GetPurchaseList", std::bind(&TUser::OnReceive_GetPurchaseList, this, std::placeholders::_1));
 		DataReadSignalMap.AddSlot("Purchase", std::bind(&TUser::OnReceive_Purchase, this, std::placeholders::_1));
 		DataReadSignalMap.AddSlot("DownloadPurchase", std::bind(&TUser::OnReceive_DownloadPurchase, this, std::placeholders::_1));
+
+#endif
 }
 
 void TUser::StartRead()
@@ -176,7 +168,7 @@ void TUser::HandleReadData(const boost::system::error_code& error)
 		}
 
 
-
+#if 0
 		if (nextIsBinary)
 		{
 			InnerStartReadBinary(binaryTree);
@@ -185,7 +177,9 @@ void TUser::HandleReadData(const boost::system::error_code& error)
 		{
 			StartRead();
 		}
-
+#else
+		StartRead();
+#endif
 
 
 	}
@@ -194,6 +188,9 @@ void TUser::HandleReadData(const boost::system::error_code& error)
 		SE::WriteToLog("Error in inner HandleReadData: ptree_error exception caught: " + boost::lexical_cast<std::string>(this));
 	}
 }
+
+
+#ifdef USE_MYSQL
 
 void TUser::HandleReadBinaryData(boost::property_tree::ptree binaryTree, const boost::system::error_code& error)
 {
@@ -215,6 +212,8 @@ void TUser::HandleReadBinaryData(boost::property_tree::ptree binaryTree, const b
 	}
 
 }
+
+#endif
 
 void TUser::SendPropertyTree(boost::property_tree::ptree pTree)
 {
@@ -315,6 +314,67 @@ TUser::~TUser()
 	SE::WriteToLog("TUser::~TUser " + boost::lexical_cast<std::string>(selfCounter)+" : " + boost::lexical_cast<std::string>(this));
 }
 
+void TUser::OnReceive_RequestWordTranslation(boost::property_tree::ptree propertyTree)
+{
+	try
+	{
+		SE::WriteToLog("OnReceive_RequestWordTranslation begin");
+		std::string word = propertyTree.get<std::string>("");
+
+		std::string wordSymbols;
+		for (auto i : word)
+		{
+			wordSymbols += boost::lexical_cast<std::string>((int)i) + " ";
+		}
+		SE::WriteToLog("OnReceive_RequestWordTranslation word: " + wordSymbols);
+		SE::WriteToLog("OnReceive_RequestWordTranslation word: " + word);
+
+		Send_OnRequestWordTranslation(word);
+
+		SE::WriteToLog("OnReceive_RequestWordTranslation end");
+	}
+	catch (std::exception e)
+	{
+		SE::WriteToLog("Exception in TUser::OnReceive_RequestWordTranslation");
+	}
+}
+
+void TUser::OnReceive_RequestCard(boost::property_tree::ptree propertyTree)
+{
+	try
+	{
+		SE::WriteToLog("OnReceive_RequestCard begin");
+		size_t card = propertyTree.get<size_t>("");
+
+		Send_OnRequestCard(card);
+
+		SE::WriteToLog("OnReceive_RequestCard: " + boost::lexical_cast<std::string>(card));
+	}
+	catch (std::exception e)
+	{
+		SE::WriteToLog("Exception in TUser::OnReceive_RequestCard");
+	}
+}
+
+void TUser::OnReceive_RequestChineseNumberRecognize(boost::property_tree::ptree propertyTree)
+{
+	try
+	{
+		SE::WriteToLog("OnReceive_RequestChineseNumberRecognize begin");
+		int number = propertyTree.get<int>("");
+		Send_OnRequestChineseNumberRecognize(number);
+
+		SE::WriteToLog("OnReceive_RequestChineseNumberRecognize: " + boost::lexical_cast<std::string>(number));
+	}
+	catch (std::exception e)
+	{
+		SE::WriteToLog("Exception in TUser::OnReceive_RequestChineseNumberRecognize");
+	}
+}
+
+
+#ifdef USE_MYSQL
+
 
 void TUser::OnReceive_GetFeed(boost::property_tree::ptree propertyTree)
 {
@@ -359,31 +419,6 @@ void TUser::OnReceive_GetFeedList(boost::property_tree::ptree propertyTree)
 	}
 }
 
-
-void TUser::OnReceive_RequestWordTranslation(boost::property_tree::ptree propertyTree)
-{
-	try
-	{
-		SE::WriteToLog("OnReceive_RequestWordTranslation begin");
-		std::string word = propertyTree.get<std::string>("");
-
-		std::string wordSymbols;
-		for (auto i : word)
-		{
-			wordSymbols += boost::lexical_cast<std::string>((int)i) + " ";
-		}
-		SE::WriteToLog("OnReceive_RequestWordTranslation word: " + wordSymbols);
-		SE::WriteToLog("OnReceive_RequestWordTranslation word: " + word);
-
-		Send_OnRequestWordTranslation(word);
-
-		SE::WriteToLog("OnReceive_RequestWordTranslation end");
-	}
-	catch (std::exception e)
-	{
-		SE::WriteToLog("Exception in TUser::OnReceive_RequestWordTranslation");
-	}
-}
 
 void TUser::OnReceive_RegisterViaVk(boost::property_tree::ptree propertyTree)
 {
@@ -455,38 +490,6 @@ void TUser::OnReceive_RegisterViaVk_Api2(boost::property_tree::ptree propertyTre
 	}
 }
 
-void TUser::OnReceive_RequestCard(boost::property_tree::ptree propertyTree)
-{
-	try
-	{
-		SE::WriteToLog("OnReceive_RequestCard begin");
-		size_t card = propertyTree.get<size_t>("");
-
-		Send_OnRequestCard(card);
-
-		SE::WriteToLog("OnReceive_RequestCard: " + boost::lexical_cast<std::string>(card));
-	}
-	catch (std::exception e)
-	{
-		SE::WriteToLog("Exception in TUser::OnReceive_RequestCard");
-	}
-}
-
-void TUser::OnReceive_RequestChineseNumberRecognize(boost::property_tree::ptree propertyTree)
-{
-	try
-	{
-		SE::WriteToLog("OnReceive_RequestChineseNumberRecognize begin");
-		int number = propertyTree.get<int>("");
-		Send_OnRequestChineseNumberRecognize(number);
-
-		SE::WriteToLog("OnReceive_RequestChineseNumberRecognize: " + boost::lexical_cast<std::string>(number));
-	}
-	catch (std::exception e)
-	{
-		SE::WriteToLog("Exception in TUser::OnReceive_RequestChineseNumberRecognize");
-	}
-}
 
 void TUser::OnReceive_GetUser(boost::property_tree::ptree propertyTree)
 {
@@ -738,6 +741,157 @@ void TUser::ProcessBinaryData(boost::property_tree::ptree propertyTree, std::vec
 
 }
 
+#endif
+
+
+void TUser::Send_OnRequestWordTranslation(std::string wordToTranslate)
+{
+	boost::property_tree::ptree p;
+
+	//boost::trim(wordToTranslate);
+
+	std::wstring wWordToTranslate = SE::string_to_wstring(wordToTranslate);
+
+	boost::trim(wWordToTranslate);
+
+	std::string verboseResult;
+
+	std::set<std::wstring> lessonSet;
+
+	if (wWordToTranslate.size() > 0)
+	{
+
+		//std::vector<std::wstring> wWordToTranslateArr;
+
+		//boost::split(wWordToTranslateArr, wWordToTranslate, boost::is_any_of(L" "), boost::token_compress_on);
+
+		bool hangulWord = true;
+
+		for (wchar_t& wc : wWordToTranslate)
+		{
+			if (!((wc >= 44032 && wc <= 55203) || (wc == L' ')))
+			{
+				hangulWord = false;
+			}
+		}
+
+		if (hangulWord)
+		{
+			//HallyuSocketServer.HangulProcessor.RecognizeAndVerboseWords(wWordToTranslateArr, verboseResult, lessonSet);
+
+
+
+			LH::HangulResult result = HallyuSocketServer.luaHelper.ProcessString(wWordToTranslate);
+
+			for (int i = 0; i < result.resultTable.size(); i++)
+			{
+				for (int j = 0; j < result.resultTable[i].size(); j++)
+				{
+					for (int k = 0; k < result.resultTable[i][j].dictStruct.words.size(); k++)
+					{
+						verboseResult += "\"" + SE::wstring_to_string(result.resultTable[i][j].dictStruct.words[k]) + "\" ";
+					}
+
+					verboseResult += "- ";
+
+					verboseResult += SE::wstring_to_string(result.resultTable[i][j].verbose) + "\n";
+
+					for (auto& lesson : result.resultTable[i][j].lessons)
+					{
+						lessonSet.insert(lesson);
+					}
+
+				}
+			}
+
+			for (int i = 0; i < result.complexVerbResultArr.size(); i++)
+			{
+				verboseResult += SE::wstring_to_string(result.complexVerbResultArr[i].verbose) + "\n";
+
+				for (auto& lesson : result.complexVerbResultArr[i].lessons)
+				{
+					lessonSet.insert(lesson);
+				}
+			}
+
+		}
+		else
+		{
+			verboseResult = "Request contains non-hangul characters";
+		}
+	}
+	else
+	{
+		verboseResult = "Request is empty";
+	}
+
+	SE::WriteToLog("Verbose result size : " + boost::lexical_cast<std::string>(verboseResult.size()));
+
+
+	//p.put("OnRequestWordTranslation", verboseResult); // For andoid app version 5 or lower
+
+	p.put("OnRequestWordTranslation.Verbose", verboseResult);
+
+	boost::property_tree::ptree lesson_tree;
+
+	for (const std::wstring& lesson : lessonSet)
+	{
+		lesson_tree.add("Lesson", SE::wstring_to_string(lesson));
+	}
+	p.add_child("OnRequestWordTranslation.LessonList", lesson_tree);
+
+	SendPropertyTree(p);
+}
+
+
+
+void TUser::Send_OnRequestCard(size_t wordCount)
+{
+
+	//Xperimental
+	boost::property_tree::ptree p;
+
+	std::wstring translation;
+	std::wstring word0;
+	std::wstring word1;
+	std::wstring word2;
+	std::wstring word3;
+
+	size_t correctAnswer;
+
+	HallyuSocketServer.luaHelper.HangulDictionary.GetRandomWord(wordCount, translation, word0, word1, word2, word3, correctAnswer);
+
+	p.put("OnRequestCard.Translation", SE::wstring_to_string(translation));
+	p.put("OnRequestCard.Word0", SE::wstring_to_string(word0));
+	p.put("OnRequestCard.Word1", SE::wstring_to_string(word1));
+	p.put("OnRequestCard.Word2", SE::wstring_to_string(word2));
+	p.put("OnRequestCard.Word3", SE::wstring_to_string(word3));
+	p.put("OnRequestCard.CorrectWord", correctAnswer);
+
+	SendPropertyTree(p);
+}
+
+void TUser::Send_OnRequestChineseNumberRecognize(int maxDigits)
+{
+
+	std::wstring numberStr;
+	unsigned long long number;
+
+	HallyuSocketServer.luaHelper.HangulDictionary.GetRandomChineseNumber(maxDigits, number, numberStr);
+
+	boost::property_tree::ptree p;
+
+	p.put("OnRequestChineseNumberRecognize.number", number);
+	p.put("OnRequestChineseNumberRecognize.numberStr", SE::wstring_to_string(numberStr));
+
+
+	SendPropertyTree(p);
+
+
+}
+
+
+#ifdef USE_MYSQL
 
 
 void TUser::Send_OnGetFeed(int feedId, int startingFromPostId, int count)
@@ -794,104 +948,6 @@ void TUser::Send_OnGetFeedList()
 }
 
 
-void TUser::Send_OnRequestWordTranslation(std::string wordToTranslate)
-{
-	boost::property_tree::ptree p;
-
-	//boost::trim(wordToTranslate);
-
-	std::wstring wWordToTranslate = SE::string_to_wstring(wordToTranslate);
-
-	boost::trim(wWordToTranslate);
-
-	std::string verboseResult;
-
-	std::set<std::wstring> lessonSet;
-
-	if (wWordToTranslate.size() > 0)
-	{
-
-		//std::vector<std::wstring> wWordToTranslateArr;
-
-		//boost::split(wWordToTranslateArr, wWordToTranslate, boost::is_any_of(L" "), boost::token_compress_on);
-
-		bool hangulWord = true;
-
-		for (wchar_t& wc : wWordToTranslate)
-		{
-			if (!((wc >= 44032 && wc <= 55203) || (wc == L' ')))
-			{
-				hangulWord = false;
-			}
-		}
-
-		if (hangulWord)
-		{
-			//HallyuSocketServer.HangulProcessor.RecognizeAndVerboseWords(wWordToTranslateArr, verboseResult, lessonSet);
-
-			
-
-			LH::HangulResult result = HallyuSocketServer.luaHelper.ProcessString(wWordToTranslate);
-
-			for (int i = 0; i < result.resultTable.size(); i++)
-			{
-				for (int j = 0; j < result.resultTable[i].size(); j++)
-				{
-					for (int k = 0; k < result.resultTable[i][j].dictStruct.words.size(); k++)
-					{
-						verboseResult += "\"" + SE::wstring_to_string(result.resultTable[i][j].dictStruct.words[k]) + "\" ";
-					}
-
-					verboseResult += "- ";
-
-					verboseResult += SE::wstring_to_string(result.resultTable[i][j].verbose) + "\n";
-
-					for (auto& lesson : result.resultTable[i][j].lessons)
-					{
-						lessonSet.insert(lesson);
-					}
-					
-				}
-			}
-
-			for (int i = 0; i < result.complexVerbResultArr.size(); i++)
-			{
-				verboseResult += SE::wstring_to_string(result.complexVerbResultArr[i].verbose) + "\n";
-
-				for (auto& lesson : result.complexVerbResultArr[i].lessons)
-				{
-					lessonSet.insert(lesson);
-				}
-			}
-			
-		}
-		else
-		{
-			verboseResult = "Request contains non-hangul characters";
-		}
-	}
-	else
-	{
-		verboseResult = "Request is empty";
-	}
-
-	SE::WriteToLog("Verbose result size : " + boost::lexical_cast<std::string>(verboseResult.size()));
-
-
-	//p.put("OnRequestWordTranslation", verboseResult); // For andoid app version 5 or lower
-
-	p.put("OnRequestWordTranslation.Verbose", verboseResult);
-
-	boost::property_tree::ptree lesson_tree;
-
-	for (const std::wstring& lesson : lessonSet)
-	{
-		lesson_tree.add("Lesson", SE::wstring_to_string(lesson));
-	}
-	p.add_child("OnRequestWordTranslation.LessonList", lesson_tree);
-
-	SendPropertyTree(p);
-}
 
 void TUser::Send_OnRegisterViaVk(const std::string& username)
 {
@@ -905,50 +961,6 @@ void TUser::Send_OnRegisterViaVk(const std::string& username)
 }
 
 
-void TUser::Send_OnRequestCard(size_t wordCount)
-{
-
-	//Xperimental
-	boost::property_tree::ptree p;
-	
-	std::wstring translation;
-	std::wstring word0;
-	std::wstring word1;
-	std::wstring word2;
-	std::wstring word3;
-
-	size_t correctAnswer;
-
-	HallyuSocketServer.luaHelper.HangulDictionary.GetRandomWord(wordCount, translation, word0, word1, word2, word3, correctAnswer);
-
-	p.put("OnRequestCard.Translation", SE::wstring_to_string(translation));
-	p.put("OnRequestCard.Word0", SE::wstring_to_string(word0));
-	p.put("OnRequestCard.Word1", SE::wstring_to_string(word1));
-	p.put("OnRequestCard.Word2", SE::wstring_to_string(word2));
-	p.put("OnRequestCard.Word3", SE::wstring_to_string(word3));
-	p.put("OnRequestCard.CorrectWord", correctAnswer);
-	
-	SendPropertyTree(p);
-}
-
-void TUser::Send_OnRequestChineseNumberRecognize(int maxDigits)
-{
-	
-	std::wstring numberStr;
-	unsigned long long number;
-
-	HallyuSocketServer.luaHelper.HangulDictionary.GetRandomChineseNumber(maxDigits, number, numberStr);
-
-	boost::property_tree::ptree p;
-	
-	p.put("OnRequestChineseNumberRecognize.number", number);
-	p.put("OnRequestChineseNumberRecognize.numberStr", SE::wstring_to_string(numberStr));
-	
-
-	SendPropertyTree(p);
-
-
-}
 
 void TUser::Send_OnGetUser(const std::string& username)
 {
@@ -1183,7 +1195,7 @@ void TUser::Send_OnDownloadPurchase(int purchaseId, std::string username, std::s
 		}
 
 		SE::WriteToLog("Send_OnDownloadPurchase purchaseMade calculated");
-/*
+#if 0
 		if (purchaseMade)
 		{
 
@@ -1241,7 +1253,7 @@ void TUser::Send_OnDownloadPurchase(int purchaseId, std::string username, std::s
 			SendBinary(std::vector<char>());
 		}
 		
-		*/
+#endif
 		SendBinary(std::vector<char>());
 	}
 	else
@@ -1254,14 +1266,13 @@ void TUser::Send_OnDownloadPurchase(int purchaseId, std::string username, std::s
 }
 
 
+#endif
 
 //===================== THallyuSocketServer =================
 
 void THallyuSocketServer::StartAccept()
 {
 
-	
-	//std::shared_ptr<TDataReader> userDataReader(new TDataReader(IoService, sslContext));
 
 	acceptor.async_accept(
 		[this](boost::system::error_code ec, boost::asio::ip::tcp::socket socket)
@@ -1295,8 +1306,6 @@ THallyuSocketServer::THallyuSocketServer(int port, TMySqlConnector& mySqlConnect
 	, ImageDownloader(IoService)
 	, luaHelper(iLuaHelper)
 {
-	//OnUserConnectedSignal.connect(std::bind(&THallyuSocketServer::OnUserConnected, this, std::placeholders::_1));
-	//OnUserDisconnectedSignal.connect(std::bind(&THallyuSocketServer::OnUserDisconnected, this, std::placeholders::_1));
 
 	SE::WriteToLog("THallyuSocketServer::THallyuSocketServer begin");
 
@@ -1307,44 +1316,9 @@ THallyuSocketServer::THallyuSocketServer(int port, TMySqlConnector& mySqlConnect
 	SE::WriteToLog("THallyuSocketServer::THallyuSocketServer end");
 
 }
-/*
-void THallyuSocketServer::OnUserConnected(std::shared_ptr<TUser> user)
-{
-	try
-	{
-		SE::WriteToLog("OnUserConnected begin");
-		//std::shared_ptr<TUser> user = std::shared_ptr<TUser>(new TUser(*this, connectedUser->Socket.lowest_layer().remote_endpoint().address().to_string()));
-
-		//UserArr.push_back(user);
-
-		//user->BinaryDataFunc = std::bind(&TUser::ProcessBinaryData, user, std::placeholders::_1, std::placeholders::_2);
-
-		SE::WriteToLog("OnUserConnected end");
-
-		//SE::WriteToLog("OnUserConnected: " + connectedUser->Socket.remote_endpoint().address().to_string());
-
-	}
-	catch (std::exception e)
-	{
-		SE::WriteToLog("Exception in THallyuSocketServer::OnUserConnected");
-	}
-}*/
 
 
-/*
-void THallyuSocketServer::OnUserDisconnected(std::shared_ptr<SE::TConnectedUser> connectedUser)
-{
-	try
-	{
-		SE::WriteToLog("OnUserDisconnected: " + connectedUser->Socket.remote_endpoint().address().to_string());
-	}
-	catch (std::exception e)
-	{
-		SE::WriteToLog("Exception in THallyuSocketServer::OnUserDisconnected");
-	}
-}
-*/
-
+#ifdef USE_MYSQL
 std::vector<TPostListElement> THallyuSocketServer::GetPostList(int feedId, int startingFromPostId, int count)
 {
 	std::vector<TPostListElement> postList = MySqlConnector.GetPostList(feedId, startingFromPostId, count);
@@ -1503,3 +1477,5 @@ void THallyuSocketServer::AddPurchaseForUser(const std::string& username, int pu
 {
 	MySqlConnector.AddPurchaseForUser(username, purchaseId);
 }
+
+#endif

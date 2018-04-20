@@ -1,7 +1,7 @@
 #include "MySqlConnector.h"
 
 
-
+#ifdef USE_MYSQL
 
 TMySqlConnector::TMySqlConnector()
 {
@@ -1132,3 +1132,5 @@ std::string TMySqlConnector::GenerateLogin(const std::string& userId)
 {
 	return "vkUser" + userId;
 }
+
+#endif

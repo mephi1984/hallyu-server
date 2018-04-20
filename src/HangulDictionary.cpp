@@ -758,7 +758,7 @@ namespace LH
 		try
 		{
 #ifdef _WIN32
-			std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/scripts/" + fileName);
+			std::ifstream f("../scripts/" + fileName);
 
 #else
 			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);
@@ -806,7 +806,7 @@ namespace LH
 		{
 
 #ifdef _WIN32
-			std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/scripts/" + fileName);
+			std::ifstream f("../scripts/" + fileName);
 
 #else
 			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);
@@ -854,7 +854,7 @@ namespace LH
 		try
 		{
 #ifdef _WIN32
-			std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/scripts/" + fileName);
+			std::ifstream f("../scripts/" + fileName);
 
 #else
 			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);

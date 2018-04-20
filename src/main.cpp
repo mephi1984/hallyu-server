@@ -165,10 +165,10 @@ int main(int argc, char *argv[])
 	//std::vector<LH::TWordRecord> r3 = luaHelper.HangulDictionary.SearchWordByRussian(L"пах");
 
 
-	//LH::HangulResult r1 = luaHelper.ProcessString(L"했었어요");
-	//LH::HangulResult r2 = luaHelper.ProcessString(L"먹지 않아요");
+	LH::HangulResult r1 = luaHelper.ProcessString(L"했었어요");
+	LH::HangulResult r2 = luaHelper.ProcessString(L"먹지 않아요");
 
-	//LH::HangulResult r1 = luaHelper.ProcessString(L"백오십이");
+	LH::HangulResult r3 = luaHelper.ProcessString(L"백오십이");
 
 
 	/*
