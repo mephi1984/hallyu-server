@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -22,33 +22,34 @@
     <ProjectGuid>{086DBA7B-9D25-47EF-8371-0E4CE295FD3F}</ProjectGuid>
     <RootNamespace>k_observer_srv</RootNamespace>
     <ProjectName>hallyu_server</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>NotSet</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>NotSet</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -107,12 +108,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Work\openssl-master;C:\Work\openssl-master\output64\include;C:\Work\AndroidStudioProjects\lua-5.3.1\luabind;C:\Work\AndroidStudioProjects\lua-5.3.1\src;C:/Work/AndroidStudioProjects/boost_1_67_0;../../jni/network</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\OpenSSL\include;C:\Work\Projects\lua-5.3.1\luabind;C:\Work\Projects\lua-5.3.1\src;C:\Work\boost_1_67_0;C:\Work\openssl-master;C:\Work\openssl-master\output64\include;C:\Work\AndroidStudioProjects\lua-5.3.1\luabind;C:\Work\AndroidStudioProjects\lua-5.3.1\src;C:/Work/AndroidStudioProjects/boost_1_67_0;../../jni/network</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0501;MYSQLCLIENT_STATIC_BINDING;CPPCONN_LIB_BUILD;_SCL_SECURE_NO_WARNINGS;OPENSSL_NO_SSL2;OPENSSL_USE_DEPRECATED;ZIP_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;C:\Work\openssl-master\output64\lib;C:/Work/AndroidStudioProjects/boost_1_67_0/stage/lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\OpenSSL\lib;C:\Work\boost_1_67_0\stage\lib;$(SolutionDir)$(Platform)\$(Configuration)\;C:\Work\openssl-master\output64\lib;C:/Work/AndroidStudioProjects/boost_1_67_0/stage/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>libcrypto.lib;libssl.lib;luabind.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -139,7 +140,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>C:\Work\openssl-master;C:\Work\openssl-master\output64\include;C:\Work\AndroidStudioProjects\lua-5.3.1\luabind;C:\Work\AndroidStudioProjects\lua-5.3.1\src;C:/Workplace/boost_1_57_0;../../jni/network</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Work\boost_1_67_0;C:\Work\openssl-master;C:\Work\openssl-master\output64\include;C:\Work\AndroidStudioProjects\lua-5.3.1\luabind;C:\Work\AndroidStudioProjects\lua-5.3.1\src;C:/Workplace/boost_1_57_0;../../jni/network</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0501;MYSQLCLIENT_STATIC_BINDING;CPPCONN_LIB_BUILD;_SCL_SECURE_NO_WARNINGS;OPENSSL_NO_SSL2;OPENSSL_USE_DEPRECATED;ZIP_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
