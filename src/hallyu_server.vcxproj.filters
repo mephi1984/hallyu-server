@@ -1,3 +1,141 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="HangulDictionary.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="HangulProcessor.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="http_server.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageDownloader.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="inner_base64.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="linux_stuff.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaHelper.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="SE\misc.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="MySqlConnector.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="SE\Network.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="NumbersProcessor.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="SE\Server.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="socket_server.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="http_connection_manager.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="http_connection.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="http_request_handler.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="http_reply.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HangulDictionary.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="HangulInterfaces.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="HangulProcessor.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_connection.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_connection_manager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_server.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageDownloader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="inner_base64.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="linux_stuff.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaHelper.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="lunar.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SE\misc.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MySqlConnector.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SE\Network.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="NumbersProcessor.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SE\Server.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SE\SignalSender.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="socket_server.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_request_handler.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_request.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_header.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_reply.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{377c9020-c193-4a1c-a6cb-8071ad56147c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source code">
+      <UniqueIdentifier>{42a9a8a4-4ee9-4749-b030-4a4c758f1085}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
 </Project>

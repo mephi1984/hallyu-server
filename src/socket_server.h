@@ -167,11 +167,7 @@ public:
 
 	THallyuSocketServer(int port, TMySqlConnector& mySqlConnector, LH::LuaHelper& iLuaHelper);
 
-	// ---# http #---
-	boost::asio::io_context io_context_;
-	boost::asio::signal_set signals_;
-	boost::asio::ip::tcp::acceptor acceptor_;
-	// ===# http #===
+	
 
 #ifdef USE_MYSQL
 

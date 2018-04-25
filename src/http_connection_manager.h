@@ -14,8 +14,14 @@ public:
 	connection_manager& operator=(const connection_manager&) = delete;
 
 	connection_manager();
+
+	// acces methods
+	void start(connection_ptr c);
+	void stop(connection_ptr c);
+	void stop_all();
+
 private:
-	std::set<connection_ptr> connections;
+	std::set<connection_ptr> http_connections;
 };
 
 }

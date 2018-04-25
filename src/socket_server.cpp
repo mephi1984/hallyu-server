@@ -1306,17 +1306,6 @@ THallyuSocketServer::THallyuSocketServer(int port, TMySqlConnector& mySqlConnect
 	, ImageDownloader(IoService)
 	, luaHelper(iLuaHelper)
 {
-	/*// -------# http #-------
-	std::string addr_; // replace it
-	boost::asio::ip::tcp::resolver resolver_(io_context_);
-	boost::asio::ip::tcp::endpoint endpoint_= *resolver_.resolve(addr_,std::to_string(port)).begin();
-	// ----------------------
-	acceptor_.open(endpoint_.protocol());
-	acceptor_.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
-	acceptor_.bind(endpoint_);
-	acceptor_.listen();
-	// =======# http #=======*/
-
 
 	SE::WriteToLog("THallyuSocketServer::THallyuSocketServer begin");
 

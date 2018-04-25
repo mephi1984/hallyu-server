@@ -3,6 +3,10 @@
 namespace http {
 namespace server {
 
+connection_manager::connection_manager() {
+
+}
+
 
 }
 }
