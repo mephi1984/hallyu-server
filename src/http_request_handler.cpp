@@ -2,6 +2,7 @@
 #include <sstream>
 #include <fstream>
 #include "http_request_handler.h"
+#include "http_MIME_types.h"
 #include "http_reply.h"
 #include "http_request.h"
 
@@ -11,7 +12,6 @@ namespace server {
 request_handler::request_handler(std::string doc_root)
 	: root_dir(doc_root)
 {
-
 }
 
 void request_handler::handle_request(const request& req, reply& rep){
@@ -54,7 +54,12 @@ void request_handler::handle_request(const request& req, reply& rep){
 	char buf[512];
 	while(is.read(buf, sizeof(buf)).gcount() > 0) {
 		rep.content.append(buf, is.gcount());
-	} // #from#
+	}
+	rep.headers.resize(2);
+	rep.headers[0].name = "Content-Length";
+	rep.headers[0].value = rep.content.size();
+	rep.headers[1].name = "Content-Type";
+	rep.headers[1].value = mime_types::extension_to_type(extension);
 }
 
 bool request_handler::url_decode(const std::string& in, std::string& out){

@@ -55,6 +55,12 @@
     <ClCompile Include="http_reply.cpp">
       <Filter>Source code</Filter>
     </ClCompile>
+    <ClCompile Include="http_MIME_types.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
+    <ClCompile Include="http_request_parser.cpp">
+      <Filter>Source code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HangulDictionary.h">
@@ -127,6 +133,12 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="http_reply.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_MIME_types.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="http_request_parser.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
