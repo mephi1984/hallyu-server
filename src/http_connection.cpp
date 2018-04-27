@@ -41,8 +41,24 @@ namespace server {
 		});
 	}
 
+	void connection::do_write() {
+		auto self(shared_from_this());
+		boost::asio::async_write(http_socket,http_reply.to_buffers(),
+			[this,self](boost::system::error_code ec, std::size_t)
+		{
+			if(!ec) {
+				boost::system::error_code ignored_ec;
+				http_socket.shutdown(boost::asio::ip::tcp::socket::shutdown_both, ignored_ec); // <== shutting down socket after handle
+			}
+
+			if (ec != boost::asio::error::operation_aborted) {
+				http_connection_manager.stop(shared_from_this());
+			}
+		});
+	}
+
 	void connection::stop() {
-	
+		http_socket.close();
 	}
 }
 }
