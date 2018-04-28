@@ -8,6 +8,7 @@ connection_manager::connection_manager() {
 
 void connection_manager::start(connection_ptr c) {
 	http_connections.insert(c);
+	c->BeforeStart();
 	c->start();
 }
 

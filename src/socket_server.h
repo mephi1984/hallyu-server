@@ -18,6 +18,8 @@
 #include "SE/Server.h"
 #include "SE/Network.h"
 
+#include "http_server.h"
+
 
 extern const int CONST_DICTIONARY_CURRENT_VERSION;
 
@@ -42,6 +44,7 @@ struct TCommentStruct
 	std::string AuthorPhotoHash;
 	std::string Date;
 };
+
 
 class TUser : public std::enable_shared_from_this<TUser>
 {
@@ -157,6 +160,7 @@ public:
 	void SendBinary(const std::vector<char>& binaryData);
 };
 
+
 class THallyuSocketServer : public SE::TServerSocket
 {
 public:
@@ -218,4 +222,4 @@ protected:
 	
 };
 
-#endif //SOCKET_SERVER_H_INCLUDED
+#endif // SOCKET_SERVER_H_INCLUDED

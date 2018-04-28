@@ -308,6 +308,7 @@ TUser::TUser(boost::asio::io_service& ioService, boost::asio::ip::tcp::socket so
 	SE::WriteToLog("TUser::TUser " + boost::lexical_cast<std::string>(selfCounter)+" : " + boost::lexical_cast<std::string>(this));
 	
 }
+		
 
 TUser::~TUser()
 {
