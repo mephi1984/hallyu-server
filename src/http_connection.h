@@ -3,20 +3,16 @@
 
 #include <memory>
 #include <boost/asio.hpp>
-#include "http_connection_manager.h"
 #include "http_request_handler.h"
 #include "http_request_parser.h"
-#include <boost/property_tree/ptree.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/algorithm/string.hpp>
-#include "LuaHelper.h"
 #include "http_server.h"
-#include "SE/Network.h"
+
 
 namespace http {
 namespace server {
 
 	class connection_manager;
+	//class THallyuHttpServer;
 
 	class connection : public std::enable_shared_from_this<connection>
 	{
@@ -45,8 +41,7 @@ namespace server {
 
 		// Other methods
 		void SendPropertyTree(boost::property_tree::ptree pTree);
-		void HandleReadDataSize(const boost::system::error_code& error);
-		void HandleReadData(const boost::system::error_code& error);
+		void HandleHttpRequest(const request& req);
 
 	private:
 		// ------ read/write ------- asynchronous
@@ -56,7 +51,7 @@ namespace server {
 
 		std::string Address;
 
-		std::array<char, 8192> connection_buffer;
+		std::vector<char> connection_buffer;
 	
 		boost::asio::ip::tcp::socket http_socket;
 		connection_manager& http_connection_manager;

@@ -2,7 +2,6 @@
 #define _HTTP_SERVER_H_
 
 #include "boost/asio.hpp"
-#include "SE/Server.h"
 #include "LuaHelper.h"
 #include "http_connection_manager.h"
 #include "http_request_handler.h"

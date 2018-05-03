@@ -6,7 +6,7 @@
 #include "http_reply.h"
 #include "http_request.h"
 
-namespace http{
+namespace http {
 namespace server {
 
 request_handler::request_handler(std::string doc_root)
@@ -16,6 +16,8 @@ request_handler::request_handler(std::string doc_root)
 
 void request_handler::handle_request(const request& req, reply& rep){
 	
+	// ====== tmp section (sending file to client by url) ======	
+
 	std::string request_path;
 	if(!url_decode(req.uri,request_path)) {  // <=== Decoding url address
 		rep = reply::stock_reply(reply::bad_request);
@@ -48,6 +50,8 @@ void request_handler::handle_request(const request& req, reply& rep){
 		rep = reply::stock_reply(reply::not_found);
 		return;
 	}
+
+	// ------ tmp section (...) ------
 
 	// Fill out the reply
 	rep.status = reply::ok;

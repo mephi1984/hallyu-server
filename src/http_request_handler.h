@@ -1,4 +1,4 @@
-#ifndef _HTTP_REQUEST_HADLER_H_
+#ifndef _HTTP_REQUEST_HANDLER_H_
 #define _HTTP_REQUEST_HANDLER_H_
 
 #include <string>
@@ -16,7 +16,7 @@ public:
 
 	explicit request_handler(const std::string doc_root);
 
-	void handle_request(const request& req, reply& rep); // core request handle method (produce a reply)
+	void handle_request(const request& req, reply& rep); // core request handle method (produce a reply, emitting signals)
 private:
 	std::string root_dir;
 

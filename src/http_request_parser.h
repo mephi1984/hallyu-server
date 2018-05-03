@@ -17,9 +17,14 @@ namespace server {
 		template<typename Buffer_iterator>
 		std::tuple<result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end)
 		{
-			while(begin != end) {
+			while(begin != end) { 
 				result_type result = consume(req,*begin++);
 				if (result == good || result == bad) {
+					if (result == good) { // store request content at req
+						while(begin != end) {
+							req.request_content.push_back(*begin++);
+						}
+					}
 					return std::make_tuple(result, begin);
 				}
 			}

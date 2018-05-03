@@ -1,13 +1,21 @@
-#include "http_connection.h"
+
+#include <boost/property_tree/ptree.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/algorithm/string.hpp>
+#include "LuaHelper.h"
+//#include "http_server.h"
+#include "SE/Network.h"
+//#include "http_connection.h"
+#include "http_connection_manager.h"
 
 namespace http {
 namespace server {
 	
 	connection::connection(boost::asio::ip::tcp::socket isocket, connection_manager& manager, request_handler& handler, THallyuHttpServer& server)
-		: http_socket(std::move(isocket))
+		: HallyuHttpServer(server)
+		, http_socket(std::move(isocket))
 		, http_connection_manager(manager)
 		, http_request_handler(handler)
-		, HallyuHttpServer(server)
 	{
 	}
 
@@ -23,25 +31,20 @@ namespace server {
 
 	void connection::do_read() {
 
-		SE::ErrorToLog("Data reader start read: " + boost::lexical_cast<std::string>(this));
-
-#define _TMP_DEFINE_1_ // tmp, for method-assign time
-#ifdef _TMP_DEFINE_1_
-
-		//boost::asio::async_read(http_socket, boost::asio::buffer(&DataSize, 4), std::bind(&connection::HandleReadDataSize, shared_from_this(), std::placeholders::_1));
-		// #from#
-
-#else // Default request parsing
 		auto self(shared_from_this());
 		http_socket.async_read_some(boost::asio::buffer(connection_buffer),
 			[this,self](boost::system::error_code ec, std::size_t bytes_transfered) {
 				if(!ec) {
 					request_parser::result_type result;
-					std::tie(result, std::ignore) = request_parser_.parse(http_request, connection_buffer.data(), connection_buffer.data() + bytes_transfered);
+/*parse*/			std::tie(result, std::ignore) = request_parser_.parse(http_request, connection_buffer.data(), connection_buffer.data() + bytes_transfered);
 					if (result == request_parser::good)
 					{
-						http_request_handler.handle_request(http_request, http_reply);
-						do_write();
+
+						// Signals emitting
+						HandleHttpRequest(http_request);
+
+						// http_request_handler.handle_request(http_request, http_reply); // read headers and content to reply
+						//do_write(); // write content to socket (close socket if error_code)
 					}
 					else if (result == request_parser::bad)
 					{
@@ -56,7 +59,6 @@ namespace server {
 					http_connection_manager.stop(shared_from_this());
 				}
 		});
-#endif // TMP_DEFINE_1
 	}
 
 	void connection::do_write() {
@@ -217,22 +219,25 @@ namespace server {
 
 			int len = data.size();
 
-			boost::shared_array<char> dataToSend(new char[len + 4]);
+			boost::shared_array<char> dataToSend(new char[len]); // [len +4]
 
-			memcpy(&dataToSend[0], &len, 4);
+			//memcpy(&dataToSend[0], &len, 4);
 
-			memcpy(&dataToSend[4], &data[0], len);
+			//memcpy(&dataToSend[4], &data[0], len);
+
+			memcpy(&dataToSend[0], &data[0], len);
 
 			auto sharedThis = shared_from_this(); // to keep connection
 
 
-			boost::asio::async_write(http_socket, boost::asio::buffer(&dataToSend[0], len + 4),
-				[dataToSend, sharedThis](boost::system::error_code ec, std::size_t)
+			boost::asio::async_write(http_socket, boost::asio::buffer(&dataToSend[0], len /*len + 4*/),
+				[dataToSend, sharedThis, this](boost::system::error_code ec, std::size_t)
 			{
 				if (ec)
 				{
 					SE::WriteToLog("Error in inner SendPropertyTree");
 				}
+				http_connection_manager.stop(shared_from_this()); // close connection
 			}
 			);
 		}
@@ -242,25 +247,44 @@ namespace server {
 		}
 	}
 
-	void connection::HandleReadDataSize(const boost::system::error_code& error)
-	{
-		if (error)
+	void connection::HandleHttpRequest(const request& req) {
+		try
 		{
-			SE::WriteToLog("Error in inner HandleReadDataSize: " + boost::lexical_cast<std::string>(this));
-			return;
+			//Xperimental - Might be optimized a lot:
+
+			std::string xmlCode = std::string(&req.request_content[0], &req.request_content[0] + req.request_content.size());
+
+			std::stringstream stream(xmlCode);
+
+			boost::property_tree::ptree propertyTree;
+
+			boost::property_tree::read_xml(stream, propertyTree);
+
+			bool nextIsBinary = false;
+			boost::property_tree::ptree binaryTree;
+
+			BOOST_FOREACH(auto i, propertyTree)
+			{
+				if (i.first == "_binary")
+				{
+					binaryTree = i.second;
+					nextIsBinary = true;
+
+				}
+				else
+					if (DataReadSignalMap.SignalExists(i.first))
+					{
+						DataReadSignalMap.EmitSignal(i.first, i.second); // All methods need to close connection after reply is sended
+
+					} else {
+						http_connection_manager.stop(shared_from_this()); // close connection
+					}
+			}
 		}
-
-
-		if (DataSize > 65536 || DataSize <= 0)
+		catch (boost::property_tree::ptree_error)
 		{
-			// len>65536 is something unbelievable. Prevent this just in case;
-			SE::WriteToLog("Error in inner HandleReadDataSize, DataSize is too long or too small: " + boost::lexical_cast<std::string>(this));
-			return;
+			SE::WriteToLog("Error in inner HandleReadData: ptree_error exception caught: " + boost::lexical_cast<std::string>(this));
 		}
-
-		Data.resize(DataSize);
-
-		boost::asio::async_read(http_socket, boost::asio::buffer(Data), std::bind(&connection::HandleReadData, shared_from_this(), std::placeholders::_1));
 
 	}
 
