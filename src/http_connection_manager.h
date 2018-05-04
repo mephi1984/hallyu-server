@@ -1,11 +1,19 @@
-#ifndef _HTTP_CONNECTION_MANAGER_H_
-#define _HTTP_CONNECTION_MANAGER_H_
+#ifndef HTTP_CONNECTION_MANAGER_H
+#define HTTP_CONNECTION_MANAGER_H
+/*
+#include <set>
+#include <memory>
+*/
 
 #include <set>
-#include "http_connection.h"
+#include <memory>
+
 
 namespace http {
 namespace server {
+
+	class connection;
+	//typedef std::shared_ptr<connection> connection_ptr;
 
 class connection_manager
 {
@@ -15,13 +23,13 @@ public:
 
 	connection_manager();
 
-	// acces methods
-	void start(connection_ptr c);
-	void stop(connection_ptr c);
+	// access methods
+	void start(std::shared_ptr<connection> c);
+	void stop(std::shared_ptr<connection> c);
 	void stop_all();
 
 private:
-	std::set<connection_ptr> http_connections;
+	std::set<std::shared_ptr<connection>> http_connections;
 };
 
 }

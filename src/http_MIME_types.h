@@ -1,9 +1,9 @@
-#ifndef _HTTP_MIME_TYPES_H_
-#define _HTTP_MIME_TYPES_H_
+#ifndef HTTP_MIME_TYPES_H
+#define HTTP_MIME_TYPES_H
 
 #include <string>
 
-namespace http{
+namespace http {
 namespace server {
 namespace mime_types {
 

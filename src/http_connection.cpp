@@ -1,12 +1,16 @@
-
-#include <boost/property_tree/ptree.hpp>
+/*
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 #include "LuaHelper.h"
 //#include "http_server.h"
-#include "SE/Network.h"
-//#include "http_connection.h"
-#include "http_connection_manager.h"
+#include "http_connection.h"
+*/
+
+#include "http_server.h"
+
+#include "http_connection.h"
+#include "LuaHelper.h"
+#include "SE/misc.h"
 
 namespace http {
 namespace server {
@@ -19,10 +23,10 @@ namespace server {
 	{
 	}
 
-	void connection::BeforeStart() {
+	void connection::before_start() {
 		Address = http_socket.lowest_layer().remote_endpoint().address().to_string();
 
-		DataReadSignalMap.AddSlot("RequestWordTranslation", std::bind(&connection::OnReceive_RequestWordTranslation, this, std::placeholders::_1));
+		DataReadSignalMap.AddSlot("RequestWordTranslation", std::bind(&connection::http_recieve_RequestWordTranslation, this, std::placeholders::_1));
 	}
 
 	void connection::start() {
@@ -36,12 +40,12 @@ namespace server {
 			[this,self](boost::system::error_code ec, std::size_t bytes_transfered) {
 				if(!ec) {
 					request_parser::result_type result;
-/*parse*/			std::tie(result, std::ignore) = request_parser_.parse(http_request, connection_buffer.data(), connection_buffer.data() + bytes_transfered);
+/*parse*/			std::tie(result, std::ignore) = http_request_parser.parse(http_request, connection_buffer.data(), connection_buffer.data() + bytes_transfered);
 					if (result == request_parser::good)
 					{
 
 						// Signals emitting
-						HandleHttpRequest(http_request);
+						handle_http_request(http_request);
 
 						// http_request_handler.handle_request(http_request, http_reply); // read headers and content to reply
 						//do_write(); // write content to socket (close socket if error_code)
@@ -81,11 +85,11 @@ namespace server {
 		http_socket.close();
 	}
 
-	void connection::OnReceive_RequestWordTranslation(boost::property_tree::ptree propertyTree)
+	void connection::http_recieve_RequestWordTranslation(boost::property_tree::ptree propertyTree)
 	{
 		try
 		{
-			SE::WriteToLog("OnReceive_RequestWordTranslation begin");
+			SE::WriteToLog("http_recieve_RequestWordTranslation begin");
 			std::string word = propertyTree.get<std::string>("");
 
 			std::string wordSymbols;
@@ -93,20 +97,20 @@ namespace server {
 			{
 				wordSymbols += boost::lexical_cast<std::string>((int)i) + " ";
 			}
-			SE::WriteToLog("OnReceive_RequestWordTranslation word: " + wordSymbols);
-			SE::WriteToLog("OnReceive_RequestWordTranslation word: " + word);
+			SE::WriteToLog("http_recieve_RequestWordTranslation word: " + wordSymbols);
+			SE::WriteToLog("http_recieve_RequestWordTranslation word: " + word);
 
-			Send_OnRequestWordTranslation(word);
+			http_send_RequestWordTranslation(word);
 
-			SE::WriteToLog("OnReceive_RequestWordTranslation end");
+			SE::WriteToLog("http_recieve_RequestWordTranslation end");
 		}
 		catch (std::exception e)
 		{
-			SE::WriteToLog("Exception in TUser::OnReceive_RequestWordTranslation");
+			SE::WriteToLog("Exception in connection::http_recieve_RequestWordTranslation");
 		}
 	}
 
-	void connection::Send_OnRequestWordTranslation(std::string wordToTranslate)
+	void connection::http_send_RequestWordTranslation(std::string wordToTranslate)
 	{
 		boost::property_tree::ptree p;
 
@@ -202,10 +206,10 @@ namespace server {
 		}
 		p.add_child("OnRequestWordTranslation.LessonList", lesson_tree);
 
-		SendPropertyTree(p);
+		http_send_PropertyTree(p);
 	}
 
-	void connection::SendPropertyTree(boost::property_tree::ptree pTree)
+	void connection::http_send_PropertyTree(boost::property_tree::ptree pTree)
 	{
 		//Xperimental -- need to optimize this
 		try
@@ -247,7 +251,7 @@ namespace server {
 		}
 	}
 
-	void connection::HandleHttpRequest(const request& req) {
+	void connection::handle_http_request(request& req) {
 		try
 		{
 			//Xperimental - Might be optimized a lot:

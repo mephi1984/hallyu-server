@@ -1,18 +1,36 @@
-#ifndef _HTTP_CONNECTION_H_
-#define _HTTP_CONNECTION_H_
-
+#ifndef HTTP_CONNECTION_H
+#define HTTP_CONNECTION_H
+/*
 #include <memory>
 #include <boost/asio.hpp>
+#include <boost/property_tree/ptree.hpp>
 #include "http_request_handler.h"
 #include "http_request_parser.h"
+#include "SE/Network.h"
+//#include "http_connection_manager.h"
 #include "http_server.h"
+*/
 
+#include <memory>
+#include <set>
+#include <boost/asio.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/lexical_cast.hpp>
+
+#include "http_request.h"
+#include "http_reply.h"
+#include "http_request_parser.h"
+#include "http_connection_manager.h"
+
+#include "SE/Network.h"
+#include "SE/Server.h"
 
 namespace http {
 namespace server {
 
-	class connection_manager;
-	//class THallyuHttpServer;
+	class request_handler;
+	class THallyuHttpServer;
 
 	class connection : public std::enable_shared_from_this<connection>
 	{
@@ -33,15 +51,15 @@ namespace server {
 		void start();
 		void stop();
 
-		void BeforeStart();
+		void before_start();
 
 		// Request/Reply methods
-		void OnReceive_RequestWordTranslation(boost::property_tree::ptree propertyTree);
-		void Send_OnRequestWordTranslation(std::string wordToTranslate);
+		void http_recieve_RequestWordTranslation(boost::property_tree::ptree propertyTree);
+		void http_send_RequestWordTranslation(std::string wordToTranslate);
 
 		// Other methods
-		void SendPropertyTree(boost::property_tree::ptree pTree);
-		void HandleHttpRequest(const request& req);
+		void http_send_PropertyTree(boost::property_tree::ptree pTree);
+		void handle_http_request(request& req);
 
 	private:
 		// ------ read/write ------- asynchronous
@@ -57,12 +75,12 @@ namespace server {
 		connection_manager& http_connection_manager;
 		request_handler& http_request_handler;
 
-		request_parser request_parser_;
+		request_parser http_request_parser;
 		request http_request;
 		reply http_reply;
 	};
 
-	typedef std::shared_ptr<connection> connection_ptr;
+	//typedef std::shared_ptr<connection> connection_ptr;
 }
 }
 

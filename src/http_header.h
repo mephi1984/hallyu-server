@@ -1,5 +1,5 @@
-#ifndef _HTTP_HEADER_H_
-#define _HTTP_HEADER_H_
+#ifndef HTTP_HEADER_H
+#define HTTP_HEADER_H
 
 #include <string>
 

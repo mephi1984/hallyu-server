@@ -1,12 +1,17 @@
-#ifndef _HTTP_REQUEST_H_
-#define _HTTP_REQUEST_H_
+#ifndef HTTP_REQUEST_H
+#define HTTP_REQUEST_H
+/*
+#include <string>
+#include <vector>
+#include "http_header.h"
+*/
 
 #include <string>
 #include <vector>
 #include "http_header.h"
 
 namespace http {
-namespace server{
+namespace server {
 
 	struct request
 	{

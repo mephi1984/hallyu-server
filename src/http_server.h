@@ -1,8 +1,19 @@
-#ifndef _HTTP_SERVER_H_
-#define _HTTP_SERVER_H_
-
-#include "boost/asio.hpp"
+#ifndef HTTP_SERVER_H
+#define HTTP_SERVER_H
+/*
+//#include <boost/asio.hpp>
 #include "LuaHelper.h"
+#include "http_connection_manager.h"
+#include "http_request_handler.h"
+#include "SE/Server.h"
+*/
+
+#include <string>
+#include "SE/Server.h"
+#include "LuaHelper.h"
+
+#include "http_connection.h" // !!!
+
 #include "http_connection_manager.h"
 #include "http_request_handler.h"
 

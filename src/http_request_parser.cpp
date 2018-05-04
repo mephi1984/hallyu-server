@@ -1,3 +1,6 @@
+/*
+#include "http_request_parser.h"
+*/
 
 #include "http_request_parser.h"
 
@@ -7,6 +10,23 @@ namespace server {
 	request_parser::request_parser()
 		: state_(method_start)
 	{
+	}
+
+	template<typename Buffer_iterator>
+	std::tuple<request_parser::result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end)
+	{
+		while (begin != end) {
+			result_type result = consume(req, *begin++);
+			if (result == good || result == bad) {
+				if (result == good) { // store request content at req
+					while (begin != end) {
+						req.request_content.push_back(*begin++);
+					}
+				}
+				return std::make_tuple(result, begin);
+			}
+		}
+		return std::make_tuple(indeterminate, begin);
 	}
 
 	request_parser::result_type request_parser::consume(request& req, char input) {

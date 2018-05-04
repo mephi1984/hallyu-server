@@ -1,7 +1,16 @@
-#ifndef _HTTP_REQUEST_HANDLER_H_
-#define _HTTP_REQUEST_HANDLER_H_
+#ifndef HTTP_REQUEST_HANDLER_H
+#define HTTP_REQUEST_HANDLER_H
+/*
+#include <string>
+#include "http_request.h"
+#include "http_reply.h"
+*/
 
 #include <string>
+#include <sstream>
+#include <fstream>
+
+#include "http_MIME_types.h"
 #include "http_request.h"
 #include "http_reply.h"
 

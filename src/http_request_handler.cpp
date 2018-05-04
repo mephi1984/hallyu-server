@@ -1,10 +1,13 @@
-
+/*
 #include <sstream>
 #include <fstream>
 #include "http_request_handler.h"
 #include "http_MIME_types.h"
 #include "http_reply.h"
 #include "http_request.h"
+*/
+
+#include "http_request_handler.h"
 
 namespace http {
 namespace server {
@@ -44,8 +47,8 @@ void request_handler::handle_request(const request& req, reply& rep){
 	}
 	// Open the file to send back
 	std::string full_path = root_dir + request_path;
-	std::ifstream is(full_path.c_str(), std::ios::in | std::ios::binary);
-	if (!is)
+	std::ifstream i_f_stream(full_path.c_str(), std::ios::in | std::ios::binary);
+	if (!i_f_stream)
 	{
 		rep = reply::stock_reply(reply::not_found);
 		return;
@@ -56,8 +59,8 @@ void request_handler::handle_request(const request& req, reply& rep){
 	// Fill out the reply
 	rep.status = reply::ok;
 	char buf[512];
-	while(is.read(buf, sizeof(buf)).gcount() > 0) {
-		rep.content.append(buf, is.gcount());
+	while(i_f_stream.read(buf, sizeof(buf)).gcount() > 0) {
+		rep.content.append(buf, i_f_stream.gcount());
 	}
 	rep.headers.resize(2);
 	rep.headers[0].name = "Content-Length";

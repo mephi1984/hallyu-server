@@ -18,7 +18,7 @@
 #include "SE/Server.h"
 #include "SE/Network.h"
 
-#include "http_server.h"
+//#include "http_server.h"
 
 
 extern const int CONST_DICTIONARY_CURRENT_VERSION;
