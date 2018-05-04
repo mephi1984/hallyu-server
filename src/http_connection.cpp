@@ -241,7 +241,7 @@ namespace server {
 				{
 					SE::WriteToLog("Error in inner SendPropertyTree");
 				}
-				http_connection_manager.stop(shared_from_this()); // close connection
+				http_connection_manager.stop(sharedThis); // close connection
 			}
 			);
 		}

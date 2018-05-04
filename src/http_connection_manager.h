@@ -7,6 +7,7 @@
 
 #include <set>
 #include <memory>
+#include <array>
 
 
 namespace http {
