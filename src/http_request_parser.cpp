@@ -3,6 +3,7 @@
 */
 
 #include "http_request_parser.h"
+#include <iostream>
 
 namespace http {
 namespace server {
@@ -11,7 +12,7 @@ namespace server {
 		: state_(method_start)
 	{
 	}
-
+	/*
 	template<typename Buffer_iterator>
 	std::tuple<request_parser::result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end)
 	{
@@ -27,7 +28,7 @@ namespace server {
 			}
 		}
 		return std::make_tuple(indeterminate, begin);
-	}
+	}*/
 
 	request_parser::result_type request_parser::consume(request& req, char input) {
 		switch (state_)

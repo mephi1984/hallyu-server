@@ -29,6 +29,8 @@ protected:
 
 	std::string getPassword();
 
+	boost::asio::ip::tcp::resolver resolver;
+
 	boost::asio::ip::tcp::endpoint endpoint;
 
 	boost::asio::ip::tcp::acceptor acceptor;

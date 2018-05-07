@@ -39,7 +39,7 @@ namespace server {
 		connection& operator=(const connection&) = delete;
 
 		explicit connection(boost::asio::ip::tcp::socket isocket, connection_manager& manager, request_handler& handler, THallyuHttpServer& server);
-
+		
 
 		// Init list
 		THallyuHttpServer& HallyuHttpServer;
@@ -60,7 +60,7 @@ namespace server {
 		// Other methods
 		void http_send_PropertyTree(boost::property_tree::ptree pTree);
 		void handle_http_request(request& req);
-
+		
 	private:
 		// ------ read/write ------- asynchronous
 		void do_read();
@@ -69,7 +69,8 @@ namespace server {
 
 		std::string Address;
 
-		std::vector<char> connection_buffer;
+		//std::vector<char> connection_buffer;
+		std::array<char, 8192> connection_buffer;
 	
 		boost::asio::ip::tcp::socket http_socket;
 		connection_manager& http_connection_manager;

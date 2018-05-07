@@ -18,8 +18,29 @@ namespace server {
 
 		enum result_type {good, bad, indeterminate};
 
+		//template<typename Buffer_iterator>
+		//std::tuple<result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end);
 		template<typename Buffer_iterator>
-		std::tuple<result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end);
+		std::tuple<request_parser::result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end)
+		{
+			int tmp_iter = 0;
+			//std::cout << "http_request_parser before loop, iteraror " << *begin << " " << *end << std::endl;
+			while (begin != end) {
+				result_type result = consume(req, *begin++);
+				tmp_iter++;
+				if (result == good || result == bad) {
+					std::cout << "iterations:: " << tmp_iter << std::endl;
+					if (result == good) { // store request content at req
+						while (begin != end) {
+							std::cout << "content copy iteration " << std::endl;
+							req.request_content.push_back(*begin++);
+						}
+					}
+					return std::make_tuple(result, begin);
+				}
+			}
+			return std::make_tuple(indeterminate, begin);
+		}
 
 	private:
 		result_type consume(request& req, char input);

@@ -8,28 +8,28 @@
 namespace http {
 namespace server {
 
-THallyuHttpServer::THallyuHttpServer(/*const std::string& address, */const std::string& port, const std::string& root_dir, LH::LuaHelper& iluaHelper) 
-	: SE::TServerSocket(std::stoi(port))
+THallyuHttpServer::THallyuHttpServer(/*const std::string& address, */int port/*, const std::string& root_dir*/, LH::LuaHelper& iluaHelper) 
+	: SE::TServerSocket(port)
 	, luaHelper(iluaHelper)
 	//, io_context_(1)
 	, signals_(IoService)
 	//, acceptor_(io_context_)
 	, connection_manager_()
-	, request_handler_(root_dir)
+	, request_handler_(/*root_dir*/)
 {
-	
+	std::cout << "http_Server_constructor start" << std::endl;
 	// -------- Signals section --------
 	signals_.add(SIGINT);
 	signals_.add(SIGTERM);
-
+	std::cout << "http_Server_constructor signals" << std::endl;
 	do_await_stop();
 	// ======== Signals section ========
 
-	
+	std::cout << "http_Server_constructor await to stop" << std::endl;
 	do_accept();
-
+	std::cout << "http_Server_constructor in_acception" << std::endl;
 	ServiceThread = boost::thread(std::bind(&TServerSocket::UpdateInThread, this));
-
+	std::cout << "http_Server_constructor threaded" << std::endl;
 	// Open the acceptor
 	// -----------------
 	/*
@@ -50,11 +50,15 @@ void THallyuHttpServer::do_accept() {
 		[this](boost::system::error_code ec, boost::asio::ip::tcp::socket isocket){
 			
 			if(!acceptor.is_open()) {
+				std::cout << "http_Server_acception open_error" << std::endl;
 				return;
 			}
 
 			if (!ec) {
-				connection_manager_.start(std::make_shared<connection> (std::move(isocket), connection_manager_, request_handler_));
+				connection_manager_.start(std::make_shared<connection>(std::move(isocket), connection_manager_, request_handler_, *this));
+				
+				std::cout << "acception" << std::endl;
+
 				/*
 				std::shared_ptr<TUser> user = std::shared_ptr<TUser>(new TUser(IoService, std::move(socket), *this));
 
@@ -63,7 +67,6 @@ void THallyuHttpServer::do_accept() {
 				user->StartRead();
 				*/
 			}
-
 			do_accept();
 	}
 	);

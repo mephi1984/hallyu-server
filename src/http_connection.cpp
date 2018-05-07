@@ -21,11 +21,12 @@ namespace server {
 		, http_connection_manager(manager)
 		, http_request_handler(handler)
 	{
+		std::cout << "http_connection constructor" << std::endl;
 	}
 
 	void connection::before_start() {
 		Address = http_socket.lowest_layer().remote_endpoint().address().to_string();
-
+		std::cout << "http_connection befor start " << Address <<  std::endl;
 		DataReadSignalMap.AddSlot("RequestWordTranslation", std::bind(&connection::http_recieve_RequestWordTranslation, this, std::placeholders::_1));
 	}
 
@@ -34,26 +35,31 @@ namespace server {
 	}
 
 	void connection::do_read() {
-
+		
 		auto self(shared_from_this());
 		http_socket.async_read_some(boost::asio::buffer(connection_buffer),
 			[this,self](boost::system::error_code ec, std::size_t bytes_transfered) {
 				if(!ec) {
+					std::cout << "http_connection bytes_transfered:: " << bytes_transfered << std::endl;
 					request_parser::result_type result;
 /*parse*/			std::tie(result, std::ignore) = http_request_parser.parse(http_request, connection_buffer.data(), connection_buffer.data() + bytes_transfered);
+
+					//std::cout << "http_connection do_read result:: " << result << std::endl;
+
 					if (result == request_parser::good)
 					{
-
+						std::cout << "http_connection request handle " << std::endl;
 						// Signals emitting
 						handle_http_request(http_request);
-
+						
 						// http_request_handler.handle_request(http_request, http_reply); // read headers and content to reply
 						//do_write(); // write content to socket (close socket if error_code)
 					}
 					else if (result == request_parser::bad)
 					{
-						http_reply = reply::stock_reply(reply::bad_request);
-						do_write();
+						//http_reply = reply::stock_reply(reply::bad_request);
+						//do_write();
+						http_connection_manager.stop(shared_from_this());
 					}
 					else
 					{
@@ -214,7 +220,7 @@ namespace server {
 		//Xperimental -- need to optimize this
 		try
 		{
-
+			
 			std::stringstream o_stream;
 
 			boost::property_tree::write_xml(o_stream, pTree);
@@ -222,13 +228,13 @@ namespace server {
 			std::string data = o_stream.str();
 
 			int len = data.size();
-
+			
 			boost::shared_array<char> dataToSend(new char[len]); // [len +4]
 
 			//memcpy(&dataToSend[0], &len, 4);
 
 			//memcpy(&dataToSend[4], &data[0], len);
-
+			
 			memcpy(&dataToSend[0], &data[0], len);
 
 			auto sharedThis = shared_from_this(); // to keep connection
@@ -252,16 +258,21 @@ namespace server {
 	}
 
 	void connection::handle_http_request(request& req) {
-		try
+		try 
 		{
 			//Xperimental - Might be optimized a lot:
+			std::cout << "handle_http_req start " << "||| req content size:: " << req.request_content.size() << " |||" << std::endl;
+			if (req.request_content.size() == 0) {
+				SE::WriteToLog("Request content is empty");
+				http_connection_manager.stop(shared_from_this()); // close connection
+				return;
+			}
 
 			std::string xmlCode = std::string(&req.request_content[0], &req.request_content[0] + req.request_content.size());
 
 			std::stringstream stream(xmlCode);
 
 			boost::property_tree::ptree propertyTree;
-
 			boost::property_tree::read_xml(stream, propertyTree);
 
 			bool nextIsBinary = false;
@@ -284,6 +295,7 @@ namespace server {
 						http_connection_manager.stop(shared_from_this()); // close connection
 					}
 			}
+
 		}
 		catch (boost::property_tree::ptree_error)
 		{

@@ -20,6 +20,7 @@ void connection_manager::start(std::shared_ptr<connection> c) {
 
 void connection_manager::stop(std::shared_ptr<connection> c) {
 	http_connections.erase(c);
+
 	c->stop();
 }
 

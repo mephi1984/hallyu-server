@@ -23,7 +23,7 @@ namespace server {
 class THallyuHttpServer : public SE::TServerSocket
 {
 public:
-	THallyuHttpServer(/*const std::string& address, */const::std::string& port, const::std::string& root_dir, LH::LuaHelper& iluaHelper);
+	THallyuHttpServer(/*const std::string& address, */int port/*, const::std::string& root_dir*/, LH::LuaHelper& iluaHelper);
 
 	THallyuHttpServer(const THallyuHttpServer&) = delete;
 	THallyuHttpServer& operator=(const THallyuHttpServer&) = delete;

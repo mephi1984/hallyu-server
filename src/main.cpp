@@ -6,6 +6,7 @@
 #include "boost/random.hpp"
 #include "boost/program_options.hpp"
 
+#include "http_server.h"
 #include "socket_server.h"
 #include "MySqlConnector.h"
 #include "HangulProcessor.h"
@@ -19,6 +20,7 @@
 //#include "ZipFile.h"
 
 int BasePort = 43333;
+//int BasePort = 8080;
 
 static int testLuaFunc(lua_State *L)
 {
@@ -308,7 +310,9 @@ int main(int argc, char *argv[])
 
 		SE::WriteToLog("Server start step 2-5=");
 
-		std::shared_ptr<THallyuSocketServer> Server(new THallyuSocketServer(BasePort, MySqlConnector, luaHelper));
+		//std::shared_ptr<THallyuSocketServer> Server(new THallyuSocketServer(BasePort, MySqlConnector, luaHelper));
+
+		std::shared_ptr<http::server::THallyuHttpServer> Server(new http::server::THallyuHttpServer(BasePort, luaHelper));
 
 		SE::WriteToLog("Server start step 3=");
 

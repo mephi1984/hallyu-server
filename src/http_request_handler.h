@@ -23,7 +23,7 @@ public:
 	request_handler(const request_handler&) = delete;
 	request_handler& operator=(const request_handler&) = delete;
 
-	explicit request_handler(const std::string doc_root);
+	explicit request_handler(/*const std::string doc_root*/);
 
 	void handle_request(const request& req, reply& rep); // core request handle method (produce a reply, emitting signals)
 private:

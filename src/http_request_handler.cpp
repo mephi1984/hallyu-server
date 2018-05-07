@@ -12,14 +12,14 @@
 namespace http {
 namespace server {
 
-request_handler::request_handler(std::string doc_root)
-	: root_dir(doc_root)
+request_handler::request_handler(/*std::string doc_root*/)
+	: root_dir(/*doc_root*/"default")
 {
 }
 
 void request_handler::handle_request(const request& req, reply& rep){
 	
-	// ====== tmp section (sending file to client by url) ======	
+	/*// ====== tmp section (sending file to client by url) ======	
 
 	std::string request_path;
 	if(!url_decode(req.uri,request_path)) {  // <=== Decoding url address
@@ -54,7 +54,7 @@ void request_handler::handle_request(const request& req, reply& rep){
 		return;
 	}
 
-	// ------ tmp section (...) ------
+	// ------ tmp section (...) ------ 
 
 	// Fill out the reply
 	rep.status = reply::ok;
@@ -67,6 +67,7 @@ void request_handler::handle_request(const request& req, reply& rep){
 	rep.headers[0].value = rep.content.size();
 	rep.headers[1].name = "Content-Type";
 	rep.headers[1].value = mime_types::extension_to_type(extension);
+	*/
 }
 
 bool request_handler::url_decode(const std::string& in, std::string& out){
