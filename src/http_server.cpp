@@ -67,6 +67,7 @@ void THallyuHttpServer::do_accept() {
 				user->StartRead();
 				*/
 			}
+			std::cout << " connection COUNT:: " << connection_manager_.get_connections_count() << std::endl;
 			do_accept();
 	}
 	);

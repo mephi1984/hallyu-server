@@ -1,0 +1,165 @@
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: application/json
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: application/json
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+
+
+transfered content:: 
+HTTP/1.0 200 OK
+Content-Length: 456
+Content-Type: text/plain
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
+

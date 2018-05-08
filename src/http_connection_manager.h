@@ -28,6 +28,8 @@ public:
 	void start(std::shared_ptr<connection> c);
 	void stop(std::shared_ptr<connection> c);
 	void stop_all();
+	
+	int get_connections_count();
 
 private:
 	std::set<std::shared_ptr<connection>> http_connections;

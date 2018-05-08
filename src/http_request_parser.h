@@ -29,10 +29,8 @@ namespace server {
 				result_type result = consume(req, *begin++);
 				tmp_iter++;
 				if (result == good || result == bad) {
-					std::cout << "iterations:: " << tmp_iter << std::endl;
 					if (result == good) { // store request content at req
 						while (begin != end) {
-							std::cout << "content copy iteration " << std::endl;
 							req.request_content.push_back(*begin++);
 						}
 					}

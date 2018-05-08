@@ -1,412 +1,140 @@
-2018-May-07 07:19:04 Server started!
-2018-May-07 07:19:04 Server start step 1=
-2018-May-07 07:19:04 Server start step 2=
-2018-May-07 07:19:04 Server start step 2-2=
-2018-May-07 07:19:04 Server start step 2-3=
-2018-May-07 07:19:04 TImageDownloader::TImageDownloader
-2018-May-07 07:19:04 Server start step 2-4=
-2018-May-07 07:19:04 Server start step 2-5=
-2018-May-07 07:19:04 TServerSocket::TServerSocket
-2018-May-07 07:19:04 Server start step 3=
-2018-May-07 07:24:12 Server started!
-2018-May-07 07:24:12 Server start step 1=
-2018-May-07 07:24:12 Server start step 2=
-2018-May-07 07:24:12 Server start step 2-2=
-2018-May-07 07:24:12 Server start step 2-3=
-2018-May-07 07:24:12 TImageDownloader::TImageDownloader
-2018-May-07 07:24:12 Server start step 2-4=
-2018-May-07 07:24:12 Server start step 2-5=
-2018-May-07 07:24:12 TServerSocket::TServerSocket
-2018-May-07 07:24:12 Server start step 3=
-2018-May-07 07:40:00 Server started!
-2018-May-07 07:40:00 Server start step 1=
-2018-May-07 07:40:00 Server start step 2=
-2018-May-07 07:40:00 Server start step 2-2=
-2018-May-07 07:40:00 Server start step 2-3=
-2018-May-07 07:40:00 TImageDownloader::TImageDownloader
-2018-May-07 07:40:00 Server start step 2-4=
-2018-May-07 07:40:00 Server start step 2-5=
-2018-May-07 07:40:00 TServerSocket::TServerSocket acception started
-2018-May-07 07:40:00 Server start step 3=
-2018-May-07 07:43:44 Server started!
-2018-May-07 07:43:44 Server start step 1=
-2018-May-07 07:43:44 Server start step 2=
-2018-May-07 07:43:44 Server start step 2-2=
-2018-May-07 07:43:44 Server start step 2-3=
-2018-May-07 07:43:44 TImageDownloader::TImageDownloader
-2018-May-07 07:43:44 Server start step 2-4=
-2018-May-07 07:43:44 Server start step 2-5=
-2018-May-07 07:43:44 TServerSocket::TServerSocket acception started
-2018-May-07 07:43:44 Server start step 3=
-2018-May-07 07:47:28 Server started!
-2018-May-07 07:47:28 Server start step 1=
-2018-May-07 07:47:28 Server start step 2=
-2018-May-07 07:47:28 Server start step 2-2=
-2018-May-07 07:47:28 Server start step 2-3=
-2018-May-07 07:47:28 TImageDownloader::TImageDownloader
-2018-May-07 07:47:28 Server start step 2-4=
-2018-May-07 07:47:28 Server start step 2-5=
-2018-May-07 07:47:28 TServerSocket::TServerSocket acception started
-2018-May-07 07:47:28 Server start step 3=
-2018-May-07 07:50:14 Server started!
-2018-May-07 07:50:14 Server start step 1=
-2018-May-07 07:50:14 Server start step 2=
-2018-May-07 07:50:14 Server start step 2-2=
-2018-May-07 07:50:14 Server start step 2-3=
-2018-May-07 07:50:14 TImageDownloader::TImageDownloader
-2018-May-07 07:50:14 Server start step 2-4=
-2018-May-07 07:50:14 Server start step 2-5=
-2018-May-07 07:50:14 TServerSocket::TServerSocket acception started
-2018-May-07 07:50:14 Server start step 3=
-2018-May-07 07:53:43 Server started!
-2018-May-07 07:53:43 Server start step 1=
-2018-May-07 07:53:43 Server start step 2=
-2018-May-07 07:53:43 Server start step 2-2=
-2018-May-07 07:53:43 Server start step 2-3=
-2018-May-07 07:53:43 TImageDownloader::TImageDownloader
-2018-May-07 07:53:43 Server start step 2-4=
-2018-May-07 07:53:43 Server start step 2-5=
-2018-May-07 07:53:43 TServerSocket::TServerSocket acception started
-2018-May-07 07:53:43 Server start step 3=
-2018-May-07 07:55:19 Server started!
-2018-May-07 07:55:19 Server start step 1=
-2018-May-07 07:55:19 Server start step 2=
-2018-May-07 07:55:19 Server start step 2-2=
-2018-May-07 07:55:19 Server start step 2-3=
-2018-May-07 07:55:19 TImageDownloader::TImageDownloader
-2018-May-07 07:55:19 Server start step 2-4=
-2018-May-07 07:55:19 Server start step 2-5=
-2018-May-07 07:55:19 TServerSocket::TServerSocket acception started
-2018-May-07 07:55:19 Server start step 3=
-2018-May-07 07:58:49 Server started!
-2018-May-07 07:58:49 Server start step 1=
-2018-May-07 07:58:49 Server start step 2=
-2018-May-07 07:58:49 Server start step 2-2=
-2018-May-07 07:58:49 Server start step 2-3=
-2018-May-07 07:58:49 TImageDownloader::TImageDownloader
-2018-May-07 07:58:49 Server start step 2-4=
-2018-May-07 07:58:49 Server start step 2-5=
-2018-May-07 07:58:49 TServerSocket::TServerSocket acception started
-2018-May-07 07:58:49 Server start step 3=
-2018-May-07 08:00:40 Server started!
-2018-May-07 08:00:40 Server start step 1=
-2018-May-07 08:00:40 Server start step 2=
-2018-May-07 08:00:40 Server start step 2-2=
-2018-May-07 08:00:40 Server start step 2-3=
-2018-May-07 08:00:40 TImageDownloader::TImageDownloader
-2018-May-07 08:00:40 Server start step 2-4=
-2018-May-07 08:00:40 Server start step 2-5=
-2018-May-07 08:00:40 TServerSocket::TServerSocket acception started
-2018-May-07 08:00:40 Server start step 3=
-2018-May-07 08:12:10 Server started!
-2018-May-07 08:12:10 Server start step 1=
-2018-May-07 08:12:10 Server start step 2=
-2018-May-07 08:12:10 Server start step 2-2=
-2018-May-07 08:12:10 Server start step 2-3=
-2018-May-07 08:12:10 TImageDownloader::TImageDownloader
-2018-May-07 08:12:10 Server start step 2-4=
-2018-May-07 08:12:10 Server start step 2-5=
-2018-May-07 08:12:10 TServerSocket::TServerSocket acception started
-2018-May-07 08:12:10 Server start step 3=
-2018-May-07 08:13:10 Server started!
-2018-May-07 08:13:10 Server start step 1=
-2018-May-07 08:13:10 Server start step 2=
-2018-May-07 08:13:10 Server start step 2-2=
-2018-May-07 08:13:10 Server start step 2-3=
-2018-May-07 08:13:10 TImageDownloader::TImageDownloader
-2018-May-07 08:13:10 Server start step 2-4=
-2018-May-07 08:13:10 Server start step 2-5=
-2018-May-07 08:13:10 TServerSocket::TServerSocket acception started
-2018-May-07 08:13:10 Server start step 3=
-2018-May-07 08:16:00 Server started!
-2018-May-07 08:16:00 Server start step 1=
-2018-May-07 08:16:00 Server start step 2=
-2018-May-07 08:16:00 Server start step 2-2=
-2018-May-07 08:16:00 Server start step 2-3=
-2018-May-07 08:16:00 TImageDownloader::TImageDownloader
-2018-May-07 08:16:00 Server start step 2-4=
-2018-May-07 08:16:00 Server start step 2-5=
-2018-May-07 08:16:00 TServerSocket::TServerSocket acception started
-2018-May-07 08:16:00 Server start step 3=
-2018-May-07 08:19:23 Server started!
-2018-May-07 08:19:23 Server start step 1=
-2018-May-07 08:19:23 Server start step 2=
-2018-May-07 08:19:23 Server start step 2-2=
-2018-May-07 08:19:23 Server start step 2-3=
-2018-May-07 08:19:23 TImageDownloader::TImageDownloader
-2018-May-07 08:19:23 Server start step 2-4=
-2018-May-07 08:19:23 Server start step 2-5=
-2018-May-07 08:19:23 TServerSocket::TServerSocket acception started
-2018-May-07 08:19:23 Server start step 3=
-2018-May-07 08:20:33 Server started!
-2018-May-07 08:20:33 Server start step 1=
-2018-May-07 08:20:34 Server start step 2=
-2018-May-07 08:20:34 Server start step 2-2=
-2018-May-07 08:20:34 Server start step 2-3=
-2018-May-07 08:20:34 TImageDownloader::TImageDownloader
-2018-May-07 08:20:34 Server start step 2-4=
-2018-May-07 08:20:34 Server start step 2-5=
-2018-May-07 08:20:34 TServerSocket::TServerSocket acception started
-2018-May-07 08:20:34 Server start step 3=
-2018-May-07 08:22:21 Server started!
-2018-May-07 08:22:21 Server start step 1=
-2018-May-07 08:22:21 Server start step 2=
-2018-May-07 08:22:21 Server start step 2-2=
-2018-May-07 08:22:21 Server start step 2-3=
-2018-May-07 08:22:21 TImageDownloader::TImageDownloader
-2018-May-07 08:22:21 Server start step 2-4=
-2018-May-07 08:22:21 Server start step 2-5=
-2018-May-07 08:22:21 TServerSocket::TServerSocket acception started
-2018-May-07 08:22:21 Server start step 3=
-2018-May-07 08:25:18 Server started!
-2018-May-07 08:25:18 Server start step 1=
-2018-May-07 08:25:18 Server start step 2=
-2018-May-07 08:25:18 Server start step 2-2=
-2018-May-07 08:25:18 Server start step 2-3=
-2018-May-07 08:25:18 TImageDownloader::TImageDownloader
-2018-May-07 08:25:18 Server start step 2-4=
-2018-May-07 08:25:18 Server start step 2-5=
-2018-May-07 08:25:18 TServerSocket::TServerSocket acception started
-2018-May-07 08:25:18 Server start step 3=
-2018-May-07 08:30:14 Server started!
-2018-May-07 08:30:14 Server start step 1=
-2018-May-07 08:30:14 Server start step 2=
-2018-May-07 08:30:14 Server start step 2-2=
-2018-May-07 08:30:14 Server start step 2-3=
-2018-May-07 08:30:14 TImageDownloader::TImageDownloader
-2018-May-07 08:30:14 Server start step 2-4=
-2018-May-07 08:30:14 Server start step 2-5=
-2018-May-07 08:30:14 TServerSocket::TServerSocket acception started
-2018-May-07 08:30:14 Server start step 3=
-2018-May-07 08:33:08 Server started!
-2018-May-07 08:33:08 Server start step 1=
-2018-May-07 08:33:08 Server start step 2=
-2018-May-07 08:33:08 Server start step 2-2=
-2018-May-07 08:33:08 Server start step 2-3=
-2018-May-07 08:33:08 TImageDownloader::TImageDownloader
-2018-May-07 08:33:08 Server start step 2-4=
-2018-May-07 08:33:08 Server start step 2-5=
-2018-May-07 08:33:08 TServerSocket::TServerSocket acception started
-2018-May-07 08:33:08 Server start step 3=
-2018-May-07 08:34:22 Server started!
-2018-May-07 08:34:22 Server start step 1=
-2018-May-07 08:34:22 Server start step 2=
-2018-May-07 08:34:22 Server start step 2-2=
-2018-May-07 08:34:22 Server start step 2-3=
-2018-May-07 08:34:22 TImageDownloader::TImageDownloader
-2018-May-07 08:34:22 Server start step 2-4=
-2018-May-07 08:34:22 Server start step 2-5=
-2018-May-07 08:34:22 TServerSocket::TServerSocket acception started
-2018-May-07 08:34:22 Server start step 3=
-2018-May-07 08:37:21 Server started!
-2018-May-07 08:37:21 Server start step 1=
-2018-May-07 08:37:21 Server start step 2=
-2018-May-07 08:37:21 Server start step 2-2=
-2018-May-07 08:37:21 Server start step 2-3=
-2018-May-07 08:37:21 TImageDownloader::TImageDownloader
-2018-May-07 08:37:21 Server start step 2-4=
-2018-May-07 08:37:21 Server start step 2-5=
-2018-May-07 08:37:21 TServerSocket::TServerSocket acception started
-2018-May-07 08:37:21 Server start step 3=
-2018-May-07 09:29:37 Server started!
-2018-May-07 09:29:37 Server start step 1=
-2018-May-07 09:29:37 Server start step 2=
-2018-May-07 09:29:37 Server start step 2-2=
-2018-May-07 09:29:37 Server start step 2-3=
-2018-May-07 09:29:37 TImageDownloader::TImageDownloader
-2018-May-07 09:29:37 Server start step 2-4=
-2018-May-07 09:29:37 Server start step 2-5=
-2018-May-07 09:29:37 TServerSocket::TServerSocket acception started
-2018-May-07 09:29:37 Server start step 3=
-2018-May-07 09:33:00 Server started!
-2018-May-07 09:33:00 Server start step 1=
-2018-May-07 09:33:00 Server start step 2=
-2018-May-07 09:33:00 Server start step 2-2=
-2018-May-07 09:33:00 Server start step 2-3=
-2018-May-07 09:33:00 TImageDownloader::TImageDownloader
-2018-May-07 09:33:00 Server start step 2-4=
-2018-May-07 09:33:00 Server start step 2-5=
-2018-May-07 09:33:00 TServerSocket::TServerSocket acception started
-2018-May-07 09:33:00 Server start step 3=
-2018-May-07 09:52:09 Server started!
-2018-May-07 09:52:09 Server start step 1=
-2018-May-07 09:52:09 Server start step 2=
-2018-May-07 09:52:09 Server start step 2-2=
-2018-May-07 09:52:09 Server start step 2-3=
-2018-May-07 09:52:09 TImageDownloader::TImageDownloader
-2018-May-07 09:52:09 Server start step 2-4=
-2018-May-07 09:52:09 Server start step 2-5=
-2018-May-07 09:52:09 TServerSocket::TServerSocket acception started
-2018-May-07 09:52:09 Server start step 3=
-2018-May-07 09:59:44 Server started!
-2018-May-07 09:59:44 Server start step 1=
-2018-May-07 09:59:44 Server start step 2=
-2018-May-07 09:59:44 Server start step 2-2=
-2018-May-07 09:59:44 Server start step 2-3=
-2018-May-07 09:59:44 TImageDownloader::TImageDownloader
-2018-May-07 09:59:44 Server start step 2-4=
-2018-May-07 09:59:44 Server start step 2-5=
-2018-May-07 09:59:44 TServerSocket::TServerSocket acception started
-2018-May-07 09:59:44 Server start step 3=
-2018-May-07 10:01:24 Server started!
-2018-May-07 10:01:24 Server start step 1=
-2018-May-07 10:01:24 Server start step 2=
-2018-May-07 10:01:24 Server start step 2-2=
-2018-May-07 10:01:24 Server start step 2-3=
-2018-May-07 10:01:24 TImageDownloader::TImageDownloader
-2018-May-07 10:01:24 Server start step 2-4=
-2018-May-07 10:01:24 Server start step 2-5=
-2018-May-07 10:01:24 TServerSocket::TServerSocket acception started
-2018-May-07 10:01:24 Server start step 3=
-2018-May-07 10:02:49 Server started!
-2018-May-07 10:02:50 Server start step 1=
-2018-May-07 10:02:50 Server start step 2=
-2018-May-07 10:02:50 Server start step 2-2=
-2018-May-07 10:02:50 Server start step 2-3=
-2018-May-07 10:02:50 TImageDownloader::TImageDownloader
-2018-May-07 10:02:50 Server start step 2-4=
-2018-May-07 10:02:50 Server start step 2-5=
-2018-May-07 10:02:50 TServerSocket::TServerSocket acception started
-2018-May-07 10:02:50 Server start step 3=
-2018-May-07 10:04:52 Server started!
-2018-May-07 10:04:52 Server start step 1=
-2018-May-07 10:04:52 Server start step 2=
-2018-May-07 10:04:52 Server start step 2-2=
-2018-May-07 10:04:52 Server start step 2-3=
-2018-May-07 10:04:52 TImageDownloader::TImageDownloader
-2018-May-07 10:04:52 Server start step 2-4=
-2018-May-07 10:04:52 Server start step 2-5=
-2018-May-07 10:04:52 TServerSocket::TServerSocket acception started
-2018-May-07 10:04:52 Server start step 3=
-2018-May-07 10:07:59 Server started!
-2018-May-07 10:07:59 Server start step 1=
-2018-May-07 10:07:59 Server start step 2=
-2018-May-07 10:07:59 Server start step 2-2=
-2018-May-07 10:07:59 Server start step 2-3=
-2018-May-07 10:07:59 TImageDownloader::TImageDownloader
-2018-May-07 10:07:59 Server start step 2-4=
-2018-May-07 10:07:59 Server start step 2-5=
-2018-May-07 10:07:59 TServerSocket::TServerSocket acception started
-2018-May-07 10:07:59 Server start step 3=
-2018-May-07 10:10:05 Server started!
-2018-May-07 10:10:05 Server start step 1=
-2018-May-07 10:10:05 Server start step 2=
-2018-May-07 10:10:05 Server start step 2-2=
-2018-May-07 10:10:05 Server start step 2-3=
-2018-May-07 10:10:05 TImageDownloader::TImageDownloader
-2018-May-07 10:10:05 Server start step 2-4=
-2018-May-07 10:10:05 Server start step 2-5=
-2018-May-07 10:10:05 TServerSocket::TServerSocket acception started
-2018-May-07 10:10:05 Server start step 3=
-2018-May-07 10:10:08 Request content is empty
-2018-May-07 10:11:33 Server started!
-2018-May-07 10:11:33 Server start step 1=
-2018-May-07 10:11:33 Server start step 2=
-2018-May-07 10:11:33 Server start step 2-2=
-2018-May-07 10:11:33 Server start step 2-3=
-2018-May-07 10:11:33 TImageDownloader::TImageDownloader
-2018-May-07 10:11:33 Server start step 2-4=
-2018-May-07 10:11:33 Server start step 2-5=
-2018-May-07 10:11:33 TServerSocket::TServerSocket acception started
-2018-May-07 10:11:33 Server start step 3=
-2018-May-07 10:13:38 Server started!
-2018-May-07 10:13:38 Server start step 1=
-2018-May-07 10:13:38 Server start step 2=
-2018-May-07 10:13:38 Server start step 2-2=
-2018-May-07 10:13:38 Server start step 2-3=
-2018-May-07 10:13:38 TImageDownloader::TImageDownloader
-2018-May-07 10:13:38 Server start step 2-4=
-2018-May-07 10:13:38 Server start step 2-5=
-2018-May-07 10:13:38 TServerSocket::TServerSocket acception started
-2018-May-07 10:13:38 Server start step 3=
-2018-May-07 10:13:42 Request content is empty
-2018-May-07 10:17:06 Server started!
-2018-May-07 10:17:06 Server start step 1=
-2018-May-07 10:17:06 Server start step 2=
-2018-May-07 10:17:06 Server start step 2-2=
-2018-May-07 10:17:06 Server start step 2-3=
-2018-May-07 10:17:06 TImageDownloader::TImageDownloader
-2018-May-07 10:17:06 Server start step 2-4=
-2018-May-07 10:17:06 Server start step 2-5=
-2018-May-07 10:17:06 TServerSocket::TServerSocket acception started
-2018-May-07 10:17:06 Server start step 3=
-2018-May-07 10:17:11 Request content is empty
-2018-May-07 10:21:27 Server started!
-2018-May-07 10:21:27 Server start step 1=
-2018-May-07 10:21:27 Server start step 2=
-2018-May-07 10:21:27 Server start step 2-2=
-2018-May-07 10:21:27 Server start step 2-3=
-2018-May-07 10:21:27 TImageDownloader::TImageDownloader
-2018-May-07 10:21:27 Server start step 2-4=
-2018-May-07 10:21:27 Server start step 2-5=
-2018-May-07 10:21:27 TServerSocket::TServerSocket acception started
-2018-May-07 10:21:27 Server start step 3=
-2018-May-07 10:22:14 Request content is empty
-2018-May-07 10:23:37 Server started!
-2018-May-07 10:23:37 Server start step 1=
-2018-May-07 10:23:37 Server start step 2=
-2018-May-07 10:23:37 Server start step 2-2=
-2018-May-07 10:23:37 Server start step 2-3=
-2018-May-07 10:23:37 TImageDownloader::TImageDownloader
-2018-May-07 10:23:37 Server start step 2-4=
-2018-May-07 10:23:37 Server start step 2-5=
-2018-May-07 10:23:37 TServerSocket::TServerSocket acception started
-2018-May-07 10:23:37 Server start step 3=
-2018-May-07 10:23:40 Request content is empty
-2018-May-07 10:24:09 Request content is empty
-2018-May-07 10:24:21 Request content is empty
-2018-May-07 10:25:11 Request content is empty
-2018-May-07 10:26:14 Request content is empty
-2018-May-07 10:29:26 Server started!
-2018-May-07 10:29:26 Server start step 1=
-2018-May-07 10:29:26 Server start step 2=
-2018-May-07 10:29:26 Server start step 2-2=
-2018-May-07 10:29:26 Server start step 2-3=
-2018-May-07 10:29:26 TImageDownloader::TImageDownloader
-2018-May-07 10:29:26 Server start step 2-4=
-2018-May-07 10:29:26 Server start step 2-5=
-2018-May-07 10:29:26 TServerSocket::TServerSocket acception started
-2018-May-07 10:29:26 Server start step 3=
-2018-May-07 10:29:28 Request content is empty
-2018-May-07 10:34:31 Server started!
-2018-May-07 10:34:31 Server start step 1=
-2018-May-07 10:34:31 Server start step 2=
-2018-May-07 10:34:32 Server start step 2-2=
-2018-May-07 10:34:32 Server start step 2-3=
-2018-May-07 10:34:32 TImageDownloader::TImageDownloader
-2018-May-07 10:34:32 Server start step 2-4=
-2018-May-07 10:34:32 Server start step 2-5=
-2018-May-07 10:34:32 TServerSocket::TServerSocket acception started
-2018-May-07 10:34:32 Server start step 3=
-2018-May-07 10:34:38 Request content is empty
-2018-May-07 11:16:20 Server started!
-2018-May-07 11:16:20 Server start step 1=
-2018-May-07 11:16:20 Server start step 2=
-2018-May-07 11:16:20 Server start step 2-2=
-2018-May-07 11:16:20 Server start step 2-3=
-2018-May-07 11:16:20 TImageDownloader::TImageDownloader
-2018-May-07 11:16:20 Server start step 2-4=
-2018-May-07 11:16:20 Server start step 2-5=
-2018-May-07 11:16:20 TServerSocket::TServerSocket acception started
-2018-May-07 11:16:20 Server start step 3=
-2018-May-07 11:16:25 Request content is empty
-2018-May-07 11:22:19 Server started!
-2018-May-07 11:22:19 Server start step 1=
-2018-May-07 11:22:20 Server start step 2=
-2018-May-07 11:22:20 Server start step 2-2=
-2018-May-07 11:22:20 Server start step 2-3=
-2018-May-07 11:22:20 TImageDownloader::TImageDownloader
-2018-May-07 11:22:20 Server start step 2-4=
-2018-May-07 11:22:20 Server start step 2-5=
-2018-May-07 11:22:20 TServerSocket::TServerSocket acception started
-2018-May-07 11:22:20 Server start step 3=
-2018-May-07 11:22:25 Request content is empty
-2018-May-07 11:22:47 Request content is empty
-2018-May-07 11:23:43 Request content is empty
-2018-May-07 11:24:10 Request content is empty
-2018-May-07 11:24:44 Request content is empty
-2018-May-07 11:25:01 Request content is empty
-2018-May-07 11:25:22 Request content is empty
-2018-May-07 11:25:48 Request content is empty
-2018-May-07 11:26:39 Request content is empty
-2018-May-07 11:28:44 Request content is empty
+2018-May-08 10:05:03 Server started!
+2018-May-08 10:05:03 Server start step 1=
+2018-May-08 10:05:03 Server start step 2=
+2018-May-08 10:05:03 Server start step 2-2=
+2018-May-08 10:05:03 Server start step 2-3=
+2018-May-08 10:05:03 TImageDownloader::TImageDownloader
+2018-May-08 10:05:03 Server start step 2-4=
+2018-May-08 10:05:03 Server start step 2-5=
+2018-May-08 10:05:03 TServerSocket::TServerSocket acception started
+2018-May-08 10:05:03 Server start step 3=
+2018-May-08 10:05:07 http_recieve_RequestWordTranslation begin
+2018-May-08 10:05:07 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:05:07 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:05:07 Verbose result size : 247
+2018-May-08 10:05:07 http_recieve_RequestWordTranslation end
+2018-May-08 10:06:21 http_recieve_RequestWordTranslation begin
+2018-May-08 10:06:21 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:06:21 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:06:21 Verbose result size : 247
+2018-May-08 10:06:21 http_recieve_RequestWordTranslation end
+2018-May-08 10:07:51 Server started!
+2018-May-08 10:07:51 Server start step 1=
+2018-May-08 10:07:51 Server start step 2=
+2018-May-08 10:07:51 Server start step 2-2=
+2018-May-08 10:07:51 Server start step 2-3=
+2018-May-08 10:07:51 TImageDownloader::TImageDownloader
+2018-May-08 10:07:51 Server start step 2-4=
+2018-May-08 10:07:51 Server start step 2-5=
+2018-May-08 10:07:51 TServerSocket::TServerSocket acception started
+2018-May-08 10:07:51 Server start step 3=
+2018-May-08 10:07:54 http_recieve_RequestWordTranslation begin
+2018-May-08 10:07:54 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:07:54 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:07:54 Verbose result size : 247
+2018-May-08 10:07:54 http_recieve_RequestWordTranslation end
+2018-May-08 10:09:10 http_recieve_RequestWordTranslation begin
+2018-May-08 10:09:10 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:09:10 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:09:10 Verbose result size : 247
+2018-May-08 10:09:10 http_recieve_RequestWordTranslation end
+2018-May-08 10:10:19 Server started!
+2018-May-08 10:10:19 Server start step 1=
+2018-May-08 10:10:19 Server start step 2=
+2018-May-08 10:10:19 Server start step 2-2=
+2018-May-08 10:10:19 Server start step 2-3=
+2018-May-08 10:10:19 TImageDownloader::TImageDownloader
+2018-May-08 10:10:19 Server start step 2-4=
+2018-May-08 10:10:19 Server start step 2-5=
+2018-May-08 10:10:19 TServerSocket::TServerSocket acception started
+2018-May-08 10:10:19 Server start step 3=
+2018-May-08 10:10:32 http_recieve_RequestWordTranslation begin
+2018-May-08 10:10:32 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:10:32 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:10:33 Verbose result size : 247
+2018-May-08 10:10:33 http_recieve_RequestWordTranslation end
+2018-May-08 10:47:56 Server started!
+2018-May-08 10:47:56 Server start step 1=
+2018-May-08 10:47:56 Server start step 2=
+2018-May-08 10:47:56 Server start step 2-2=
+2018-May-08 10:47:56 Server start step 2-3=
+2018-May-08 10:47:56 TImageDownloader::TImageDownloader
+2018-May-08 10:47:56 Server start step 2-4=
+2018-May-08 10:47:56 Server start step 2-5=
+2018-May-08 10:47:56 TServerSocket::TServerSocket acception started
+2018-May-08 10:47:56 Server start step 3=
+2018-May-08 10:47:59 http_recieve_RequestWordTranslation begin
+2018-May-08 10:47:59 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:47:59 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:47:59 Verbose result size : 247
+2018-May-08 10:47:59 http_recieve_RequestWordTranslation end
+2018-May-08 10:55:32 Server started!
+2018-May-08 10:55:32 Server start step 1=
+2018-May-08 10:55:32 Server start step 2=
+2018-May-08 10:55:32 Server start step 2-2=
+2018-May-08 10:55:32 Server start step 2-3=
+2018-May-08 10:55:32 TImageDownloader::TImageDownloader
+2018-May-08 10:55:32 Server start step 2-4=
+2018-May-08 10:55:32 Server start step 2-5=
+2018-May-08 10:55:32 TServerSocket::TServerSocket acception started
+2018-May-08 10:55:32 Server start step 3=
+2018-May-08 10:55:37 http_recieve_RequestWordTranslation begin
+2018-May-08 10:55:37 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:55:37 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:55:37 Verbose result size : 247
+2018-May-08 10:57:33 Server started!
+2018-May-08 10:57:33 Server start step 1=
+2018-May-08 10:57:33 Server start step 2=
+2018-May-08 10:57:33 Server start step 2-2=
+2018-May-08 10:57:33 Server start step 2-3=
+2018-May-08 10:57:33 TImageDownloader::TImageDownloader
+2018-May-08 10:57:33 Server start step 2-4=
+2018-May-08 10:57:33 Server start step 2-5=
+2018-May-08 10:57:33 TServerSocket::TServerSocket acception started
+2018-May-08 10:57:33 Server start step 3=
+2018-May-08 10:57:36 http_recieve_RequestWordTranslation begin
+2018-May-08 10:57:36 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:57:36 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:57:36 Verbose result size : 247
+2018-May-08 10:58:58 Server started!
+2018-May-08 10:58:58 Server start step 1=
+2018-May-08 10:58:58 Server start step 2=
+2018-May-08 10:58:58 Server start step 2-2=
+2018-May-08 10:58:58 Server start step 2-3=
+2018-May-08 10:58:58 TImageDownloader::TImageDownloader
+2018-May-08 10:58:58 Server start step 2-4=
+2018-May-08 10:58:58 Server start step 2-5=
+2018-May-08 10:58:58 TServerSocket::TServerSocket acception started
+2018-May-08 10:58:58 Server start step 3=
+2018-May-08 10:59:01 http_recieve_RequestWordTranslation begin
+2018-May-08 10:59:01 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 10:59:01 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 10:59:01 Verbose result size : 247
+2018-May-08 11:00:29 Server started!
+2018-May-08 11:00:29 Server start step 1=
+2018-May-08 11:00:29 Server start step 2=
+2018-May-08 11:00:29 Server start step 2-2=
+2018-May-08 11:00:29 Server start step 2-3=
+2018-May-08 11:00:29 TImageDownloader::TImageDownloader
+2018-May-08 11:00:29 Server start step 2-4=
+2018-May-08 11:00:29 Server start step 2-5=
+2018-May-08 11:00:29 TServerSocket::TServerSocket acception started
+2018-May-08 11:00:29 Server start step 3=
+2018-May-08 11:00:34 http_recieve_RequestWordTranslation begin
+2018-May-08 11:00:34 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 11:00:34 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 11:00:34 Verbose result size : 247
+2018-May-08 11:01:25 Server started!
+2018-May-08 11:01:25 Server start step 1=
+2018-May-08 11:01:25 Server start step 2=
+2018-May-08 11:01:25 Server start step 2-2=
+2018-May-08 11:01:25 Server start step 2-3=
+2018-May-08 11:01:25 TImageDownloader::TImageDownloader
+2018-May-08 11:01:25 Server start step 2-4=
+2018-May-08 11:01:25 Server start step 2-5=
+2018-May-08 11:01:25 TServerSocket::TServerSocket acception started
+2018-May-08 11:01:25 Server start step 3=
+2018-May-08 11:01:31 http_recieve_RequestWordTranslation begin
+2018-May-08 11:01:31 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-08 11:01:31 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-08 11:01:31 Verbose result size : 247

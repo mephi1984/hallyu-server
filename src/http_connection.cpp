@@ -26,7 +26,7 @@ namespace server {
 
 	void connection::before_start() {
 		Address = http_socket.lowest_layer().remote_endpoint().address().to_string();
-		std::cout << "http_connection befor start " << Address <<  std::endl;
+		std::cout << "http_connection before_start " << Address <<  std::endl;
 		DataReadSignalMap.AddSlot("RequestWordTranslation", std::bind(&connection::http_recieve_RequestWordTranslation, this, std::placeholders::_1));
 	}
 
@@ -220,36 +220,74 @@ namespace server {
 		//Xperimental -- need to optimize this
 		try
 		{
-			
+			std::cout << "sending ptree " << std::endl;
 			std::stringstream o_stream;
+			std::ofstream test_json_file;
+			test_json_file.open("jsonTest.txt", std::ios::app);
 
-			boost::property_tree::write_xml(o_stream, pTree);
+			boost::property_tree::write_json(o_stream, pTree);
+			//boost::property_tree::write_json(test_json_file, pTree);
 
 			std::string data = o_stream.str();
+			int dLen = data.size();
 
-			int len = data.size();
-			
+			std::string http_headers;
+			http_headers = "HTTP/1.0 200 OK\n";
+			http_headers += "Content-Length: ";
+			http_headers += std::to_string(dLen);
+			http_headers += "\n";
+			http_headers += "Content-Type: text/plain";
+			http_headers+= "\r\n";
+
+			std::string http_rep_data = http_headers;
+			http_rep_data+=data;
+			int len = http_rep_data.size();
+
+			std::cout << "out stream data size:: " << len << std::endl;
 			boost::shared_array<char> dataToSend(new char[len]); // [len +4]
 
 			//memcpy(&dataToSend[0], &len, 4);
 
 			//memcpy(&dataToSend[4], &data[0], len);
 			
-			memcpy(&dataToSend[0], &data[0], len);
+			memcpy(&dataToSend[0], &http_rep_data[0], len);
 
 			auto sharedThis = shared_from_this(); // to keep connection
+			
+			test_json_file << std::endl << "transfered content:: " << std::endl;
+			for (size_t Jtc=0; Jtc < len ;Jtc++) {
+				test_json_file << dataToSend[Jtc];
+			}
+			test_json_file << std::endl;
+			test_json_file.close();
 
+			/*http_headers = "HTTP/1.0 200 OK\n";
+			http_headers += "Content-Length: ";
+			http_headers += std::to_string(dLen);
+			http_headers += "\n";
+			http_headers += "Content-Type: text/plain";
+			http_headers+= "\r\n"*/
 
-			boost::asio::async_write(http_socket, boost::asio::buffer(&dataToSend[0], len /*len + 4*/),
-				[dataToSend, sharedThis, this](boost::system::error_code ec, std::size_t)
+			std::vector<boost::asio::const_buffer> rep_buf;
+			rep_buf.push_back(boost::asio::buffer("HTTP/1.0 200 OK\n"));
+			rep_buf.push_back(boost::asio::buffer("Content-Length"));
+			rep_buf.push_back(boost::asio::buffer(": "));
+			rep_buf.push_back(boost::asio::buffer(std::to_string(dLen)));
+			rep_buf.push_back(boost::asio::buffer("\r\n"));
+			rep_buf.push_back(boost::asio::buffer("\r\n"));
+			rep_buf.push_back(boost::asio::buffer(data));
+
+			boost::asio::async_write(http_socket, rep_buf/*boost::asio::buffer(&dataToSend[0], len /*len + 4)*/,
+				[dataToSend, sharedThis, this](boost::system::error_code ec, std::size_t bytes_transfered)
 			{
+				std::cout << "async_write bytes_transferes:: " << bytes_transfered << std::endl;
 				if (ec)
 				{
 					SE::WriteToLog("Error in inner SendPropertyTree");
 				}
-				http_connection_manager.stop(sharedThis); // close connection
 			}
 			);
+			//http_connection_manager.stop(sharedThis); // close connection
 		}
 		catch (std::exception e)
 		{
@@ -268,12 +306,12 @@ namespace server {
 				return;
 			}
 
-			std::string xmlCode = std::string(&req.request_content[0], &req.request_content[0] + req.request_content.size());
+			std::string jsonCode = std::string(&req.request_content[0], &req.request_content[0] + req.request_content.size());
 
-			std::stringstream stream(xmlCode);
+			std::stringstream stream(jsonCode);
 
 			boost::property_tree::ptree propertyTree;
-			boost::property_tree::read_xml(stream, propertyTree);
+			boost::property_tree::read_json(stream, propertyTree);
 
 			bool nextIsBinary = false;
 			boost::property_tree::ptree binaryTree;

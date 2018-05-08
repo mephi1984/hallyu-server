@@ -31,5 +31,9 @@ void connection_manager::stop_all() {
 	http_connections.clear();
 }
 
+int connection_manager::get_connections_count() {
+	return http_connections.size();
+}
+
 }
 }
