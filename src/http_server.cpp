@@ -9,40 +9,31 @@ namespace http {
 namespace server {
 
 THallyuHttpServer::THallyuHttpServer(/*const std::string& address, */int port/*, const std::string& root_dir*/, LH::LuaHelper& iluaHelper) 
-	: SE::TServerSocket(port)
+	: resolver(IoService)
 	, luaHelper(iluaHelper)
-	//, io_context_(1)
+	, acceptor(IoService)
 	, signals_(IoService)
-	//, acceptor_(io_context_)
 	, connection_manager_()
 	, request_handler_(/*root_dir*/)
 {
-	std::cout << "http_Server_constructor start" << std::endl;
+
+	std::string addr("127.0.0.1");
+	endpoint = *resolver.resolve(addr, std::to_string(port)).begin();
+	acceptor.open(endpoint.protocol());
+	acceptor.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
+	acceptor.bind(endpoint);
+	acceptor.listen();
+
 	// -------- Signals section --------
 	signals_.add(SIGINT);
 	signals_.add(SIGTERM);
-	std::cout << "http_Server_constructor signals" << std::endl;
 	do_await_stop();
 	// ======== Signals section ========
-
-	std::cout << "http_Server_constructor await to stop" << std::endl;
 	do_accept();
-	std::cout << "http_Server_constructor in_acception" << std::endl;
-	ServiceThread = boost::thread(std::bind(&TServerSocket::UpdateInThread, this));
-	std::cout << "http_Server_constructor threaded" << std::endl;
-	// Open the acceptor
-	// -----------------
-	/*
-	boost::asio::ip::tcp::resolver resolver(io_context_);
-	boost::asio::ip::tcp::endpoint endpoint =
-		*resolver.resolve(address, port).begin();
-	acceptor_.open(endpoint.protocol());
-	acceptor_.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
-	acceptor_.bind(endpoint);
-	acceptor_.listen();
-	 
-	do_accept();
-	*/
+	std::cout << "Acception" << std::endl;
+	
+	ServiceThread = boost::thread(std::bind(&THallyuHttpServer::UpdateInThread, this));
+	
 }
 
 void THallyuHttpServer::do_accept() {
@@ -56,16 +47,7 @@ void THallyuHttpServer::do_accept() {
 
 			if (!ec) {
 				connection_manager_.start(std::make_shared<connection>(std::move(isocket), connection_manager_, request_handler_, *this));
-				
-				std::cout << "acception" << std::endl;
-
-				/*
-				std::shared_ptr<TUser> user = std::shared_ptr<TUser>(new TUser(IoService, std::move(socket), *this));
-
-				user->BeforeStartRead();
-
-				user->StartRead();
-				*/
+				std::cout << "connected" << std::endl;
 			}
 			std::cout << " connection COUNT:: " << connection_manager_.get_connections_count() << std::endl;
 			do_accept();
@@ -88,8 +70,25 @@ void THallyuHttpServer::do_await_stop() {
 }
 
 void THallyuHttpServer::run() {
-	//io_context_.run();
 	IoService.run();
+}
+
+void THallyuHttpServer::JoinServiceThread()
+{
+	ServiceThread.join();
+}
+
+void THallyuHttpServer::UpdateInThread()
+{
+	try
+	{
+		IoService.run();
+		IoService.reset();
+	}
+	catch (std::exception e)
+	{
+		SE::WriteToLog("Error in TServerSocket::UpdateInThread");
+	}
 }
 
 }

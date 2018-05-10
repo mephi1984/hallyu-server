@@ -52,6 +52,8 @@ namespace server {
 		void start();
 		void stop();
 
+		//std::vector<boost::asio::const_buffer> to_bffers(std::string data, int dLen);
+
 		void before_start();
 
 		// Request/Reply methods
@@ -61,7 +63,9 @@ namespace server {
 		// Other methods
 		void http_send_PropertyTree(boost::property_tree::ptree pTree);
 		void handle_http_request(request& req);
-		
+
+		std::vector<boost::asio::const_buffer> rep_buf;
+
 	private:
 		// ------ read/write ------- asynchronous
 		void do_read();

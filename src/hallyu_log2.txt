@@ -1,140 +1,571 @@
-2018-May-08 10:05:03 Server started!
-2018-May-08 10:05:03 Server start step 1=
-2018-May-08 10:05:03 Server start step 2=
-2018-May-08 10:05:03 Server start step 2-2=
-2018-May-08 10:05:03 Server start step 2-3=
-2018-May-08 10:05:03 TImageDownloader::TImageDownloader
-2018-May-08 10:05:03 Server start step 2-4=
-2018-May-08 10:05:03 Server start step 2-5=
-2018-May-08 10:05:03 TServerSocket::TServerSocket acception started
-2018-May-08 10:05:03 Server start step 3=
-2018-May-08 10:05:07 http_recieve_RequestWordTranslation begin
-2018-May-08 10:05:07 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:05:07 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:05:07 Verbose result size : 247
-2018-May-08 10:05:07 http_recieve_RequestWordTranslation end
-2018-May-08 10:06:21 http_recieve_RequestWordTranslation begin
-2018-May-08 10:06:21 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:06:21 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:06:21 Verbose result size : 247
-2018-May-08 10:06:21 http_recieve_RequestWordTranslation end
-2018-May-08 10:07:51 Server started!
-2018-May-08 10:07:51 Server start step 1=
-2018-May-08 10:07:51 Server start step 2=
-2018-May-08 10:07:51 Server start step 2-2=
-2018-May-08 10:07:51 Server start step 2-3=
-2018-May-08 10:07:51 TImageDownloader::TImageDownloader
-2018-May-08 10:07:51 Server start step 2-4=
-2018-May-08 10:07:51 Server start step 2-5=
-2018-May-08 10:07:51 TServerSocket::TServerSocket acception started
-2018-May-08 10:07:51 Server start step 3=
-2018-May-08 10:07:54 http_recieve_RequestWordTranslation begin
-2018-May-08 10:07:54 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:07:54 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:07:54 Verbose result size : 247
-2018-May-08 10:07:54 http_recieve_RequestWordTranslation end
-2018-May-08 10:09:10 http_recieve_RequestWordTranslation begin
-2018-May-08 10:09:10 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:09:10 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:09:10 Verbose result size : 247
-2018-May-08 10:09:10 http_recieve_RequestWordTranslation end
-2018-May-08 10:10:19 Server started!
-2018-May-08 10:10:19 Server start step 1=
-2018-May-08 10:10:19 Server start step 2=
-2018-May-08 10:10:19 Server start step 2-2=
-2018-May-08 10:10:19 Server start step 2-3=
-2018-May-08 10:10:19 TImageDownloader::TImageDownloader
-2018-May-08 10:10:19 Server start step 2-4=
-2018-May-08 10:10:19 Server start step 2-5=
-2018-May-08 10:10:19 TServerSocket::TServerSocket acception started
-2018-May-08 10:10:19 Server start step 3=
-2018-May-08 10:10:32 http_recieve_RequestWordTranslation begin
-2018-May-08 10:10:32 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:10:32 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:10:33 Verbose result size : 247
-2018-May-08 10:10:33 http_recieve_RequestWordTranslation end
-2018-May-08 10:47:56 Server started!
-2018-May-08 10:47:56 Server start step 1=
-2018-May-08 10:47:56 Server start step 2=
-2018-May-08 10:47:56 Server start step 2-2=
-2018-May-08 10:47:56 Server start step 2-3=
-2018-May-08 10:47:56 TImageDownloader::TImageDownloader
-2018-May-08 10:47:56 Server start step 2-4=
-2018-May-08 10:47:56 Server start step 2-5=
-2018-May-08 10:47:56 TServerSocket::TServerSocket acception started
-2018-May-08 10:47:56 Server start step 3=
-2018-May-08 10:47:59 http_recieve_RequestWordTranslation begin
-2018-May-08 10:47:59 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:47:59 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:47:59 Verbose result size : 247
-2018-May-08 10:47:59 http_recieve_RequestWordTranslation end
-2018-May-08 10:55:32 Server started!
-2018-May-08 10:55:32 Server start step 1=
-2018-May-08 10:55:32 Server start step 2=
-2018-May-08 10:55:32 Server start step 2-2=
-2018-May-08 10:55:32 Server start step 2-3=
-2018-May-08 10:55:32 TImageDownloader::TImageDownloader
-2018-May-08 10:55:32 Server start step 2-4=
-2018-May-08 10:55:32 Server start step 2-5=
-2018-May-08 10:55:32 TServerSocket::TServerSocket acception started
-2018-May-08 10:55:32 Server start step 3=
-2018-May-08 10:55:37 http_recieve_RequestWordTranslation begin
-2018-May-08 10:55:37 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:55:37 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:55:37 Verbose result size : 247
-2018-May-08 10:57:33 Server started!
-2018-May-08 10:57:33 Server start step 1=
-2018-May-08 10:57:33 Server start step 2=
-2018-May-08 10:57:33 Server start step 2-2=
-2018-May-08 10:57:33 Server start step 2-3=
-2018-May-08 10:57:33 TImageDownloader::TImageDownloader
-2018-May-08 10:57:33 Server start step 2-4=
-2018-May-08 10:57:33 Server start step 2-5=
-2018-May-08 10:57:33 TServerSocket::TServerSocket acception started
-2018-May-08 10:57:33 Server start step 3=
-2018-May-08 10:57:36 http_recieve_RequestWordTranslation begin
-2018-May-08 10:57:36 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:57:36 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:57:36 Verbose result size : 247
-2018-May-08 10:58:58 Server started!
-2018-May-08 10:58:58 Server start step 1=
-2018-May-08 10:58:58 Server start step 2=
-2018-May-08 10:58:58 Server start step 2-2=
-2018-May-08 10:58:58 Server start step 2-3=
-2018-May-08 10:58:58 TImageDownloader::TImageDownloader
-2018-May-08 10:58:58 Server start step 2-4=
-2018-May-08 10:58:58 Server start step 2-5=
-2018-May-08 10:58:58 TServerSocket::TServerSocket acception started
-2018-May-08 10:58:58 Server start step 3=
-2018-May-08 10:59:01 http_recieve_RequestWordTranslation begin
-2018-May-08 10:59:01 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 10:59:01 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 10:59:01 Verbose result size : 247
-2018-May-08 11:00:29 Server started!
-2018-May-08 11:00:29 Server start step 1=
-2018-May-08 11:00:29 Server start step 2=
-2018-May-08 11:00:29 Server start step 2-2=
-2018-May-08 11:00:29 Server start step 2-3=
-2018-May-08 11:00:29 TImageDownloader::TImageDownloader
-2018-May-08 11:00:29 Server start step 2-4=
-2018-May-08 11:00:29 Server start step 2-5=
-2018-May-08 11:00:29 TServerSocket::TServerSocket acception started
-2018-May-08 11:00:29 Server start step 3=
-2018-May-08 11:00:34 http_recieve_RequestWordTranslation begin
-2018-May-08 11:00:34 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 11:00:34 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 11:00:34 Verbose result size : 247
-2018-May-08 11:01:25 Server started!
-2018-May-08 11:01:25 Server start step 1=
-2018-May-08 11:01:25 Server start step 2=
-2018-May-08 11:01:25 Server start step 2-2=
-2018-May-08 11:01:25 Server start step 2-3=
-2018-May-08 11:01:25 TImageDownloader::TImageDownloader
-2018-May-08 11:01:25 Server start step 2-4=
-2018-May-08 11:01:25 Server start step 2-5=
-2018-May-08 11:01:25 TServerSocket::TServerSocket acception started
-2018-May-08 11:01:25 Server start step 3=
-2018-May-08 11:01:31 http_recieve_RequestWordTranslation begin
-2018-May-08 11:01:31 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
-2018-May-08 11:01:31 http_recieve_RequestWordTranslation word: 먹지 않아요
-2018-May-08 11:01:31 Verbose result size : 247
+2018-May-10 07:25:37 Server started!
+2018-May-10 07:25:37 Server start step 1=
+2018-May-10 07:25:37 Server start step 2=
+2018-May-10 07:25:37 Server start step 2-2=
+2018-May-10 07:25:37 Server start step 2-3=
+2018-May-10 07:25:37 TImageDownloader::TImageDownloader
+2018-May-10 07:25:37 Server start step 2-4=
+2018-May-10 07:25:37 Server start step 2-5=
+2018-May-10 07:25:37 TServerSocket::TServerSocket acception started
+2018-May-10 07:25:37 Server start step 3=
+2018-May-10 07:25:40 http_recieve_RequestWordTranslation begin
+2018-May-10 07:25:40 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:25:40 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:25:40 Verbose result size : 247
+2018-May-10 07:25:40 http_recieve_RequestWordTranslation end
+2018-May-10 07:26:36 Server started!
+2018-May-10 07:26:36 Server start step 1=
+2018-May-10 07:26:36 Server start step 2=
+2018-May-10 07:26:36 Server start step 2-2=
+2018-May-10 07:26:36 Server start step 2-3=
+2018-May-10 07:26:36 TImageDownloader::TImageDownloader
+2018-May-10 07:26:36 Server start step 2-4=
+2018-May-10 07:26:36 Server start step 2-5=
+2018-May-10 07:26:36 TServerSocket::TServerSocket acception started
+2018-May-10 07:26:36 Server start step 3=
+2018-May-10 07:26:40 http_recieve_RequestWordTranslation begin
+2018-May-10 07:26:40 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:26:40 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:26:40 Verbose result size : 247
+2018-May-10 07:26:40 http_recieve_RequestWordTranslation end
+2018-May-10 07:27:37 Server started!
+2018-May-10 07:27:37 Server start step 1=
+2018-May-10 07:27:37 Server start step 2=
+2018-May-10 07:27:37 Server start step 2-2=
+2018-May-10 07:27:37 Server start step 2-3=
+2018-May-10 07:27:37 TImageDownloader::TImageDownloader
+2018-May-10 07:27:37 Server start step 2-4=
+2018-May-10 07:27:37 Server start step 2-5=
+2018-May-10 07:27:37 TServerSocket::TServerSocket acception started
+2018-May-10 07:27:37 Server start step 3=
+2018-May-10 07:27:42 http_recieve_RequestWordTranslation begin
+2018-May-10 07:27:42 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:27:42 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:27:43 Verbose result size : 247
+2018-May-10 07:27:43 http_recieve_RequestWordTranslation end
+2018-May-10 07:28:24 Server started!
+2018-May-10 07:28:24 Server start step 1=
+2018-May-10 07:28:24 Server start step 2=
+2018-May-10 07:28:24 Server start step 2-2=
+2018-May-10 07:28:24 Server start step 2-3=
+2018-May-10 07:28:24 TImageDownloader::TImageDownloader
+2018-May-10 07:28:24 Server start step 2-4=
+2018-May-10 07:28:24 Server start step 2-5=
+2018-May-10 07:28:24 TServerSocket::TServerSocket acception started
+2018-May-10 07:28:24 Server start step 3=
+2018-May-10 07:28:34 http_recieve_RequestWordTranslation begin
+2018-May-10 07:28:34 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:28:34 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:28:34 Verbose result size : 247
+2018-May-10 07:28:34 http_recieve_RequestWordTranslation end
+2018-May-10 07:30:38 Server started!
+2018-May-10 07:30:38 Server start step 1=
+2018-May-10 07:30:38 Server start step 2=
+2018-May-10 07:30:38 Server start step 2-2=
+2018-May-10 07:30:38 Server start step 2-3=
+2018-May-10 07:30:38 TImageDownloader::TImageDownloader
+2018-May-10 07:30:38 Server start step 2-4=
+2018-May-10 07:30:38 Server start step 2-5=
+2018-May-10 07:30:38 TServerSocket::TServerSocket acception started
+2018-May-10 07:30:38 Server start step 3=
+2018-May-10 07:30:41 http_recieve_RequestWordTranslation begin
+2018-May-10 07:30:41 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:30:41 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:30:41 Verbose result size : 247
+2018-May-10 07:30:41 http_recieve_RequestWordTranslation end
+2018-May-10 07:31:26 Server started!
+2018-May-10 07:31:26 Server start step 1=
+2018-May-10 07:31:26 Server start step 2=
+2018-May-10 07:31:26 Server start step 2-2=
+2018-May-10 07:31:26 Server start step 2-3=
+2018-May-10 07:31:26 TImageDownloader::TImageDownloader
+2018-May-10 07:31:26 Server start step 2-4=
+2018-May-10 07:31:26 Server start step 2-5=
+2018-May-10 07:31:26 TServerSocket::TServerSocket acception started
+2018-May-10 07:31:26 Server start step 3=
+2018-May-10 07:31:35 http_recieve_RequestWordTranslation begin
+2018-May-10 07:31:35 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:31:35 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:31:35 Verbose result size : 247
+2018-May-10 07:31:35 http_recieve_RequestWordTranslation end
+2018-May-10 07:33:02 Server started!
+2018-May-10 07:33:02 Server start step 1=
+2018-May-10 07:33:02 Server start step 2=
+2018-May-10 07:33:02 Server start step 2-2=
+2018-May-10 07:33:02 Server start step 2-3=
+2018-May-10 07:33:02 TImageDownloader::TImageDownloader
+2018-May-10 07:33:02 Server start step 2-4=
+2018-May-10 07:33:02 Server start step 2-5=
+2018-May-10 07:33:02 TServerSocket::TServerSocket acception started
+2018-May-10 07:33:02 Server start step 3=
+2018-May-10 07:33:10 http_recieve_RequestWordTranslation begin
+2018-May-10 07:33:10 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:33:10 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:33:10 Verbose result size : 247
+2018-May-10 07:33:10 http_recieve_RequestWordTranslation end
+2018-May-10 07:37:23 Server started!
+2018-May-10 07:37:23 Server start step 1=
+2018-May-10 07:37:23 Server start step 2=
+2018-May-10 07:37:23 Server start step 2-2=
+2018-May-10 07:37:23 Server start step 2-3=
+2018-May-10 07:37:23 TImageDownloader::TImageDownloader
+2018-May-10 07:37:23 Server start step 2-4=
+2018-May-10 07:37:23 Server start step 2-5=
+2018-May-10 07:37:23 TServerSocket::TServerSocket acception started
+2018-May-10 07:37:23 Server start step 3=
+2018-May-10 07:37:25 http_recieve_RequestWordTranslation begin
+2018-May-10 07:37:25 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:37:25 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:37:25 Verbose result size : 247
+2018-May-10 07:37:25 http_recieve_RequestWordTranslation end
+2018-May-10 07:40:16 Server started!
+2018-May-10 07:40:16 Server start step 1=
+2018-May-10 07:40:16 Server start step 2=
+2018-May-10 07:40:16 Server start step 2-2=
+2018-May-10 07:40:16 Server start step 2-3=
+2018-May-10 07:40:16 TImageDownloader::TImageDownloader
+2018-May-10 07:40:16 Server start step 2-4=
+2018-May-10 07:40:16 Server start step 2-5=
+2018-May-10 07:40:16 TServerSocket::TServerSocket acception started
+2018-May-10 07:40:16 Server start step 3=
+2018-May-10 07:40:20 http_recieve_RequestWordTranslation begin
+2018-May-10 07:40:20 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:40:20 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:40:20 Verbose result size : 247
+2018-May-10 07:40:20 http_recieve_RequestWordTranslation end
+2018-May-10 07:44:57 Server started!
+2018-May-10 07:44:57 Server start step 1=
+2018-May-10 07:44:57 Server start step 2=
+2018-May-10 07:44:57 Server start step 2-2=
+2018-May-10 07:44:57 Server start step 2-3=
+2018-May-10 07:44:57 TImageDownloader::TImageDownloader
+2018-May-10 07:44:57 Server start step 2-4=
+2018-May-10 07:44:57 Server start step 2-5=
+2018-May-10 07:44:57 TServerSocket::TServerSocket acception started
+2018-May-10 07:44:57 Server start step 3=
+2018-May-10 07:45:02 http_recieve_RequestWordTranslation begin
+2018-May-10 07:45:02 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:45:02 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:45:02 Verbose result size : 247
+2018-May-10 07:45:02 http_recieve_RequestWordTranslation end
+2018-May-10 07:53:15 Server started!
+2018-May-10 07:53:15 Server start step 1=
+2018-May-10 07:53:15 Server start step 2=
+2018-May-10 07:53:15 Server start step 2-2=
+2018-May-10 07:53:15 Server start step 2-3=
+2018-May-10 07:53:15 TImageDownloader::TImageDownloader
+2018-May-10 07:53:15 Server start step 2-4=
+2018-May-10 07:53:15 Server start step 2-5=
+2018-May-10 07:53:15 TServerSocket::TServerSocket acception started
+2018-May-10 07:53:15 Server start step 3=
+2018-May-10 07:53:20 http_recieve_RequestWordTranslation begin
+2018-May-10 07:53:20 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:53:20 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:53:20 Verbose result size : 247
+2018-May-10 07:53:20 http_recieve_RequestWordTranslation end
+2018-May-10 07:55:52 Server started!
+2018-May-10 07:55:52 Server start step 1=
+2018-May-10 07:55:52 Server start step 2=
+2018-May-10 07:55:52 Server start step 2-2=
+2018-May-10 07:55:52 Server start step 2-3=
+2018-May-10 07:55:52 TImageDownloader::TImageDownloader
+2018-May-10 07:55:52 Server start step 2-4=
+2018-May-10 07:55:52 Server start step 2-5=
+2018-May-10 07:55:52 TServerSocket::TServerSocket acception started
+2018-May-10 07:55:52 Server start step 3=
+2018-May-10 07:55:56 http_recieve_RequestWordTranslation begin
+2018-May-10 07:55:56 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:55:56 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:55:56 Verbose result size : 247
+2018-May-10 07:55:56 http_recieve_RequestWordTranslation end
+2018-May-10 07:58:46 Server started!
+2018-May-10 07:58:46 Server start step 1=
+2018-May-10 07:58:46 Server start step 2=
+2018-May-10 07:58:46 Server start step 2-2=
+2018-May-10 07:58:46 Server start step 2-3=
+2018-May-10 07:58:46 TImageDownloader::TImageDownloader
+2018-May-10 07:58:46 Server start step 2-4=
+2018-May-10 07:58:46 Server start step 2-5=
+2018-May-10 07:58:46 TServerSocket::TServerSocket acception started
+2018-May-10 07:58:46 Server start step 3=
+2018-May-10 07:58:54 http_recieve_RequestWordTranslation begin
+2018-May-10 07:58:54 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:58:54 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:58:54 Verbose result size : 247
+2018-May-10 07:58:54 http_recieve_RequestWordTranslation end
+2018-May-10 07:59:08 http_recieve_RequestWordTranslation begin
+2018-May-10 07:59:08 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 07:59:08 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 07:59:08 Verbose result size : 247
+2018-May-10 07:59:08 http_recieve_RequestWordTranslation end
+2018-May-10 08:00:10 Server started!
+2018-May-10 08:00:10 Server start step 1=
+2018-May-10 08:00:10 Server start step 2=
+2018-May-10 08:00:10 Server start step 2-2=
+2018-May-10 08:00:10 Server start step 2-3=
+2018-May-10 08:00:10 TImageDownloader::TImageDownloader
+2018-May-10 08:00:10 Server start step 2-4=
+2018-May-10 08:00:10 Server start step 2-5=
+2018-May-10 08:00:10 TServerSocket::TServerSocket acception started
+2018-May-10 08:00:10 Server start step 3=
+2018-May-10 08:00:13 http_recieve_RequestWordTranslation begin
+2018-May-10 08:00:13 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:00:13 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:00:14 Verbose result size : 247
+2018-May-10 08:00:14 http_recieve_RequestWordTranslation end
+2018-May-10 08:00:21 http_recieve_RequestWordTranslation begin
+2018-May-10 08:00:21 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:00:21 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:00:21 Verbose result size : 247
+2018-May-10 08:00:21 http_recieve_RequestWordTranslation end
+2018-May-10 08:05:35 Server started!
+2018-May-10 08:05:35 Server start step 1=
+2018-May-10 08:05:35 Server start step 2=
+2018-May-10 08:05:35 Server start step 2-2=
+2018-May-10 08:05:35 Server start step 2-3=
+2018-May-10 08:05:35 TImageDownloader::TImageDownloader
+2018-May-10 08:05:35 Server start step 2-4=
+2018-May-10 08:05:35 Server start step 2-5=
+2018-May-10 08:05:35 TServerSocket::TServerSocket acception started
+2018-May-10 08:05:35 Server start step 3=
+2018-May-10 08:05:38 http_recieve_RequestWordTranslation begin
+2018-May-10 08:05:38 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:05:38 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:05:38 Verbose result size : 247
+2018-May-10 08:05:38 http_recieve_RequestWordTranslation end
+2018-May-10 08:05:53 http_recieve_RequestWordTranslation begin
+2018-May-10 08:05:53 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:05:53 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:05:53 Verbose result size : 247
+2018-May-10 08:05:53 http_recieve_RequestWordTranslation end
+2018-May-10 08:06:31 Server started!
+2018-May-10 08:06:31 Server start step 1=
+2018-May-10 08:06:31 Server start step 2=
+2018-May-10 08:06:31 Server start step 2-2=
+2018-May-10 08:06:31 Server start step 2-3=
+2018-May-10 08:06:31 TImageDownloader::TImageDownloader
+2018-May-10 08:06:31 Server start step 2-4=
+2018-May-10 08:06:31 Server start step 2-5=
+2018-May-10 08:06:31 TServerSocket::TServerSocket acception started
+2018-May-10 08:06:31 Server start step 3=
+2018-May-10 08:06:40 http_recieve_RequestWordTranslation begin
+2018-May-10 08:06:40 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:06:40 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:06:40 Verbose result size : 247
+2018-May-10 08:06:40 http_recieve_RequestWordTranslation end
+2018-May-10 08:07:00 http_recieve_RequestWordTranslation begin
+2018-May-10 08:07:00 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:07:00 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:07:00 Verbose result size : 247
+2018-May-10 08:07:00 http_recieve_RequestWordTranslation end
+2018-May-10 08:08:41 Server started!
+2018-May-10 08:08:41 Server start step 1=
+2018-May-10 08:08:41 Server start step 2=
+2018-May-10 08:08:41 Server start step 2-2=
+2018-May-10 08:08:41 Server start step 2-3=
+2018-May-10 08:08:41 TImageDownloader::TImageDownloader
+2018-May-10 08:08:41 Server start step 2-4=
+2018-May-10 08:08:41 Server start step 2-5=
+2018-May-10 08:08:41 TServerSocket::TServerSocket acception started
+2018-May-10 08:08:41 Server start step 3=
+2018-May-10 08:08:43 http_recieve_RequestWordTranslation begin
+2018-May-10 08:08:43 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:08:43 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:08:43 Verbose result size : 247
+2018-May-10 08:08:43 http_recieve_RequestWordTranslation end
+2018-May-10 08:11:51 Server started!
+2018-May-10 08:11:51 Server start step 1=
+2018-May-10 08:11:51 Server start step 2=
+2018-May-10 08:11:51 Server start step 2-2=
+2018-May-10 08:11:51 Server start step 2-3=
+2018-May-10 08:11:51 TImageDownloader::TImageDownloader
+2018-May-10 08:11:51 Server start step 2-4=
+2018-May-10 08:11:51 Server start step 2-5=
+2018-May-10 08:11:51 TServerSocket::TServerSocket acception started
+2018-May-10 08:11:51 Server start step 3=
+2018-May-10 08:11:54 http_recieve_RequestWordTranslation begin
+2018-May-10 08:11:54 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:11:54 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:11:55 Verbose result size : 247
+2018-May-10 08:11:55 http_recieve_RequestWordTranslation end
+2018-May-10 08:12:54 Server started!
+2018-May-10 08:12:54 Server start step 1=
+2018-May-10 08:12:54 Server start step 2=
+2018-May-10 08:12:54 Server start step 2-2=
+2018-May-10 08:12:54 Server start step 2-3=
+2018-May-10 08:12:54 TImageDownloader::TImageDownloader
+2018-May-10 08:12:54 Server start step 2-4=
+2018-May-10 08:12:54 Server start step 2-5=
+2018-May-10 08:12:54 TServerSocket::TServerSocket acception started
+2018-May-10 08:12:54 Server start step 3=
+2018-May-10 08:13:01 http_recieve_RequestWordTranslation begin
+2018-May-10 08:13:01 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:13:01 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:13:01 Verbose result size : 247
+2018-May-10 08:13:01 http_recieve_RequestWordTranslation end
+2018-May-10 08:15:45 Server started!
+2018-May-10 08:15:45 Server start step 1=
+2018-May-10 08:15:45 Server start step 2=
+2018-May-10 08:15:45 Server start step 2-2=
+2018-May-10 08:15:45 Server start step 2-3=
+2018-May-10 08:15:45 TImageDownloader::TImageDownloader
+2018-May-10 08:15:45 Server start step 2-4=
+2018-May-10 08:15:45 Server start step 2-5=
+2018-May-10 08:15:45 TServerSocket::TServerSocket acception started
+2018-May-10 08:15:45 Server start step 3=
+2018-May-10 08:15:49 http_recieve_RequestWordTranslation begin
+2018-May-10 08:15:49 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:15:49 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:15:49 Verbose result size : 247
+2018-May-10 08:15:49 http_recieve_RequestWordTranslation end
+2018-May-10 08:17:29 Server started!
+2018-May-10 08:17:29 Server start step 1=
+2018-May-10 08:17:29 Server start step 2=
+2018-May-10 08:17:29 Server start step 2-2=
+2018-May-10 08:17:29 Server start step 2-3=
+2018-May-10 08:17:29 TImageDownloader::TImageDownloader
+2018-May-10 08:17:29 Server start step 2-4=
+2018-May-10 08:17:29 Server start step 2-5=
+2018-May-10 08:17:29 TServerSocket::TServerSocket acception started
+2018-May-10 08:17:29 Server start step 3=
+2018-May-10 08:17:31 http_recieve_RequestWordTranslation begin
+2018-May-10 08:17:31 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:17:31 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:17:32 Verbose result size : 247
+2018-May-10 08:17:32 http_recieve_RequestWordTranslation end
+2018-May-10 08:20:50 Server started!
+2018-May-10 08:20:50 Server start step 1=
+2018-May-10 08:20:50 Server start step 2=
+2018-May-10 08:20:50 Server start step 2-2=
+2018-May-10 08:20:50 Server start step 2-3=
+2018-May-10 08:20:50 TImageDownloader::TImageDownloader
+2018-May-10 08:20:50 Server start step 2-4=
+2018-May-10 08:20:50 Server start step 2-5=
+2018-May-10 08:20:50 TServerSocket::TServerSocket acception started
+2018-May-10 08:20:50 Server start step 3=
+2018-May-10 08:20:57 http_recieve_RequestWordTranslation begin
+2018-May-10 08:20:57 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 08:20:57 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 08:20:57 Verbose result size : 247
+2018-May-10 08:20:57 http_recieve_RequestWordTranslation end
+2018-May-10 08:44:20 Server started!
+2018-May-10 08:44:20 Server start step 1=
+2018-May-10 08:44:20 Server start step 2=
+2018-May-10 08:44:20 Server start step 2-2=
+2018-May-10 08:44:20 Server start step 2-3=
+2018-May-10 08:44:20 TImageDownloader::TImageDownloader
+2018-May-10 08:44:20 Server start step 2-4=
+2018-May-10 08:44:20 Server start step 2-5=
+2018-May-10 08:44:20 TServerSocket::TServerSocket acception started
+2018-May-10 08:44:20 Server start step 3=
+2018-May-10 09:26:22 Server started!
+2018-May-10 09:26:22 Server start step 1=
+2018-May-10 09:26:22 Server start step 2=
+2018-May-10 09:26:22 Server start step 2-2=
+2018-May-10 09:26:22 Server start step 2-3=
+2018-May-10 09:26:22 TImageDownloader::TImageDownloader
+2018-May-10 09:26:22 Server start step 2-4=
+2018-May-10 09:26:22 Server start step 2-5=
+2018-May-10 09:26:22 Server start step 3=
+2018-May-10 09:26:37 http_recieve_RequestWordTranslation begin
+2018-May-10 09:26:37 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 09:26:37 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 09:26:37 Verbose result size : 247
+2018-May-10 09:26:37 http_recieve_RequestWordTranslation end
+2018-May-10 10:28:17 Server started!
+2018-May-10 10:28:17 Server start step 1=
+2018-May-10 10:28:17 Server start step 2=
+2018-May-10 10:28:17 Server start step 2-2=
+2018-May-10 10:28:17 Server start step 2-3=
+2018-May-10 10:28:17 TImageDownloader::TImageDownloader
+2018-May-10 10:28:17 Server start step 2-4=
+2018-May-10 10:28:17 Server start step 2-5=
+2018-May-10 10:28:17 Server start step 3=
+2018-May-10 10:28:24 http_recieve_RequestWordTranslation begin
+2018-May-10 10:28:24 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 10:28:24 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 10:28:24 Verbose result size : 247
+2018-May-10 10:28:24 http_recieve_RequestWordTranslation end
+2018-May-10 10:34:25 Server started!
+2018-May-10 10:34:25 Server start step 1=
+2018-May-10 10:34:25 Server start step 2=
+2018-May-10 10:34:25 Server start step 2-2=
+2018-May-10 10:34:25 Server start step 2-3=
+2018-May-10 10:34:25 TImageDownloader::TImageDownloader
+2018-May-10 10:34:25 Server start step 2-4=
+2018-May-10 10:34:25 Server start step 2-5=
+2018-May-10 10:34:25 Server start step 3=
+2018-May-10 10:34:32 http_recieve_RequestWordTranslation begin
+2018-May-10 10:34:32 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 10:34:32 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 10:34:32 Verbose result size : 247
+2018-May-10 10:34:32 http_recieve_RequestWordTranslation end
+2018-May-10 10:44:58 Server started!
+2018-May-10 10:44:58 Server start step 1=
+2018-May-10 10:44:58 Server start step 2=
+2018-May-10 10:44:58 Server start step 2-2=
+2018-May-10 10:44:58 Server start step 2-3=
+2018-May-10 10:44:58 TImageDownloader::TImageDownloader
+2018-May-10 10:44:58 Server start step 2-4=
+2018-May-10 10:44:58 Server start step 2-5=
+2018-May-10 10:44:58 Server start step 3=
+2018-May-10 10:45:02 http_recieve_RequestWordTranslation begin
+2018-May-10 10:45:02 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 10:45:02 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 10:45:02 Verbose result size : 247
+2018-May-10 10:45:02 http_recieve_RequestWordTranslation end
+2018-May-10 10:48:41 Server started!
+2018-May-10 10:48:41 Server start step 1=
+2018-May-10 10:48:41 Server start step 2=
+2018-May-10 10:48:41 Server start step 2-2=
+2018-May-10 10:48:41 Server start step 2-3=
+2018-May-10 10:48:42 TImageDownloader::TImageDownloader
+2018-May-10 10:48:42 Server start step 2-4=
+2018-May-10 10:48:42 Server start step 2-5=
+2018-May-10 10:48:42 Server start step 3=
+2018-May-10 10:48:46 http_recieve_RequestWordTranslation begin
+2018-May-10 10:48:46 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 10:48:46 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 10:48:46 Verbose result size : 247
+2018-May-10 10:48:46 http_recieve_RequestWordTranslation end
+2018-May-10 10:54:08 Server started!
+2018-May-10 10:54:08 Server start step 1=
+2018-May-10 10:54:08 Server start step 2=
+2018-May-10 10:54:08 Server start step 2-2=
+2018-May-10 10:54:08 Server start step 2-3=
+2018-May-10 10:54:08 TImageDownloader::TImageDownloader
+2018-May-10 10:54:08 Server start step 2-4=
+2018-May-10 10:54:08 Server start step 2-5=
+2018-May-10 10:54:08 Server start step 3=
+2018-May-10 10:54:19 http_recieve_RequestWordTranslation begin
+2018-May-10 10:54:19 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 10:54:19 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 10:54:19 Verbose result size : 247
+2018-May-10 11:07:56 Server started!
+2018-May-10 11:07:56 Server start step 1=
+2018-May-10 11:07:56 Server start step 2=
+2018-May-10 11:07:56 Server start step 2-2=
+2018-May-10 11:07:56 Server start step 2-3=
+2018-May-10 11:07:56 TImageDownloader::TImageDownloader
+2018-May-10 11:07:56 Server start step 2-4=
+2018-May-10 11:07:56 Server start step 2-5=
+2018-May-10 11:07:56 Server start step 3=
+2018-May-10 11:07:59 http_recieve_RequestWordTranslation begin
+2018-May-10 11:07:59 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:07:59 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:07:59 Verbose result size : 247
+2018-May-10 11:07:59 http_recieve_RequestWordTranslation end
+2018-May-10 11:10:23 Server started!
+2018-May-10 11:10:23 Server start step 1=
+2018-May-10 11:10:23 Server start step 2=
+2018-May-10 11:10:23 Server start step 2-2=
+2018-May-10 11:10:23 Server start step 2-3=
+2018-May-10 11:10:23 TImageDownloader::TImageDownloader
+2018-May-10 11:10:23 Server start step 2-4=
+2018-May-10 11:10:23 Server start step 2-5=
+2018-May-10 11:10:23 Server start step 3=
+2018-May-10 11:10:32 http_recieve_RequestWordTranslation begin
+2018-May-10 11:10:32 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:10:32 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:10:32 Verbose result size : 247
+2018-May-10 11:10:32 http_recieve_RequestWordTranslation end
+2018-May-10 11:14:34 Server started!
+2018-May-10 11:14:34 Server start step 1=
+2018-May-10 11:14:34 Server start step 2=
+2018-May-10 11:14:34 Server start step 2-2=
+2018-May-10 11:14:34 Server start step 2-3=
+2018-May-10 11:14:34 TImageDownloader::TImageDownloader
+2018-May-10 11:14:34 Server start step 2-4=
+2018-May-10 11:14:35 Server start step 2-5=
+2018-May-10 11:14:35 Server start step 3=
+2018-May-10 11:14:46 http_recieve_RequestWordTranslation begin
+2018-May-10 11:14:46 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:14:46 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:14:46 Verbose result size : 247
+2018-May-10 11:14:46 http_recieve_RequestWordTranslation end
+2018-May-10 11:16:37 Error in inner HandleReadData: ptree_error exception caught: 0000023B85928070
+2018-May-10 11:18:27 Error in inner HandleReadData: ptree_error exception caught: 0000023B859362F0
+2018-May-10 11:19:19 Request content is empty
+2018-May-10 11:23:34 Server started!
+2018-May-10 11:23:34 Server start step 1=
+2018-May-10 11:23:34 Server start step 2=
+2018-May-10 11:23:34 Server start step 2-2=
+2018-May-10 11:23:34 Server start step 2-3=
+2018-May-10 11:23:34 TImageDownloader::TImageDownloader
+2018-May-10 11:23:34 Server start step 2-4=
+2018-May-10 11:23:34 Server start step 2-5=
+2018-May-10 11:23:34 Server start step 3=
+2018-May-10 11:23:36 http_recieve_RequestWordTranslation begin
+2018-May-10 11:23:36 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:23:36 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:23:36 Verbose result size : 247
+2018-May-10 11:23:36 http_recieve_RequestWordTranslation end
+2018-May-10 11:23:48 Error in inner HandleReadData: ptree_error exception caught: 000001870B59A080
+2018-May-10 11:26:53 Server started!
+2018-May-10 11:26:53 Server start step 1=
+2018-May-10 11:26:53 Server start step 2=
+2018-May-10 11:26:53 Server start step 2-2=
+2018-May-10 11:26:53 Server start step 2-3=
+2018-May-10 11:26:53 TImageDownloader::TImageDownloader
+2018-May-10 11:26:53 Server start step 2-4=
+2018-May-10 11:26:53 Server start step 2-5=
+2018-May-10 11:26:53 Server start step 3=
+2018-May-10 11:26:58 http_recieve_RequestWordTranslation begin
+2018-May-10 11:26:58 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:26:58 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:26:58 Verbose result size : 247
+2018-May-10 11:26:58 http_recieve_RequestWordTranslation end
+2018-May-10 11:27:51 http_recieve_RequestWordTranslation begin
+2018-May-10 11:27:51 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:27:51 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:27:51 Verbose result size : 247
+2018-May-10 11:27:51 http_recieve_RequestWordTranslation end
+2018-May-10 11:28:03 http_recieve_RequestWordTranslation begin
+2018-May-10 11:28:03 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:28:03 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:28:03 Verbose result size : 247
+2018-May-10 11:28:03 http_recieve_RequestWordTranslation end
+2018-May-10 11:29:03 http_recieve_RequestWordTranslation begin
+2018-May-10 11:29:03 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:29:03 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:29:03 Verbose result size : 247
+2018-May-10 11:29:03 http_recieve_RequestWordTranslation end
+2018-May-10 11:29:41 http_recieve_RequestWordTranslation begin
+2018-May-10 11:29:41 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:29:41 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:29:41 Verbose result size : 247
+2018-May-10 11:29:41 http_recieve_RequestWordTranslation end
+2018-May-10 11:31:13 Server started!
+2018-May-10 11:31:13 Server start step 1=
+2018-May-10 11:31:13 Server start step 2=
+2018-May-10 11:31:13 Server start step 2-2=
+2018-May-10 11:31:13 Server start step 2-3=
+2018-May-10 11:31:13 TImageDownloader::TImageDownloader
+2018-May-10 11:31:13 Server start step 2-4=
+2018-May-10 11:31:13 Server start step 2-5=
+2018-May-10 11:31:13 Server start step 3=
+2018-May-10 11:31:36 http_recieve_RequestWordTranslation begin
+2018-May-10 11:31:36 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:31:36 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:31:36 Verbose result size : 247
+2018-May-10 11:31:36 http_recieve_RequestWordTranslation end
+2018-May-10 11:32:14 http_recieve_RequestWordTranslation begin
+2018-May-10 11:32:14 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:32:14 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:32:14 Verbose result size : 247
+2018-May-10 11:32:14 http_recieve_RequestWordTranslation end
+2018-May-10 11:33:21 http_recieve_RequestWordTranslation begin
+2018-May-10 11:33:21 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:33:21 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:33:21 Verbose result size : 247
+2018-May-10 11:33:21 http_recieve_RequestWordTranslation end
+2018-May-10 11:33:38 http_recieve_RequestWordTranslation begin
+2018-May-10 11:33:38 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:33:38 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:33:38 Verbose result size : 247
+2018-May-10 11:33:38 http_recieve_RequestWordTranslation end
+2018-May-10 11:33:46 http_recieve_RequestWordTranslation begin
+2018-May-10 11:33:46 http_recieve_RequestWordTranslation word: -21 -88 -71 -20 -89 -128 32 -20 -107 -118 -20 -107 -124 -20 -102 -108 
+2018-May-10 11:33:46 http_recieve_RequestWordTranslation word: 먹지 않아요
+2018-May-10 11:33:46 Verbose result size : 247
+2018-May-10 11:33:46 http_recieve_RequestWordTranslation end

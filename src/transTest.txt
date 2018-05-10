@@ -1,7 +1,4 @@
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
+HTTP/1.1 200 OK
 Content-Type: application/json
 {
     "OnRequestWordTranslation": {
@@ -12,11 +9,7 @@ Content-Type: application/json
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
+HTTP/1.1 200 OK
 Content-Type: application/json
 {
     "OnRequestWordTranslation": {
@@ -27,12 +20,8 @@ Content-Type: application/json
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -42,12 +31,8 @@ Content-Type: text/plain
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -57,12 +42,8 @@ Content-Type: text/plain
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -72,12 +53,8 @@ Content-Type: text/plain
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -87,12 +64,8 @@ Content-Type: text/plain
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -102,12 +75,8 @@ Content-Type: text/plain
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -117,12 +86,8 @@ Content-Type: text/plain
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -132,12 +97,8 @@ Content-Type: text/plain
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -147,12 +108,8 @@ Content-Type: text/plain
         }
     }
 }
-
-
-transfered content:: 
-HTTP/1.0 200 OK
-Content-Length: 456
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/json
 {
     "OnRequestWordTranslation": {
         "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
@@ -162,4 +119,14 @@ Content-Type: text/plain
         }
     }
 }
-
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+    "OnRequestWordTranslation": {
+        "Verbose": "\"Глохнуть\" \"Есть\" - С модификатором уверенности\n\n\"Не делать\" - В простой вежливой форме\n\nСоставной глагол, с смыслом отрицания (не <глагол>)\n",
+        "LessonList": {
+            "Lesson": "lessons\/korean011.html",
+            "Lesson": "lessons\/korean018.html"
+        }
+    }
+}
