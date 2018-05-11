@@ -30,7 +30,7 @@ THallyuHttpServer::THallyuHttpServer(/*const std::string& address, */int port/*,
 	do_await_stop();
 	// ======== Signals section ========
 	do_accept();
-	std::cout << "Acception" << std::endl;
+	std::cout << "==::Acception::==" << std::endl;
 	
 	ServiceThread = boost::thread(std::bind(&THallyuHttpServer::UpdateInThread, this));
 	
@@ -47,9 +47,9 @@ void THallyuHttpServer::do_accept() {
 
 			if (!ec) {
 				connection_manager_.start(std::make_shared<connection>(std::move(isocket), connection_manager_, request_handler_, *this));
-				std::cout << "connected" << std::endl;
+				std::cout << "--:connected:--" << std::endl;
 			}
-			std::cout << " connection COUNT:: " << connection_manager_.get_connections_count() << std::endl;
+			std::cout << " connections COUNT:: " << connection_manager_.get_connections_count() << std::endl;
 			do_accept();
 	}
 	);

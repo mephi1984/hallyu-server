@@ -224,11 +224,6 @@ namespace server {
 			int dLen = data.size();
 
 
-			const char http_rep_data[] = "HTTP/1.0 400 Bad Request\r\n";
-			const char crlf[] = {'\r','\n'};
-			//const char httpContent[] = "hello";
-			int len = 0;
-
 			//boost::shared_array<char> dataToSend(new char[len]); // [len +4]
 
 			//memcpy(&dataToSend[0], &len, 4);
@@ -237,44 +232,32 @@ namespace server {
 			
 			//memcpy(&dataToSend[0], &http_rep_data[0], len);
 
-			/*
-			http_headers = "HTTP/1.0 200 OK\n";
-			http_headers += "Content-Length: ";
-			http_headers += std::to_string(dLen);
-			http_headers += "\n";
-			http_headers += "Content-Type: text/plain";
-			http_headers+= "\r\n"
-			*/
-			//std::vector<const char> stringDataToSend;
-			//stringDataToSend.push_back('h');
-			//stringDataToSend.push_back('e');
-
-			//stringDataToSend.push_back("HTTP/1.0 200 OK\n");
-			//stringDataToSend.push_back("Content-Length");
-			//stringDataToSend.push_back(": ");
-			//stringDataToSend.push_back(std::to_string(dLen));
-			//stringDataToSend.push_back("\r\n");
-			//stringDataToSend.push_back(data);
-			/*
-			std::vector<boost::asio::const_buffer> rep_buf;
-			rep_buf.push_back(boost::asio::buffer("HTTP/1.0 200 OK\n"));
-			rep_buf.push_back(boost::asio::buffer("Content-Length"));
-			rep_buf.push_back(boost::asio::buffer(": "));
-			rep_buf.push_back(boost::asio::buffer(std::to_string(dLen)));
-			rep_buf.push_back(boost::asio::buffer("\r\n"));
-			rep_buf.push_back(boost::asio::buffer("\r\n"));
-			rep_buf.push_back(boost::asio::buffer(data));
-			*/
-
 			auto sharedThis = shared_from_this(); // to keep connection
 			
-			char* c_data = new char[data.length() + 1];
+			char* c_data = new char[dLen + 1];
 			strcpy(c_data, data.c_str());
 
+			const char crlf[] = { '\r','\n' };
+			const char separ[] = { ':',' ' };
+			char http_status[] = "HTTP/1.1 200 OK";
+			char http_length_header[] = "Content-Length";
+			std::string cont_length = std::to_string(dLen);
+
+			char dataLength[4];
+			itoa(dLen,dataLength,10);
 			std::vector<boost::asio::const_buffer> rep_buf;
-			rep_buf.push_back(boost::asio::buffer("HTTP/1.1 200 OK\n"));
-			rep_buf.push_back(boost::asio::buffer("Content-Type: application/json\r\n"));
-			rep_buf.push_back(boost::asio::buffer(&c_data[0], sizeof(c_data)));
+			//rep_buf.push_back(boost::asio::buffer("HTTP/1.1 200 OK"));
+			rep_buf.push_back(boost::asio::buffer(&http_status[0], sizeof(http_status) - 1));
+			rep_buf.push_back(boost::asio::buffer(crlf));
+			//rep_buf.push_back(boost::asio::buffer(crlf));
+			rep_buf.push_back(boost::asio::buffer(&http_length_header[0], sizeof(http_length_header) - 1));
+			rep_buf.push_back(boost::asio::buffer(separ));
+			rep_buf.push_back(boost::asio::buffer(&cont_length.c_str()[0], cont_length.size()));
+			rep_buf.push_back(boost::asio::buffer(crlf));
+			rep_buf.push_back(boost::asio::buffer(crlf));
+			rep_buf.push_back(boost::asio::buffer(&c_data[0], dLen));
+
+			std::cout << "data SIZE:: " << dLen << std::endl;
 
 			boost::asio::async_write(http_socket, rep_buf /*boost::asio::buffer(&dataToSend[0], len /*len + 4)*/,
 				[rep_buf, this, sharedThis](boost::system::error_code ec, std::size_t bytes_transfered)

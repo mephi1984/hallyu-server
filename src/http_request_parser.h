@@ -24,7 +24,6 @@ namespace server {
 		std::tuple<request_parser::result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end)
 		{
 			int tmp_iter = 0;
-			//std::cout << "http_request_parser before loop, iteraror " << *begin << " " << *end << std::endl;
 			while (begin != end) {
 				result_type result = consume(req, *begin++);
 				tmp_iter++;
