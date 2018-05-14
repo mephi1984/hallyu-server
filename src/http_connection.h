@@ -57,8 +57,12 @@ namespace server {
 		void before_start();
 
 		// Request/Reply methods
-		void http_recieve_RequestWordTranslation(boost::property_tree::ptree propertyTree);
+		void http_receive_RequestWordTranslation(boost::property_tree::ptree propertyTree);
 		void http_send_RequestWordTranslation(std::string wordToTranslate);
+		void http_receive_RequestCard(boost::property_tree::ptree propertyTree);
+		void http_send_OnRequestCard(size_t wordCount);
+		void http_receive_RequestChineseNumberRecognize(boost::property_tree::ptree propertyTree);
+		void http_send_OnRequestChineseNumberRecognize(int maxDigits);
 
 		// Other methods
 		void http_send_PropertyTree(boost::property_tree::ptree pTree);

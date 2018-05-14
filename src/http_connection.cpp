@@ -22,7 +22,9 @@ namespace server {
 	void connection::before_start() {
 		Address = http_socket.lowest_layer().remote_endpoint().address().to_string();
 		std::cout << "http_connection before_start " << Address <<  std::endl;
-		DataReadSignalMap.AddSlot("RequestWordTranslation", std::bind(&connection::http_recieve_RequestWordTranslation, this, std::placeholders::_1));
+		DataReadSignalMap.AddSlot("RequestWordTranslation", std::bind(&connection::http_receive_RequestWordTranslation, this, std::placeholders::_1));
+		DataReadSignalMap.AddSlot("RequestCard", std::bind(&connection::http_receive_RequestCard, this, std::placeholders::_1));
+		DataReadSignalMap.AddSlot("RequestChineseNumberRecognize", std::bind(&connection::http_receive_RequestChineseNumberRecognize, this, std::placeholders::_1));
 	}
 
 	void connection::start() {
@@ -86,7 +88,7 @@ namespace server {
 		http_socket.close();
 	}
 
-	void connection::http_recieve_RequestWordTranslation(boost::property_tree::ptree propertyTree)
+	void connection::http_receive_RequestWordTranslation(boost::property_tree::ptree propertyTree)
 	{
 		try
 		{
@@ -210,6 +212,84 @@ namespace server {
 		http_send_PropertyTree(p);
 	}
 
+	void connection::http_receive_RequestCard(boost::property_tree::ptree propertyTree)
+	{
+		try
+		{
+			SE::WriteToLog("OnReceive_RequestCard begin");
+			size_t card = propertyTree.get<size_t>("");
+
+			http_send_OnRequestCard(card);
+
+			SE::WriteToLog("OnReceive_RequestCard: " + boost::lexical_cast<std::string>(card));
+		}
+		catch (std::exception e)
+		{
+			SE::WriteToLog("Exception in TUser::OnReceive_RequestCard");
+		}
+	}
+
+	void connection::http_send_OnRequestCard(size_t wordCount)
+	{
+
+		//Xperimental
+		boost::property_tree::ptree p;
+
+		std::wstring translation;
+		std::wstring word0;
+		std::wstring word1;
+		std::wstring word2;
+		std::wstring word3;
+
+		size_t correctAnswer;
+
+		HallyuHttpServer.luaHelper.HangulDictionary.GetRandomWord(wordCount, translation, word0, word1, word2, word3, correctAnswer);
+
+		p.put("OnRequestCard.Translation", SE::wstring_to_string(translation));
+		p.put("OnRequestCard.Word0", SE::wstring_to_string(word0));
+		p.put("OnRequestCard.Word1", SE::wstring_to_string(word1));
+		p.put("OnRequestCard.Word2", SE::wstring_to_string(word2));
+		p.put("OnRequestCard.Word3", SE::wstring_to_string(word3));
+		p.put("OnRequestCard.CorrectWord", correctAnswer);
+
+		http_send_PropertyTree(p);
+	}
+
+	void connection::http_receive_RequestChineseNumberRecognize(boost::property_tree::ptree propertyTree)
+	{
+		try
+		{
+			SE::WriteToLog("OnReceive_RequestChineseNumberRecognize begin");
+			int number = propertyTree.get<int>("");
+			http_send_OnRequestChineseNumberRecognize(number);
+
+			SE::WriteToLog("OnReceive_RequestChineseNumberRecognize: " + boost::lexical_cast<std::string>(number));
+		}
+		catch (std::exception e)
+		{
+			SE::WriteToLog("Exception in TUser::OnReceive_RequestChineseNumberRecognize");
+		}
+	}
+
+	void connection::http_send_OnRequestChineseNumberRecognize(int maxDigits)
+	{
+
+		std::wstring numberStr;
+		unsigned long long number;
+
+		HallyuHttpServer.luaHelper.HangulDictionary.GetRandomChineseNumber(maxDigits, number, numberStr);
+
+		boost::property_tree::ptree p;
+
+		p.put("OnRequestChineseNumberRecognize.number", number);
+		p.put("OnRequestChineseNumberRecognize.numberStr", SE::wstring_to_string(numberStr));
+
+
+		http_send_PropertyTree(p);
+
+
+	}
+
 	void connection::http_send_PropertyTree(boost::property_tree::ptree pTree)
 	{
 		//Xperimental -- need to optimize this
@@ -242,11 +322,22 @@ namespace server {
 			char http_status[] = "HTTP/1.1 200 OK";
 			char http_length_header[] = "Content-Length";
 			std::string cont_length = std::to_string(dLen);
-
-			char dataLength[4];
+			/*
+			int fdv = 0;
+			float tmp = (float)dLen / 9999.f;
+			if (tmp != 1.f) {
+			while (floor(tmp) == 0.f) {
+				tmp = tmp / 0.1f;
+				fdv++;
+			}
+			fdv = 5 - fdv; //rank
+			} else {
+				fdv = 4; // max rank
+			}
+			char *dataLength = new char[fdv+1];
 			itoa(dLen,dataLength,10);
+			*/
 			std::vector<boost::asio::const_buffer> rep_buf;
-			//rep_buf.push_back(boost::asio::buffer("HTTP/1.1 200 OK"));
 			rep_buf.push_back(boost::asio::buffer(&http_status[0], sizeof(http_status) - 1));
 			rep_buf.push_back(boost::asio::buffer(crlf));
 			//rep_buf.push_back(boost::asio::buffer(crlf));
@@ -262,13 +353,7 @@ namespace server {
 			boost::asio::async_write(http_socket, rep_buf /*boost::asio::buffer(&dataToSend[0], len /*len + 4)*/,
 				[rep_buf, this, sharedThis](boost::system::error_code ec, std::size_t bytes_transfered)
 			{
-				std::cout << "async_write bytes_transferes:: " << bytes_transfered << std::endl;
-				std::ofstream tstTrans;
-				tstTrans.open("transTest.txt", std::ios::app);
-				for (size_t itr=0;itr<rep_buf.size();itr++) {
-					tstTrans << boost::asio::buffer_cast<const char*>(rep_buf[itr]);
-				}
-				tstTrans.close();
+				std::cout << "async_write bytes_transfered:: " << bytes_transfered << std::endl;
 
 				if (ec)
 				{
@@ -284,24 +369,6 @@ namespace server {
 		}
 	}
 
-	/*
-	std::vector<boost::asio::const_buffer> connection::to_bffers(std::string data, int dLen) {
-		
-		std::vector<std::string> stringDataToSend;
-		stringDataToSend.push_back("HTTP/1.0 200 OK\n");
-		stringDataToSend.push_back("Content-Length");
-		stringDataToSend.push_back(": ");
-		stringDataToSend.push_back(std::to_string(dLen));
-		stringDataToSend.push_back("\r\n");
-		stringDataToSend.push_back(data);
-
-		std::vector<boost::asio::const_buffer> rep_buf;
-		for (size_t sdbi = 0; sdbi < stringDataToSend.size(); sdbi++) {
-			rep_buf.push_back(boost::asio::buffer(stringDataToSend[sdbi]));
-		}
-		return rep_buf;
-	}
-	*/
 	void connection::handle_http_request(request& req) {
 		try 
 		{
@@ -334,8 +401,7 @@ namespace server {
 				else
 					if (DataReadSignalMap.SignalExists(i.first))
 					{
-						DataReadSignalMap.EmitSignal(i.first, i.second); // All methods need to close connection after reply is sended
-						//http_recieve_RequestWordTranslation(i.second);
+						DataReadSignalMap.EmitSignal(i.first, i.second);
 					} else {
 						std::cout << "No signal exists" << std::endl;
 						http_connection_manager.stop(shared_from_this()); // close connection
