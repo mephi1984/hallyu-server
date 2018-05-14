@@ -1,9 +1,5 @@
 #ifndef HTTP_CONNECTION_MANAGER_H
 #define HTTP_CONNECTION_MANAGER_H
-/*
-#include <set>
-#include <memory>
-*/
 
 #include <set>
 #include <memory>

@@ -1,7 +1,4 @@
-/*
-#include "http_connection_manager.h"
-#include "http_connection.h"
-*/
+
 
 #include "http_connection_manager.h"
 #include "http_connection.h"
@@ -14,7 +11,6 @@ connection_manager::connection_manager() {
 
 void connection_manager::start(std::shared_ptr<connection> c) {
 	http_connections.insert(c);
-	c->before_start();
 	c->start();
 }
 

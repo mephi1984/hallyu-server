@@ -1,15 +1,5 @@
 #ifndef HTTP_CONNECTION_H
 #define HTTP_CONNECTION_H
-/*
-#include <memory>
-#include <boost/asio.hpp>
-#include <boost/property_tree/ptree.hpp>
-#include "http_request_handler.h"
-#include "http_request_parser.h"
-#include "SE/Network.h"
-//#include "http_connection_manager.h"
-#include "http_server.h"
-*/
 
 #include <memory>
 #include <set>
@@ -44,29 +34,12 @@ namespace server {
 
 		// Init list
 		THallyuHttpServer& HallyuHttpServer;
-		SE::TDataReadSignalMap DataReadSignalMap;
 		int DataSize;
 		std::vector<char> Data;
 
 		// access methods
 		void start();
 		void stop();
-
-		//std::vector<boost::asio::const_buffer> to_bffers(std::string data, int dLen);
-
-		void before_start();
-
-		// Request/Reply methods
-		void http_receive_RequestWordTranslation(boost::property_tree::ptree propertyTree);
-		void http_send_RequestWordTranslation(std::string wordToTranslate);
-		void http_receive_RequestCard(boost::property_tree::ptree propertyTree);
-		void http_send_OnRequestCard(size_t wordCount);
-		void http_receive_RequestChineseNumberRecognize(boost::property_tree::ptree propertyTree);
-		void http_send_OnRequestChineseNumberRecognize(int maxDigits);
-
-		// Other methods
-		void http_send_PropertyTree(boost::property_tree::ptree pTree);
-		void handle_http_request(request& req);
 
 		std::vector<boost::asio::const_buffer> rep_buf;
 
@@ -78,7 +51,6 @@ namespace server {
 
 		std::string Address;
 
-		//std::vector<char> connection_buffer;
 		std::array<char, 8192> connection_buffer;
 	
 		boost::asio::ip::tcp::socket http_socket;
@@ -90,7 +62,6 @@ namespace server {
 		reply http_reply;
 	};
 
-	//typedef std::shared_ptr<connection> connection_ptr;
 }
 }
 

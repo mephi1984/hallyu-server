@@ -1,9 +1,5 @@
 #ifndef HTTP_REQUEST_PARSER_H
 #define HTTP_REQUEST_PARSER_H
-/*
-#include "http_request.h"
-#include <tuple>
-*/
 
 #include <tuple>
 #include "http_request.h"
@@ -18,15 +14,11 @@ namespace server {
 
 		enum result_type {good, bad, indeterminate};
 
-		//template<typename Buffer_iterator>
-		//std::tuple<result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end);
 		template<typename Buffer_iterator>
 		std::tuple<request_parser::result_type, Buffer_iterator> parse(request& req, Buffer_iterator begin, Buffer_iterator end)
 		{
-			int tmp_iter = 0;
 			while (begin != end) {
 				result_type result = consume(req, *begin++);
-				tmp_iter++;
 				if (result == good || result == bad) {
 					if (result == good) { // store request content at req
 						while (begin != end) {

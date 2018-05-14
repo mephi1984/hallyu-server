@@ -1,20 +1,17 @@
-/*
-#include "http_server.h"
-#include "socket_server.h"
-*/
+
 
 #include "http_server.h"
 
 namespace http {
 namespace server {
 
-THallyuHttpServer::THallyuHttpServer(/*const std::string& address, */int port/*, const std::string& root_dir*/, LH::LuaHelper& iluaHelper) 
+THallyuHttpServer::THallyuHttpServer(int port, LH::LuaHelper& iluaHelper) 
 	: resolver(IoService)
 	, luaHelper(iluaHelper)
 	, acceptor(IoService)
 	, signals_(IoService)
 	, connection_manager_()
-	, request_handler_(/*root_dir*/)
+	, request_handler_(iluaHelper)
 {
 
 	std::string addr("127.0.0.1");

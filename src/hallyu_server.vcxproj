@@ -154,8 +154,6 @@
   <ItemGroup>
     <ClCompile Include="http_connection.cpp" />
     <ClCompile Include="http_connection_manager.cpp" />
-    <ClCompile Include="http_MIME_types.cpp" />
-    <ClCompile Include="http_reply.cpp" />
     <ClCompile Include="http_request_handler.cpp" />
     <ClCompile Include="http_request_parser.cpp" />
     <ClCompile Include="http_server.cpp" />
@@ -177,7 +175,6 @@
     <ClInclude Include="http_connection.h" />
     <ClInclude Include="http_connection_manager.h" />
     <ClInclude Include="http_header.h" />
-    <ClInclude Include="http_MIME_types.h" />
     <ClInclude Include="http_reply.h" />
     <ClInclude Include="http_request.h" />
     <ClInclude Include="http_request_handler.h" />
