@@ -12,13 +12,17 @@ THallyuHttpServer::THallyuHttpServer(int port, LH::LuaHelper& iluaHelper)
 	, signals_(IoService)
 	, connection_manager_()
 	, request_handler_(iluaHelper)
+	//, requestCard(boost::asio::ip::tcp::v4(), port)
 {
 
-	std::string addr("127.0.0.1");
-	endpoint = *resolver.resolve(addr, std::to_string(port)).begin();
-	acceptor.open(endpoint.protocol());
+	std::string addr("0.0.0.0");
+	translate = *resolver.resolve(addr, std::to_string(port)).begin();
+	acceptor.open(translate.protocol());
 	acceptor.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
-	acceptor.bind(endpoint);
+	// ====----====
+	//acceptor.bind(requestCard);
+	// ====----====
+	acceptor.bind(translate);
 	acceptor.listen();
 
 	// -------- Signals section --------

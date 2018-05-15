@@ -19,7 +19,14 @@ void request_handler::handle_request(const request& req, reply& rep){
 		//Xperimental - Might be optimized a lot:
 		std::cout << "handle_http_req start " << "||| req content size:: " << req.request_content.size() << " |||" << std::endl;
 		if (req.request_content.size() == 0) {
+			rep.reply_content = "Error:: empty or wrong data";
+			rep.headers.resize(2);
+			rep.headers[0].name = "Content-Length";
+			rep.headers[0].value = "0";
+			rep.headers[1].name = "Content-Type";
+			rep.headers[1].value = "text/plain";
 			SE::WriteToLog("Request content is empty");
+			return;
 		}
 
 		std::string jsonCode = std::string(&req.request_content[0], &req.request_content[0] + req.request_content.size());

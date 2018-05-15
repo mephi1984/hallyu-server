@@ -31,7 +31,9 @@ public:
 protected:
 	boost::asio::ip::tcp::resolver resolver; 
 
-	boost::asio::ip::tcp::endpoint endpoint; 
+	boost::asio::ip::tcp::endpoint translate;
+	//boost::asio::ip::tcp::endpoint requestCard;
+	//boost::asio::ip::tcp::endpoint number;
 
 	boost::asio::ip::tcp::acceptor acceptor; 
 
