@@ -786,7 +786,7 @@ namespace LH
 			}
 			else
 			{
-				std::cout << "file not found!" << std::endl;
+				std::cout << "file not found! " << "HD789" << std::endl;
 			}
 
 		}
@@ -835,7 +835,7 @@ namespace LH
 			}
 			else
 			{
-				std::cout << "file not found!" << std::endl;
+				std::cout << "file not found! " << "HD838" << std::endl;
 			}
 
 		}
@@ -883,7 +883,7 @@ namespace LH
 			}
 			else
 			{
-				std::cout << "file not found!" << std::endl;
+				std::cout << "file not found! " << "HD886" << std::endl;
 			}
 
 		}

@@ -867,7 +867,7 @@ void THangulDictionary::LoadVerbFromFile(const std::string& fileName)
 		}
 		else
 		{
-			std::cout << "file not found!" << std::endl;
+			std::cout << "file not found! " << "HP870" << std::endl;
 		}
 
 	}
@@ -916,7 +916,7 @@ void THangulDictionary::LoadNounFromFile(const std::string& fileName)
 		}
 		else
 		{
-			std::cout << "file not found!" << std::endl;
+			std::cout << "file not found! " << "HP919" << std::endl;
 		}
 
 	}
@@ -964,7 +964,7 @@ void THangulDictionary::LoadSpecialFromFile(const std::string& fileName)
 		}
 		else
 		{
-			std::cout << "file not found!" << std::endl;
+			std::cout << "file not found!" << " HP967" << std::endl;
 		}
 
 	}
