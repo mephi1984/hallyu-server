@@ -90,6 +90,11 @@ LOCAL_SRC_FILES += ../src/MySqlConnector.cpp
 LOCAL_SRC_FILES += ../src/linux_stuff.cpp
 LOCAL_SRC_FILES += ../src/LuaHelper.cpp
 LOCAL_SRC_FILES += ../src/socket_server.cpp
+LOCAL_SRC_FILES += ../src/http_request_handler.cpp
+LOCAL_SRC_FILES += ../src/http_connection.cpp
+LOCAL_SRC_FILES += ../src/http_request_parser.cpp
+LOCAL_SRC_FILES += ../src/http_server.cpp
+LOCAL_SRC_FILES += ../src/http_connection_manager.cpp
 
 LOCAL_SRC_FILES += ../src/SE/misc.cpp
 LOCAL_SRC_FILES += ../src/SE/Network.cpp
