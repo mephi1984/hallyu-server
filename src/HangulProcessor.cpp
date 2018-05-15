@@ -842,7 +842,7 @@ void THangulDictionary::LoadVerbFromFile(const std::string& fileName)
 		std::ifstream f("../scripts/" + fileName);
 
 #else
-		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);
+		std::ifstream f("/home/ubuntu/work/hallyu_server/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/"
 #endif
 
 		std::string line;
@@ -890,7 +890,7 @@ void THangulDictionary::LoadNounFromFile(const std::string& fileName)
 		std::ifstream f("../scripts/" + fileName);
 
 #else
-		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);
+		std::ifstream f("/home/ubuntu/work/hallyu_server/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/"
 #endif
 
 		std::string line;
@@ -938,7 +938,7 @@ void THangulDictionary::LoadSpecialFromFile(const std::string& fileName)
 		std::ifstream f("../scripts/" + fileName);
 
 #else
-		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);
+		std::ifstream f("/home/ubuntu/work/hallyu_server/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/"
 #endif
 
 		std::string line;

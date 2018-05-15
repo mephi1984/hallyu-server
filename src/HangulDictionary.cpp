@@ -761,7 +761,7 @@ namespace LH
 			std::ifstream f("../scripts/" + fileName);
 
 #else
-			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);
+			std::ifstream f("/home/ubuntu/work/hallyu_server/scripts/" + fileName); // #path switch "/home/devuser/workplace/hallyu_server/scripts/"
 #endif
 
 			std::string line;
@@ -809,7 +809,7 @@ namespace LH
 			std::ifstream f("../scripts/" + fileName);
 
 #else
-			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);
+			std::ifstream f("/home/ubuntu/work/hallyu_server/scripts/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/scripts/"
 #endif
 
 			std::string line;
@@ -857,7 +857,7 @@ namespace LH
 			std::ifstream f("../scripts/" + fileName);
 
 #else
-			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);
+			std::ifstream f("/home/ubuntu/work/hallyu_server/scripts/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/scripts/"
 #endif
 
 			std::string line;
