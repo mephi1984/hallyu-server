@@ -215,7 +215,7 @@ int main(int argc, char *argv[])
 	{
 #ifndef _WIN32
 		std::cout << "Running in background" << std::endl;
-		daemonize();
+		//daemonize();
 #endif
 	}
 
