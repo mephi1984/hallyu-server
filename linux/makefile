@@ -1,10 +1,9 @@
 #CC=g++-4.7
 CC=g++
 CFLAGS=-Wall -O3 -DZIP_STATIC -std=c++11
-LDFLAGS= -lpthread -lrt -lmysqlcppconn-static -lmysqlclient -lluabind -llua -lssl -lcrypto -lzip -ldl\
+LDFLAGS= -lpthread -lrt -lmysqlcppconn-static -lmysqlclient -lluabind -llua -lssl -lcrypto -ldl\
 -L/home/ubuntu/work/mysql-connector-c-6.1.11-linux-glibc2.12-x86_64/lib -L/home/ubuntu/work/mysql-connector-c++-1.1.9-linux-ubuntu16.04-x86-64bit/lib \
 -L/home/ubuntu/work/lua-5.3.1/luabind/bin/gcc-5.4.0/release/link-static \
--L/home/ubuntu/work/wbenny-ziplib/Bin \
 -L/home/ubuntu/work/lua-out/lib \
 -L/usr/local/ssl/lib
 
@@ -75,7 +74,6 @@ LOCAL_SRC_FILES += $(BOOST_PATH)/libs/program_options/src/winmain.cpp
 CFLAGS += -I../src -I/home/ubuntu/work/mysql-connector-c++-1.1.9-linux-ubuntu16.04-x86-64bit/include \
 -I/home/ubuntu/work/lua-out/include \
 -I/home/ubuntu/work/lua-5.3.1/luabind \
--I/home/ubuntu/work/wbenny-ziplib/Source/ZipLib \
 -I/home/ubuntu/work/mysql-connector-c++-1.1.9-linux-ubuntu16.04-x86-64bit \
 -I/usr/local/ssl/include
 
