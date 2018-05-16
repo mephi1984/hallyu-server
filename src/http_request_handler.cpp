@@ -25,7 +25,7 @@ void request_handler::handle_request(const request& req, reply& rep){
 		// :::::::::::::::::::::::::::::::::::::::
 
 		if (req.request_content.size() == 0 || uri_context == "/") {
-			reply_store_ErrorPt(rep);
+			reply_store_ErrorPt(rep, "Empty request uri!");
 			return;
 		}
 
@@ -43,25 +43,34 @@ void request_handler::handle_request(const request& req, reply& rep){
 				if (i.second.get<std::string>("","wrong") != "wrong" && uri_context == "/translate") {
 						reply_store_PropertyTree(rep, http_receive_RequestWordTranslation(i.second));
 				}
-				else {
-					reply_store_ErrorPt(rep);
+				else if (uri_context != "/translate") {
+					reply_store_ErrorPt(rep, "Wrong request uri(need: /translate)!");
+				} else {
+					reply_store_ErrorPt(rep, "Wrong request value!");
 				}
-			}else if (i.first == "RequestCard") {
-				if (i.second.get<size_t>("", 0) != 0 && uri_context == "/requestCard") {
+			}
+			else if (i.first == "RequestCard") {
+				if (i.second.get<size_t>("", 0) >= 100 && uri_context == "/requestCard" ) {
 				reply_store_PropertyTree(rep, http_receive_RequestCard(i.second));
 				}
-				else {
-					reply_store_ErrorPt(rep);
+				else if (uri_context != "/requestCard" && i.second.get<size_t>("", 0) >= 100) {
+					reply_store_ErrorPt(rep, "Wrong request uri(need: /requestCard)!");
+				} else {
+					reply_store_ErrorPt(rep, "Wrong request value!");
 				}
-			} else if (i.first == "RequestChineseNumberRecognize") {
-				if (i.second.get<int>("", 0) != 0 && uri_context == "/number") {
+			}
+			else if (i.first == "RequestChineseNumberRecognize") {
+				if (i.second.get<int>("", -1) != -1 && uri_context == "/number") {
 				reply_store_PropertyTree(rep, http_receive_RequestChineseNumberRecognize(i.second));
 				}
-				else {
-					reply_store_ErrorPt(rep);
+				else if (uri_context != "/number") {
+					reply_store_ErrorPt(rep, "Wrong request uri(need: /number)!");
+				} else {
+					reply_store_ErrorPt(rep, "Wrong request value!");
 				}
-			} else {
-				reply_store_ErrorPt(rep);
+			}
+			else {
+				reply_store_ErrorPt(rep, "Wrong request!");
 			}
 		}
 
@@ -73,13 +82,26 @@ void request_handler::handle_request(const request& req, reply& rep){
 
 }
 
-void request_handler::reply_store_ErrorPt(reply& rep) {
-	rep.reply_content = "Error:: empty or wrong data";
+void request_handler::reply_store_ErrorPt(reply& rep, std::string err_s) {
+
+	// :::::::::::::::::::::::
+	boost::property_tree::ptree content;
+	content.put("result.error", err_s);
+
+	std::stringstream o_stream;
+
+	boost::property_tree::write_json(o_stream, content);
+
+	std::string data = o_stream.str();
+
+	// :::::::::::::::::::::::
+
+	rep.reply_content = data;
 	rep.headers.resize(2);
 	rep.headers[0].name = "Content-Length";
 	rep.headers[0].value = std::to_string(rep.reply_content.size());
 	rep.headers[1].name = "Content-Type";
-	rep.headers[1].value = "text";
+	rep.headers[1].value = "application/json";
 }
 
 bool request_handler::url_decode(const std::string& in, std::string& out){
@@ -250,11 +272,11 @@ boost::property_tree::ptree request_handler::http_receive_RequestCard(boost::pro
 	{
 		SE::WriteToLog("OnReceive_RequestCard begin");
 		size_t card = propertyTree.get<size_t>(""); 
-
+		
 		
 
 		SE::WriteToLog("OnReceive_RequestCard: " + boost::lexical_cast<std::string>(card));
-
+		
 		return http_send_OnRequestCard(card);
 	}
 	catch (std::exception e)
@@ -265,27 +287,27 @@ boost::property_tree::ptree request_handler::http_receive_RequestCard(boost::pro
 
 boost::property_tree::ptree request_handler::http_send_OnRequestCard(size_t wordCount)
 {
-
+	
 	//Xperimental
 	boost::property_tree::ptree p;
-
+	
 	std::wstring translation;
 	std::wstring word0;
 	std::wstring word1;
 	std::wstring word2;
 	std::wstring word3;
-
+	
 	size_t correctAnswer;
-
+	
 	luaHelper.HangulDictionary.GetRandomWord(wordCount, translation, word0, word1, word2, word3, correctAnswer);
-
+	
 	p.put("OnRequestCard.Translation", SE::wstring_to_string(translation));
 	p.put("OnRequestCard.Word0", SE::wstring_to_string(word0));
 	p.put("OnRequestCard.Word1", SE::wstring_to_string(word1));
 	p.put("OnRequestCard.Word2", SE::wstring_to_string(word2));
 	p.put("OnRequestCard.Word3", SE::wstring_to_string(word3));
 	p.put("OnRequestCard.CorrectWord", correctAnswer);
-
+	
 	return p;
 }
 
@@ -334,12 +356,7 @@ void request_handler::reply_store_PropertyTree(reply& rep, boost::property_tree:
 		std::string data = o_stream.str();
 		int dataLength = data.size();
 		if (dataLength == 0) {
-			rep.reply_content = "Error:: Empty data";
-			rep.headers.resize(2);
-			rep.headers[0].name = "Content-Length";
-			rep.headers[0].value = std::to_string(rep.reply_content.size());
-			rep.headers[1].name = "Content-Type";
-			rep.headers[1].value = "text/plain";
+			reply_store_ErrorPt(rep, "(something goes wrong)Empty reply!");
 		} else
 			rep.reply_content = data;
 			rep.headers.resize(2);

@@ -2202,3 +2202,140 @@
 2018-May-16 08:07:13 OnReceive_RequestChineseNumberRecognize: 10
 2018-May-16 08:07:17 OnReceive_RequestChineseNumberRecognize begin
 2018-May-16 08:07:17 OnReceive_RequestChineseNumberRecognize: 100
+2018-May-16 08:52:18 Server started!
+2018-May-16 08:52:18 Server start step 1=
+2018-May-16 08:52:18 Server start step 2=
+2018-May-16 08:52:18 Server start step 2-2=
+2018-May-16 08:52:18 Server start step 2-3=
+2018-May-16 08:52:18 TImageDownloader::TImageDownloader
+2018-May-16 08:52:18 Server start step 2-4=
+2018-May-16 08:52:18 Server start step 2-5=
+2018-May-16 08:52:18 Server start step 3=
+2018-May-16 08:54:05 OnReceive_RequestCard begin
+2018-May-16 08:54:05 OnReceive_RequestCard: 100
+2018-May-16 08:56:30 Server started!
+2018-May-16 08:56:30 Server start step 1=
+2018-May-16 08:56:30 Server start step 2=
+2018-May-16 08:56:30 Server start step 2-2=
+2018-May-16 08:56:30 Server start step 2-3=
+2018-May-16 08:56:30 TImageDownloader::TImageDownloader
+2018-May-16 08:56:30 Server start step 2-4=
+2018-May-16 08:56:30 Server start step 2-5=
+2018-May-16 08:56:30 Server start step 3=
+2018-May-16 08:57:30 OnReceive_RequestCard begin
+2018-May-16 08:57:30 OnReceive_RequestCard: 1
+2018-May-16 08:58:49 Server started!
+2018-May-16 08:58:49 Server start step 1=
+2018-May-16 08:58:49 Server start step 2=
+2018-May-16 08:58:49 Server start step 2-2=
+2018-May-16 08:58:49 Server start step 2-3=
+2018-May-16 08:58:49 TImageDownloader::TImageDownloader
+2018-May-16 08:58:49 Server start step 2-4=
+2018-May-16 08:58:49 Server start step 2-5=
+2018-May-16 08:58:49 Server start step 3=
+2018-May-16 08:58:57 OnReceive_RequestCard begin
+2018-May-16 08:58:57 OnReceive_RequestCard: 100
+2018-May-16 08:59:08 OnReceive_RequestCard begin
+2018-May-16 08:59:08 OnReceive_RequestCard: 100
+2018-May-16 08:59:13 OnReceive_RequestCard begin
+2018-May-16 08:59:13 OnReceive_RequestCard: 1
+2018-May-16 09:00:29 Server started!
+2018-May-16 09:00:29 Server start step 1=
+2018-May-16 09:00:29 Server start step 2=
+2018-May-16 09:00:29 Server start step 2-2=
+2018-May-16 09:00:29 Server start step 2-3=
+2018-May-16 09:00:29 TImageDownloader::TImageDownloader
+2018-May-16 09:00:29 Server start step 2-4=
+2018-May-16 09:00:29 Server start step 2-5=
+2018-May-16 09:00:29 Server start step 3=
+2018-May-16 09:00:32 OnReceive_RequestCard begin
+2018-May-16 09:00:32 OnReceive_RequestCard: 9
+2018-May-16 09:00:48 OnReceive_RequestCard begin
+2018-May-16 09:00:48 OnReceive_RequestCard: 9
+2018-May-16 09:04:14 Server started!
+2018-May-16 09:04:14 Server start step 1=
+2018-May-16 09:04:14 Server start step 2=
+2018-May-16 09:04:14 Server start step 2-2=
+2018-May-16 09:04:14 Server start step 2-3=
+2018-May-16 09:04:14 TImageDownloader::TImageDownloader
+2018-May-16 09:04:14 Server start step 2-4=
+2018-May-16 09:04:14 Server start step 2-5=
+2018-May-16 09:04:14 Server start step 3=
+2018-May-16 09:04:39 OnReceive_RequestCard begin
+2018-May-16 09:04:39 OnReceive_RequestCard: 9
+2018-May-16 09:04:52 OnReceive_RequestCard begin
+2018-May-16 09:04:52 OnReceive_RequestCard: 1
+2018-May-16 09:13:50 Server started!
+2018-May-16 09:13:50 Server start step 1=
+2018-May-16 09:13:50 Server start step 2=
+2018-May-16 09:13:50 Server start step 2-2=
+2018-May-16 09:13:50 Server start step 2-3=
+2018-May-16 09:13:50 TImageDownloader::TImageDownloader
+2018-May-16 09:13:50 Server start step 2-4=
+2018-May-16 09:13:50 Server start step 2-5=
+2018-May-16 09:13:50 Server start step 3=
+2018-May-16 09:13:56 OnReceive_RequestCard begin
+2018-May-16 09:13:56 OnReceive_RequestCard: 1
+2018-May-16 09:15:13 Server started!
+2018-May-16 09:15:13 Server start step 1=
+2018-May-16 09:15:13 Server start step 2=
+2018-May-16 09:15:13 Server start step 2-2=
+2018-May-16 09:15:13 Server start step 2-3=
+2018-May-16 09:15:13 TImageDownloader::TImageDownloader
+2018-May-16 09:15:13 Server start step 2-4=
+2018-May-16 09:15:13 Server start step 2-5=
+2018-May-16 09:15:13 Server start step 3=
+2018-May-16 09:15:30 OnReceive_RequestCard begin
+2018-May-16 09:15:30 OnReceive_RequestCard: 100
+2018-May-16 09:15:39 OnReceive_RequestCard begin
+2018-May-16 09:15:39 OnReceive_RequestCard: 101
+2018-May-16 09:16:11 Server started!
+2018-May-16 09:16:11 Server start step 1=
+2018-May-16 09:16:11 Server start step 2=
+2018-May-16 09:16:11 Server start step 2-2=
+2018-May-16 09:16:11 Server start step 2-3=
+2018-May-16 09:16:11 TImageDownloader::TImageDownloader
+2018-May-16 09:16:11 Server start step 2-4=
+2018-May-16 09:16:11 Server start step 2-5=
+2018-May-16 09:16:11 Server start step 3=
+2018-May-16 09:17:00 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 09:17:00 OnReceive_RequestChineseNumberRecognize: 101
+2018-May-16 09:17:06 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 09:17:06 OnReceive_RequestChineseNumberRecognize: 1
+2018-May-16 09:18:01 Server started!
+2018-May-16 09:18:01 Server start step 1=
+2018-May-16 09:18:01 Server start step 2=
+2018-May-16 09:18:01 Server start step 2-2=
+2018-May-16 09:18:01 Server start step 2-3=
+2018-May-16 09:18:01 TImageDownloader::TImageDownloader
+2018-May-16 09:18:01 Server start step 2-4=
+2018-May-16 09:18:01 Server start step 2-5=
+2018-May-16 09:18:01 Server start step 3=
+2018-May-16 09:18:04 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 09:18:04 OnReceive_RequestChineseNumberRecognize: 0
+2018-May-16 09:18:56 Server started!
+2018-May-16 09:18:56 Server start step 1=
+2018-May-16 09:18:56 Server start step 2=
+2018-May-16 09:18:56 Server start step 2-2=
+2018-May-16 09:18:56 Server start step 2-3=
+2018-May-16 09:18:56 TImageDownloader::TImageDownloader
+2018-May-16 09:18:56 Server start step 2-4=
+2018-May-16 09:18:56 Server start step 2-5=
+2018-May-16 09:18:56 Server start step 3=
+2018-May-16 09:19:01 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 09:19:01 OnReceive_RequestChineseNumberRecognize: -1
+2018-May-16 09:21:10 Server started!
+2018-May-16 09:21:10 Server start step 1=
+2018-May-16 09:21:10 Server start step 2=
+2018-May-16 09:21:10 Server start step 2-2=
+2018-May-16 09:21:10 Server start step 2-3=
+2018-May-16 09:21:10 TImageDownloader::TImageDownloader
+2018-May-16 09:21:10 Server start step 2-4=
+2018-May-16 09:21:10 Server start step 2-5=
+2018-May-16 09:21:10 Server start step 3=
+2018-May-16 09:21:20 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 09:21:20 OnReceive_RequestChineseNumberRecognize: 1
+2018-May-16 09:21:28 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 09:21:28 OnReceive_RequestChineseNumberRecognize: 5
+2018-May-16 09:21:35 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 09:21:35 OnReceive_RequestChineseNumberRecognize: 100
