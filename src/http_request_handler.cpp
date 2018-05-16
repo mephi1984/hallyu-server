@@ -13,19 +13,19 @@ request_handler::request_handler(LH::LuaHelper& iluaHelper)
 }
 
 void request_handler::handle_request(const request& req, reply& rep){
-
 	try
 	{
 		//Xperimental - Might be optimized a lot:
-		std::cout << "handle_http_req start " << "||| req content size:: " << req.request_content.size() << " |||" << std::endl;
-		if (req.request_content.size() == 0) {
-			rep.reply_content = "Error:: empty or wrong data";
-			rep.headers.resize(2);
-			rep.headers[0].name = "Content-Length";
-			rep.headers[0].value = std::to_string(rep.reply_content.size());
-			rep.headers[1].name = "Content-Type";
-			rep.headers[1].value = "text/plain";
-			SE::WriteToLog("Request content is empty");
+
+		// :::::::::::::::::::::::::::::::::::::::
+
+		std::string uri_context;
+		url_decode(req.uri, uri_context);
+
+		// :::::::::::::::::::::::::::::::::::::::
+
+		if (req.request_content.size() == 0 || uri_context == "/") {
+			reply_store_ErrorPt(rep);
 			return;
 		}
 
@@ -39,30 +39,29 @@ void request_handler::handle_request(const request& req, reply& rep){
 
 		BOOST_FOREACH(auto i, propertyTree)
 		{
-
 			if (i.first == "RequestWordTranslation") {
-				if (i.second.get<std::string>("","wrong") != "wrong") {
+				if (i.second.get<std::string>("","wrong") != "wrong" && uri_context == "/translate") {
 						reply_store_PropertyTree(rep, http_receive_RequestWordTranslation(i.second));
 				}
 				else {
 					reply_store_ErrorPt(rep);
 				}
-			}
-			if (i.first == "RequestCard") {
-				if (i.second.get<size_t>("", 0) != 0) {
+			}else if (i.first == "RequestCard") {
+				if (i.second.get<size_t>("", 0) != 0 && uri_context == "/requestCard") {
 				reply_store_PropertyTree(rep, http_receive_RequestCard(i.second));
 				}
 				else {
 					reply_store_ErrorPt(rep);
 				}
-			}
-			if (i.first == "RequestChineseNumberRecognize") {
-				if (i.second.get<int>("", -1) != -1) {
+			} else if (i.first == "RequestChineseNumberRecognize") {
+				if (i.second.get<int>("", 0) != 0 && uri_context == "/number") {
 				reply_store_PropertyTree(rep, http_receive_RequestChineseNumberRecognize(i.second));
 				}
 				else {
 					reply_store_ErrorPt(rep);
 				}
+			} else {
+				reply_store_ErrorPt(rep);
 			}
 		}
 

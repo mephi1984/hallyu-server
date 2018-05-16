@@ -2074,3 +2074,131 @@
 2018-May-16 05:08:54 http_recieve_RequestWordTranslation word: 100
 2018-May-16 05:08:54 http_recieve_RequestWordTranslation end
 2018-May-16 05:08:54 Verbose result size : 38
+2018-May-16 07:24:09 Server started!
+2018-May-16 07:24:09 Server start step 1=
+2018-May-16 07:24:09 Server start step 2=
+2018-May-16 07:24:09 Server start step 2-2=
+2018-May-16 07:24:09 Server start step 2-3=
+2018-May-16 07:24:09 TImageDownloader::TImageDownloader
+2018-May-16 07:24:09 Server start step 2-4=
+2018-May-16 07:24:09 Server start step 2-5=
+2018-May-16 07:24:09 Server start step 3=
+2018-May-16 07:24:13 http_recieve_RequestWordTranslation begin
+2018-May-16 07:24:13 http_recieve_RequestWordTranslation word: 49 48 48 
+2018-May-16 07:24:13 http_recieve_RequestWordTranslation word: 100
+2018-May-16 07:24:13 http_recieve_RequestWordTranslation end
+2018-May-16 07:24:13 Verbose result size : 38
+2018-May-16 07:24:30 http_recieve_RequestWordTranslation begin
+2018-May-16 07:24:30 http_recieve_RequestWordTranslation word: 49 48 48 
+2018-May-16 07:24:30 http_recieve_RequestWordTranslation word: 100
+2018-May-16 07:24:30 http_recieve_RequestWordTranslation end
+2018-May-16 07:24:30 Verbose result size : 38
+2018-May-16 07:24:44 http_recieve_RequestWordTranslation begin
+2018-May-16 07:24:44 http_recieve_RequestWordTranslation word: 49 48 48 
+2018-May-16 07:24:44 http_recieve_RequestWordTranslation word: 100
+2018-May-16 07:24:44 http_recieve_RequestWordTranslation end
+2018-May-16 07:24:44 Verbose result size : 38
+2018-May-16 07:42:57 Server started!
+2018-May-16 07:42:57 Server start step 1=
+2018-May-16 07:42:57 Server start step 2=
+2018-May-16 07:42:57 Server start step 2-2=
+2018-May-16 07:42:57 Server start step 2-3=
+2018-May-16 07:42:57 TImageDownloader::TImageDownloader
+2018-May-16 07:42:57 Server start step 2-4=
+2018-May-16 07:42:57 Server start step 2-5=
+2018-May-16 07:42:57 Server start step 3=
+2018-May-16 07:43:06 http_recieve_RequestWordTranslation begin
+2018-May-16 07:43:06 http_recieve_RequestWordTranslation word: 49 48 48 
+2018-May-16 07:43:06 http_recieve_RequestWordTranslation word: 100
+2018-May-16 07:43:06 http_recieve_RequestWordTranslation end
+2018-May-16 07:43:06 Verbose result size : 38
+2018-May-16 07:43:46 http_recieve_RequestWordTranslation begin
+2018-May-16 07:43:46 http_recieve_RequestWordTranslation word: -20 -105 -84 -21 -77 -76 -20 -124 -72 -20 -102 -108 
+2018-May-16 07:43:46 http_recieve_RequestWordTranslation word: 여보세요
+2018-May-16 07:43:46 http_recieve_RequestWordTranslation end
+2018-May-16 07:43:46 Verbose result size : 14
+2018-May-16 07:45:04 OnReceive_RequestCard begin
+2018-May-16 07:45:04 OnReceive_RequestCard: 100
+2018-May-16 07:48:12 Server started!
+2018-May-16 07:48:12 Server start step 1=
+2018-May-16 07:48:12 Server start step 2=
+2018-May-16 07:48:12 Server start step 2-2=
+2018-May-16 07:48:12 Server start step 2-3=
+2018-May-16 07:48:12 TImageDownloader::TImageDownloader
+2018-May-16 07:48:12 Server start step 2-4=
+2018-May-16 07:48:12 Server start step 2-5=
+2018-May-16 07:48:12 Server start step 3=
+2018-May-16 07:48:18 OnReceive_RequestCard begin
+2018-May-16 07:48:18 OnReceive_RequestCard: 100
+2018-May-16 07:50:26 Server started!
+2018-May-16 07:50:26 Server start step 1=
+2018-May-16 07:50:26 Server start step 2=
+2018-May-16 07:50:26 Server start step 2-2=
+2018-May-16 07:50:26 Server start step 2-3=
+2018-May-16 07:50:26 TImageDownloader::TImageDownloader
+2018-May-16 07:50:26 Server start step 2-4=
+2018-May-16 07:50:26 Server start step 2-5=
+2018-May-16 07:50:26 Server start step 3=
+2018-May-16 07:52:29 Server started!
+2018-May-16 07:52:29 Server start step 1=
+2018-May-16 07:52:29 Server start step 2=
+2018-May-16 07:52:29 Server start step 2-2=
+2018-May-16 07:52:29 Server start step 2-3=
+2018-May-16 07:52:29 TImageDownloader::TImageDownloader
+2018-May-16 07:52:29 Server start step 2-4=
+2018-May-16 07:52:29 Server start step 2-5=
+2018-May-16 07:52:29 Server start step 3=
+2018-May-16 07:53:58 Server started!
+2018-May-16 07:53:58 Server start step 1=
+2018-May-16 07:53:58 Server start step 2=
+2018-May-16 07:53:58 Server start step 2-2=
+2018-May-16 07:53:58 Server start step 2-3=
+2018-May-16 07:53:58 TImageDownloader::TImageDownloader
+2018-May-16 07:53:58 Server start step 2-4=
+2018-May-16 07:53:58 Server start step 2-5=
+2018-May-16 07:53:58 Server start step 3=
+2018-May-16 07:54:00 http_recieve_RequestWordTranslation begin
+2018-May-16 07:54:00 http_recieve_RequestWordTranslation word: -20 -105 -84 -21 -77 -76 -20 -124 -72 -20 -102 -108 
+2018-May-16 07:54:00 http_recieve_RequestWordTranslation word: 여보세요
+2018-May-16 07:54:00 http_recieve_RequestWordTranslation end
+2018-May-16 07:54:00 Verbose result size : 14
+2018-May-16 07:58:55 Server started!
+2018-May-16 07:58:55 Server start step 1=
+2018-May-16 07:58:55 Server start step 2=
+2018-May-16 07:58:55 Server start step 2-2=
+2018-May-16 07:58:55 Server start step 2-3=
+2018-May-16 07:58:55 TImageDownloader::TImageDownloader
+2018-May-16 07:58:55 Server start step 2-4=
+2018-May-16 07:58:55 Server start step 2-5=
+2018-May-16 07:58:55 Server start step 3=
+2018-May-16 07:58:59 http_recieve_RequestWordTranslation begin
+2018-May-16 07:58:59 http_recieve_RequestWordTranslation word: -20 -105 -84 -21 -77 -76 -20 -124 -72 -20 -102 -108 
+2018-May-16 07:58:59 http_recieve_RequestWordTranslation word: 여보세요
+2018-May-16 07:58:59 http_recieve_RequestWordTranslation end
+2018-May-16 07:58:59 Verbose result size : 14
+2018-May-16 07:59:35 OnReceive_RequestCard begin
+2018-May-16 07:59:35 OnReceive_RequestCard: 100
+2018-May-16 08:02:50 Server started!
+2018-May-16 08:02:50 Server start step 1=
+2018-May-16 08:02:50 Server start step 2=
+2018-May-16 08:02:50 Server start step 2-2=
+2018-May-16 08:02:50 Server start step 2-3=
+2018-May-16 08:02:50 TImageDownloader::TImageDownloader
+2018-May-16 08:02:50 Server start step 2-4=
+2018-May-16 08:02:50 Server start step 2-5=
+2018-May-16 08:02:50 Server start step 3=
+2018-May-16 08:05:39 Server started!
+2018-May-16 08:05:39 Server start step 1=
+2018-May-16 08:05:39 Server start step 2=
+2018-May-16 08:05:39 Server start step 2-2=
+2018-May-16 08:05:39 Server start step 2-3=
+2018-May-16 08:05:39 TImageDownloader::TImageDownloader
+2018-May-16 08:05:39 Server start step 2-4=
+2018-May-16 08:05:39 Server start step 2-5=
+2018-May-16 08:05:39 Server start step 3=
+2018-May-16 08:07:07 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 08:07:07 OnReceive_RequestChineseNumberRecognize: 9
+2018-May-16 08:07:13 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 08:07:13 OnReceive_RequestChineseNumberRecognize: 10
+2018-May-16 08:07:17 OnReceive_RequestChineseNumberRecognize begin
+2018-May-16 08:07:17 OnReceive_RequestChineseNumberRecognize: 100
