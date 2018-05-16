@@ -10,6 +10,8 @@
 
 #include "SE/misc.h"
 
+#ifdef USE_MYSQL
+
 #ifdef _WIN32
 
 #include "driver/mysql_driver.h"
@@ -205,7 +207,13 @@ protected:
 
 };
 
+#else
 
+class TMySqlConnector //Dummy
+{
+};
+
+#endif
 
 
 

@@ -7,7 +7,7 @@
 namespace SE
 {
 	
-
+	
 	TServerSocket::TServerSocket(int port)
 		: endpoint(boost::asio::ip::tcp::v4(), port)
 		, acceptor(IoService, endpoint)
@@ -15,6 +15,7 @@ namespace SE
 		SE::WriteToLog("TServerSocket::TServerSocket");
 
 	}
+	
 
 	TServerSocket::~TServerSocket()
 	{

@@ -359,7 +359,7 @@ namespace LH
 
 		//Xperimental
 #ifdef _WIN32
-		int ret = luaL_dofile(L, "C:\\Workplace\\Projects\\hallyu\\hallyu_server\\scripts\\main.lua");
+		int ret = luaL_dofile(L, "../scripts/main.lua");
 #else
 		int ret = luaL_dofile(L, "./scripts/main.lua");
 #endif

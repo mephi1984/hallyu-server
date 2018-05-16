@@ -18,6 +18,8 @@
 #include "SE/Server.h"
 #include "SE/Network.h"
 
+//#include "http_server.h"
+
 
 extern const int CONST_DICTIONARY_CURRENT_VERSION;
 
@@ -43,6 +45,7 @@ struct TCommentStruct
 	std::string Date;
 };
 
+
 class TUser : public std::enable_shared_from_this<TUser>
 {
 public:
@@ -54,14 +57,20 @@ public:
 
 	~TUser();
 
+
+	
+	void OnReceive_RegisterViaVk(boost::property_tree::ptree propertyTree);
+
+	void OnReceive_RequestWordTranslation(boost::property_tree::ptree propertyTree);
+	void OnReceive_RequestCard(boost::property_tree::ptree propertyTree);
+	void OnReceive_RequestChineseNumberRecognize(boost::property_tree::ptree propertyTree);
+
+#ifdef USE_MYSQL
+
+
 	void OnReceive_GetFeed(boost::property_tree::ptree propertyTree);
 	void OnReceive_GetFeedList(boost::property_tree::ptree propertyTree);
 
-	void OnReceive_RequestWordTranslation(boost::property_tree::ptree propertyTree);
-	void OnReceive_RegisterViaVk(boost::property_tree::ptree propertyTree);
-
-	void OnReceive_RequestCard(boost::property_tree::ptree propertyTree);
-	void OnReceive_RequestChineseNumberRecognize(boost::property_tree::ptree propertyTree);
 	void OnReceive_GetUser(boost::property_tree::ptree propertyTree);
 	void OnReceive_AddComment(boost::property_tree::ptree propertyTree);
 	void OnReceive_GetComments(boost::property_tree::ptree propertyTree);
@@ -79,14 +88,20 @@ public:
 
 	void ProcessBinaryData(boost::property_tree::ptree propertyTree, std::vector<char> binary);
 
+#endif
+
+	void Send_OnRequestWordTranslation(std::string wordToTranslate);
+	void Send_OnRequestCard(size_t wordCount);
+	void Send_OnRequestChineseNumberRecognize(int maxDigits);
+
+#ifdef USE_MYSQL
 
 	void Send_OnGetFeed(int feedId, int startingFromPostId, int count);
 	void Send_OnGetFeedList();
-	void Send_OnRequestWordTranslation(std::string wordToTranslate);
+
 	void Send_OnRegisterViaVk(const std::string& username);
 	void OnReceive_RegisterViaVk_Api2(boost::property_tree::ptree propertyTree);
-	void Send_OnRequestCard(size_t wordCount);
-	void Send_OnRequestChineseNumberRecognize(int maxDigits);
+
 	void Send_OnGetUser(const std::string& username);
 	void Send_OnAddComment();
 	void Send_OnGetComments(int postId);
@@ -102,11 +117,10 @@ public:
 	void Send_OnDownloadPurchase(int purchaseId, std::string username, std::string purchaseCode);
 
 
-	//std::function<void(boost::property_tree::ptree)> SendXmlFunc;
-	//std::shared_ptr<SE::TDataReader> dataReader;
-
+#endif
 
 	
+
 	std::string Address;
 
 	THallyuSocketServer& HallyuSocketServer;
@@ -119,8 +133,11 @@ public:
 
 	int DataSize;
 
+#ifdef USE_MYSQL
 
 	void InnerStartReadBinary(boost::property_tree::ptree binaryTree);
+
+#endif
 
 	std::vector<char> Data;
 
@@ -133,12 +150,16 @@ public:
 
 	void HandleReadData(const boost::system::error_code& error);
 
+#ifdef USE_MYSQL
+
 	void HandleReadBinaryData(boost::property_tree::ptree binaryTree, const boost::system::error_code& error);
+#endif
 
 	void SendPropertyTree(boost::property_tree::ptree pTree);
 
 	void SendBinary(const std::vector<char>& binaryData);
 };
+
 
 class THallyuSocketServer : public SE::TServerSocket
 {
@@ -148,10 +169,11 @@ public:
 
 	void StartAccept();
 
-	THallyuSocketServer(/*SE::TServerSocket& serverSocket, */int port, TMySqlConnector& mySqlConnector, LH::LuaHelper& iLuaHelper);
+	THallyuSocketServer(int port, TMySqlConnector& mySqlConnector, LH::LuaHelper& iLuaHelper);
 
-	//void OnUserConnected(std::shared_ptr<TUser> user);
-	//void OnUserDisconnected(std::shared_ptr<SE::TConnectedUser> connectedUser);
+	
+
+#ifdef USE_MYSQL
 
 	std::vector<TPostListElement> GetPostList(int feedId, int startingFromPostId, int count);
 	TPostListElement GetPostListElement(int id);
@@ -181,13 +203,12 @@ public:
 
 	void AddPurchaseForUser(const std::string& username, int purchaseId);
 
+#endif
+
 	boost::mutex zipPurchaseMutex;
 
-	//boost::signals2::signal<void(std::shared_ptr<TUser>)> OnUserConnectedSignal;
 
 protected:
-
-	//SE::TServerSocket& ServerSocket;
 
 	TMySqlConnector& MySqlConnector;
 
@@ -201,4 +222,4 @@ protected:
 	
 };
 
-#endif //SOCKET_SERVER_H_INCLUDED
+#endif // SOCKET_SERVER_H_INCLUDED

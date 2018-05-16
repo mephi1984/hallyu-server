@@ -758,10 +758,10 @@ namespace LH
 		try
 		{
 #ifdef _WIN32
-			std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/scripts/" + fileName);
+			std::ifstream f("../scripts/" + fileName);
 
 #else
-			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);
+			std::ifstream f("/home/ubuntu/work/hallyu_server/scripts/" + fileName); // #path switch "/home/devuser/workplace/hallyu_server/scripts/"
 #endif
 
 			std::string line;
@@ -786,7 +786,7 @@ namespace LH
 			}
 			else
 			{
-				std::cout << "file not found!" << std::endl;
+				std::cout << "file not found! " << "HD789" << std::endl;
 			}
 
 		}
@@ -806,10 +806,10 @@ namespace LH
 		{
 
 #ifdef _WIN32
-			std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/scripts/" + fileName);
+			std::ifstream f("../scripts/" + fileName);
 
 #else
-			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);
+			std::ifstream f("/home/ubuntu/work/hallyu_server/scripts/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/scripts/"
 #endif
 
 			std::string line;
@@ -835,7 +835,7 @@ namespace LH
 			}
 			else
 			{
-				std::cout << "file not found!" << std::endl;
+				std::cout << "file not found! " << "HD838" << std::endl;
 			}
 
 		}
@@ -854,10 +854,10 @@ namespace LH
 		try
 		{
 #ifdef _WIN32
-			std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/scripts/" + fileName);
+			std::ifstream f("../scripts/" + fileName);
 
 #else
-			std::ifstream f("/home/devuser/workplace/hallyu_server/scripts/" + fileName);
+			std::ifstream f("/home/ubuntu/work/hallyu_server/scripts/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/scripts/"
 #endif
 
 			std::string line;
@@ -883,7 +883,7 @@ namespace LH
 			}
 			else
 			{
-				std::cout << "file not found!" << std::endl;
+				std::cout << "file not found! " << "HD886" << std::endl;
 			}
 
 		}

@@ -839,10 +839,10 @@ void THangulDictionary::LoadVerbFromFile(const std::string& fileName)
 	try
 	{
 #ifdef _WIN32
-		std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/" + fileName);
+		std::ifstream f("../scripts/" + fileName);
 
 #else
-		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);
+		std::ifstream f("/home/ubuntu/work/hallyu_server/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/"
 #endif
 
 		std::string line;
@@ -867,7 +867,7 @@ void THangulDictionary::LoadVerbFromFile(const std::string& fileName)
 		}
 		else
 		{
-			std::cout << "file not found!" << std::endl;
+			std::cout << "file not found! " << "HP870" << std::endl;
 		}
 
 	}
@@ -887,10 +887,10 @@ void THangulDictionary::LoadNounFromFile(const std::string& fileName)
 	{
 
 #ifdef _WIN32
-		std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/" + fileName);
+		std::ifstream f("../scripts/" + fileName);
 
 #else
-		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);
+		std::ifstream f("/home/ubuntu/work/hallyu_server/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/"
 #endif
 
 		std::string line;
@@ -916,7 +916,7 @@ void THangulDictionary::LoadNounFromFile(const std::string& fileName)
 		}
 		else
 		{
-			std::cout << "file not found!" << std::endl;
+			std::cout << "file not found! " << "HP919" << std::endl;
 		}
 
 	}
@@ -935,10 +935,10 @@ void THangulDictionary::LoadSpecialFromFile(const std::string& fileName)
 	try
 	{
 #ifdef _WIN32
-		std::ifstream f("C:/Workplace/Projects/hallyu/hallyu_server/" + fileName);
+		std::ifstream f("../scripts/" + fileName);
 
 #else
-		std::ifstream f("/home/devuser/workplace/hallyu_server/" + fileName);
+		std::ifstream f("/home/ubuntu/work/hallyu_server/" + fileName); // #path switch# "/home/devuser/workplace/hallyu_server/"
 #endif
 
 		std::string line;
@@ -964,7 +964,7 @@ void THangulDictionary::LoadSpecialFromFile(const std::string& fileName)
 		}
 		else
 		{
-			std::cout << "file not found!" << std::endl;
+			std::cout << "file not found!" << " HP967" << std::endl;
 		}
 
 	}

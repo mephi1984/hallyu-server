@@ -23,8 +23,6 @@ class TServerSocket
 public:
 	//std::vector<std::shared_ptr<TConnectedUser>> UserArr;
 
-	
-
 	boost::asio::io_service IoService;
 
 protected:

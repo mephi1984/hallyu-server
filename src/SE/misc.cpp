@@ -20,9 +20,9 @@ namespace SE
 
 		std::ofstream ofs;
 #ifdef _WIN32
-		ofs.open("C:/Workplace/Projects/hallyu/hallyu_server/hallyu_log2.txt", std::ofstream::out | std::ofstream::app);
+		ofs.open("hallyu_log2.txt", std::ofstream::out | std::ofstream::app);
 #else
-		ofs.open("/home/devuser/hallyu_log2.txt", std::ofstream::out | std::ofstream::app);
+		ofs.open("/home/ubuntu/hallyu_log2.txt", std::ofstream::out | std::ofstream::app); // #path switch# "/home/devuser/hallyu_log2.txt"
 #endif
 
 		boost::posix_time::ptime now = boost::posix_time::second_clock::universal_time();
