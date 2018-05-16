@@ -361,7 +361,7 @@ namespace LH
 #ifdef _WIN32
 		int ret = luaL_dofile(L, "../scripts/main.lua");
 #else
-		int ret = luaL_dofile(L, "./scripts/main.lua");
+		int ret = luaL_dofile(L, "/home/ubuntu/work/hallyu_server/scripts/main.lua");
 #endif
 		if (ret != 0){
 
