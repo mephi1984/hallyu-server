@@ -45,6 +45,7 @@ public:
 
 	// ptree send methods
 	void reply_store_PropertyTree(reply& rep, boost::property_tree::ptree pTree);
+	void reply_store_ErrorPt(reply& rep);
 
 	//THallyuHttpServer& HallyuHttpServer;
 	LH::LuaHelper& luaHelper;

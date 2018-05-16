@@ -56,17 +56,12 @@ namespace server {
 	void connection::do_write() { 
 		auto sharedThis = shared_from_this();
 
-		int dLen = http_reply.reply_content.size();
-
-		char* c_data = new char[dLen + 1];
-		strcpy(c_data, http_reply.reply_content.c_str());
-
 		const char crlf[] = { '\r','\n' };
 		const char separ[] = { ':',' ' };
 		std::string http_status = "HTTP/1.1 200 OK";
 
 		std::vector<boost::asio::const_buffer> rep_buf;
-		rep_buf.push_back(boost::asio::buffer(&http_status.c_str()[0], http_status.size()));
+		rep_buf.push_back(boost::asio::buffer(&http_status.c_str()[0], http_status.size())); // reply status
 		rep_buf.push_back(boost::asio::buffer(crlf));
 		rep_buf.push_back(boost::asio::buffer(&http_reply.headers[0].name.c_str()[0], http_reply.headers[0].name.size()));
 		rep_buf.push_back(boost::asio::buffer(separ));
@@ -77,11 +72,11 @@ namespace server {
 		rep_buf.push_back(boost::asio::buffer(&http_reply.headers[1].value.c_str()[0], http_reply.headers[1].value.size()));
 		rep_buf.push_back(boost::asio::buffer(crlf));
 		rep_buf.push_back(boost::asio::buffer(crlf));
-		rep_buf.push_back(boost::asio::buffer(&c_data[0], dLen));
-		std::cout << "data SIZE:: " << dLen << std::endl;
+		rep_buf.push_back(boost::asio::buffer(&http_reply.reply_content[0], http_reply.reply_content.size()));
+		std::cout << "data SIZE:: " << http_reply.reply_content.size() << std::endl;
 
 		boost::asio::async_write(http_socket, rep_buf,
-			[c_data, rep_buf, this, sharedThis](boost::system::error_code ec, std::size_t bytes_transfered)
+			[rep_buf, this, sharedThis](boost::system::error_code ec, std::size_t bytes_transfered)
 		{
 			std::cout << "async_write bytes_transfered:: " << bytes_transfered << std::endl;
 

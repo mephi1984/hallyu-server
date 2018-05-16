@@ -22,7 +22,7 @@ void request_handler::handle_request(const request& req, reply& rep){
 			rep.reply_content = "Error:: empty or wrong data";
 			rep.headers.resize(2);
 			rep.headers[0].name = "Content-Length";
-			rep.headers[0].value = "0";
+			rep.headers[0].value = std::to_string(rep.reply_content.size());
 			rep.headers[1].name = "Content-Type";
 			rep.headers[1].value = "text/plain";
 			SE::WriteToLog("Request content is empty");
@@ -41,15 +41,29 @@ void request_handler::handle_request(const request& req, reply& rep){
 		{
 
 			if (i.first == "RequestWordTranslation") {
-				reply_store_PropertyTree(rep, http_receive_RequestWordTranslation(i.second)); // write to reply buffer
+				if (i.second.get<std::string>("","wrong") != "wrong") {
+						reply_store_PropertyTree(rep, http_receive_RequestWordTranslation(i.second));
+				}
+				else {
+					reply_store_ErrorPt(rep);
+				}
 			}
 			if (i.first == "RequestCard") {
+				if (i.second.get<size_t>("", 0) != 0) {
 				reply_store_PropertyTree(rep, http_receive_RequestCard(i.second));
+				}
+				else {
+					reply_store_ErrorPt(rep);
+				}
 			}
 			if (i.first == "RequestChineseNumberRecognize") {
+				if (i.second.get<int>("", -1) != -1) {
 				reply_store_PropertyTree(rep, http_receive_RequestChineseNumberRecognize(i.second));
+				}
+				else {
+					reply_store_ErrorPt(rep);
+				}
 			}
-
 		}
 
 	}
@@ -58,6 +72,15 @@ void request_handler::handle_request(const request& req, reply& rep){
 		SE::WriteToLog("Error in inner HandleReadData: ptree_error exception caught: " + boost::lexical_cast<std::string>(this));
 	}
 
+}
+
+void request_handler::reply_store_ErrorPt(reply& rep) {
+	rep.reply_content = "Error:: empty or wrong data";
+	rep.headers.resize(2);
+	rep.headers[0].name = "Content-Length";
+	rep.headers[0].value = std::to_string(rep.reply_content.size());
+	rep.headers[1].name = "Content-Type";
+	rep.headers[1].value = "text";
 }
 
 bool request_handler::url_decode(const std::string& in, std::string& out){
@@ -315,7 +338,7 @@ void request_handler::reply_store_PropertyTree(reply& rep, boost::property_tree:
 			rep.reply_content = "Error:: Empty data";
 			rep.headers.resize(2);
 			rep.headers[0].name = "Content-Length";
-			rep.headers[0].value = "0";
+			rep.headers[0].value = std::to_string(rep.reply_content.size());
 			rep.headers[1].name = "Content-Type";
 			rep.headers[1].value = "text/plain";
 		} else

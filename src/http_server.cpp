@@ -16,13 +16,13 @@ THallyuHttpServer::THallyuHttpServer(int port, LH::LuaHelper& iluaHelper)
 {
 
 	std::string addr("0.0.0.0");
-	translate = *resolver.resolve(addr, std::to_string(port)).begin();
-	acceptor.open(translate.protocol());
+	endpoint = *resolver.resolve(addr, std::to_string(port)).begin();
+	acceptor.open(endpoint.protocol());
 	acceptor.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
 	// ====----====
 	//acceptor.bind(requestCard);
 	// ====----====
-	acceptor.bind(translate);
+	acceptor.bind(endpoint);
 	acceptor.listen();
 
 	// -------- Signals section --------

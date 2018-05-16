@@ -2048,3 +2048,29 @@
 2018-May-14 11:34:36 Server start step 3=
 2018-May-14 11:34:43 OnReceive_RequestCard begin
 2018-May-14 11:34:43 OnReceive_RequestCard: 1000
+2018-May-16 05:07:40 Server started!
+2018-May-16 05:07:40 Server start step 1=
+2018-May-16 05:07:40 Server start step 2=
+2018-May-16 05:07:40 Server start step 2-2=
+2018-May-16 05:07:40 Server start step 2-3=
+2018-May-16 05:07:40 TImageDownloader::TImageDownloader
+2018-May-16 05:07:40 Server start step 2-4=
+2018-May-16 05:07:40 Server start step 2-5=
+2018-May-16 05:07:40 Server start step 3=
+2018-May-16 05:07:43 OnReceive_RequestCard begin
+2018-May-16 05:07:43 OnReceive_RequestCard: 1000
+2018-May-16 05:08:19 http_recieve_RequestWordTranslation begin
+2018-May-16 05:08:19 http_recieve_RequestWordTranslation word: 104 101 108 108 111 
+2018-May-16 05:08:19 http_recieve_RequestWordTranslation word: hello
+2018-May-16 05:08:19 http_recieve_RequestWordTranslation end
+2018-May-16 05:08:19 Verbose result size : 38
+2018-May-16 05:08:42 http_recieve_RequestWordTranslation begin
+2018-May-16 05:08:42 http_recieve_RequestWordTranslation word: 49 48 48 
+2018-May-16 05:08:42 http_recieve_RequestWordTranslation word: 100
+2018-May-16 05:08:42 http_recieve_RequestWordTranslation end
+2018-May-16 05:08:42 Verbose result size : 38
+2018-May-16 05:08:54 http_recieve_RequestWordTranslation begin
+2018-May-16 05:08:54 http_recieve_RequestWordTranslation word: 49 48 48 
+2018-May-16 05:08:54 http_recieve_RequestWordTranslation word: 100
+2018-May-16 05:08:54 http_recieve_RequestWordTranslation end
+2018-May-16 05:08:54 Verbose result size : 38
