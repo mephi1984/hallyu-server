@@ -1,4 +1,4 @@
-
+﻿
 
 #include "http_request_handler.h"
 
@@ -175,6 +175,9 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 {
 	boost::property_tree::ptree p;
 
+	std::vector<std::vector<std::string>> p_words;
+	std::vector<std::vector<std::string>> p_meanings;
+
 	//boost::trim(wordToTranslate);
 
 	std::wstring wWordToTranslate = SE::string_to_wstring(wordToTranslate);
@@ -208,17 +211,26 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 
 			LH::HangulResult result = luaHelper.ProcessString(wWordToTranslate);
 
+			p_words.resize(result.resultTable.size()); // ::::::::::::::::::::::::::::::
+			p_meanings.resize(result.resultTable.size()); // :::::::::::::::::::::::::::
+
 			for (int i = 0; i < result.resultTable.size(); i++)
 			{
+				p_meanings[i].resize(result.resultTable[i].size()); // :::::::::::::::::::::::::::::
+
 				for (int j = 0; j < result.resultTable[i].size(); j++)
 				{
+					p_words[i].resize(result.resultTable[i][j].dictStruct.words.size()); // ::::::::::::
+
 					for (int k = 0; k < result.resultTable[i][j].dictStruct.words.size(); k++)
 					{
 						verboseResult += "\"" + SE::wstring_to_string(result.resultTable[i][j].dictStruct.words[k]) + "\" ";
+
+						p_words[i][k] = SE::wstring_to_string(result.resultTable[i][j].dictStruct.words[k]); // :::::::::::
 					}
+					p_meanings[i][j] = SE::wstring_to_string(result.resultTable[i][j].verbose);
 
 					verboseResult += "- ";
-
 					verboseResult += SE::wstring_to_string(result.resultTable[i][j].verbose) + "\n";
 
 					for (auto& lesson : result.resultTable[i][j].lessons)
@@ -228,6 +240,28 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 
 				}
 			}
+
+			// ==================== TRANSLATE LOG
+			std::ofstream trs;
+			trs.open("trans_stream.txt", std::ios::app);
+			trs << "===::WORDS::===" << std::endl;
+			for (int i = 0; i<p_words.size(); i++) {
+				trs << "i[" << i << "] " << std::endl;
+				for (int j = 0; j<p_words[i].size();j++) {
+					trs << "-" << p_words[i][j] << std::endl;
+				}
+			}
+			trs << "===::MEANINGS::===" << std::endl;
+			for (int i=0; i<p_meanings.size();i++) {
+				trs << "i[" << i << "]" << std::endl;
+				for (int j=0; j<p_meanings[i].size();j++) {
+					trs << "-" << p_meanings[i][j] << std::endl;
+				}
+			}
+
+			trs.close();
+			// ==================== TRANSLATE LOG
+
 
 			for (int i = 0; i < result.complexVerbResultArr.size(); i++)
 			{
@@ -249,6 +283,7 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 	{
 		verboseResult = "Request is empty";
 	}
+
 
 	SE::WriteToLog("Verbose result size : " + boost::lexical_cast<std::string>(verboseResult.size()));
 
