@@ -108,12 +108,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Program Files\OpenSSL\include;C:\Work\Projects\lua-5.3.1\luabind;C:\Work\Projects\lua-5.3.1\src;C:\Work\boost_1_67_0;C:\Work\openssl-master;C:\Work\openssl-master\output64\include;C:\Work\AndroidStudioProjects\lua-5.3.1\luabind;C:\Work\AndroidStudioProjects\lua-5.3.1\src;C:/Work/AndroidStudioProjects/boost_1_67_0;../../jni/network</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Work\Projects\boost_1_67_0;C:\Program Files\OpenSSL\include;C:\Work\Projects\lua-5.3.1\luabind;C:\Work\Projects\lua-5.3.1\src;C:\Work\boost_1_67_0;C:\Work\openssl-master;C:\Work\openssl-master\output64\include;C:\Work\AndroidStudioProjects\lua-5.3.1\luabind;C:\Work\AndroidStudioProjects\lua-5.3.1\src;C:/Work/AndroidStudioProjects/boost_1_67_0;../../jni/network</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0501;MYSQLCLIENT_STATIC_BINDING;CPPCONN_LIB_BUILD;_SCL_SECURE_NO_WARNINGS;OPENSSL_NO_SSL2;OPENSSL_USE_DEPRECATED;ZIP_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files\OpenSSL\lib;C:\Work\boost_1_67_0\stage\lib;$(SolutionDir)$(Platform)\$(Configuration)\;C:\Work\openssl-master\output64\lib;C:/Work/AndroidStudioProjects/boost_1_67_0/stage/lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\OpenSSL\bin;C:\Program Files\OpenSSL\lib;C:\Work\Projects\boost_1_67_0\stage\lib;$(SolutionDir)$(Platform)\$(Configuration)\;C:\Work\openssl-master\output64\lib;C:/Work/AndroidStudioProjects/boost_1_67_0/stage/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>libcrypto.lib;libssl.lib;luabind.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

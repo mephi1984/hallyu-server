@@ -78,6 +78,8 @@ void request_handler::handle_request(const request& req, reply& rep){
 	catch (boost::property_tree::ptree_error)
 	{
 		SE::WriteToLog("Error in inner HandleReadData: ptree_error exception caught: " + boost::lexical_cast<std::string>(this));
+		reply_store_ErrorPt(rep, "Wrong request!");
+		return;
 	}
 
 }
@@ -95,7 +97,7 @@ void request_handler::reply_store_ErrorPt(reply& rep, std::string err_s) {
 	std::string data = o_stream.str();
 
 	// :::::::::::::::::::::::
-
+	rep.reply_status = "HTTP/1.0 400 Bad Request";
 	rep.reply_content = data;
 	rep.headers.resize(2);
 	rep.headers[0].name = "Content-Length";
@@ -359,6 +361,7 @@ void request_handler::reply_store_PropertyTree(reply& rep, boost::property_tree:
 			reply_store_ErrorPt(rep, "(something goes wrong)Empty reply!");
 		} else
 			rep.reply_content = data;
+			rep.reply_status = "HTTP/1.1 200 OK";
 			rep.headers.resize(2);
 			rep.headers[0].name = "Content-Length";
 			rep.headers[0].value = std::to_string(rep.reply_content.size());

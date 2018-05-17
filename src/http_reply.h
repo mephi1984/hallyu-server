@@ -12,7 +12,7 @@ namespace server {
 	{
 	char *http_status;
 	std::vector<header> headers;
-
+	std::string reply_status;
 	std::string reply_content;
 	};
 }

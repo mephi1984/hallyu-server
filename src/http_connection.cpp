@@ -58,10 +58,9 @@ namespace server {
 
 		const char crlf[] = { '\r','\n' };
 		const char separ[] = { ':',' ' };
-		std::string http_status = "HTTP/1.1 200 OK";
 
 		std::vector<boost::asio::const_buffer> rep_buf;
-		rep_buf.push_back(boost::asio::buffer(&http_status.c_str()[0], http_status.size())); // reply status
+		rep_buf.push_back(boost::asio::buffer(&http_reply.reply_status.c_str()[0], http_reply.reply_status.size())); // reply status
 		rep_buf.push_back(boost::asio::buffer(crlf));
 		rep_buf.push_back(boost::asio::buffer(&http_reply.headers[0].name.c_str()[0], http_reply.headers[0].name.size()));
 		rep_buf.push_back(boost::asio::buffer(separ));

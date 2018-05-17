@@ -207,18 +207,19 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
+/*
 	if (vm.count("foreground"))
 	{
 		std::cout <<"Running in foreground" << std::endl;
 	}
 	else
 	{
-#ifndef _WIN32
-		std::cout << "Running in background" << std::endl;
-		daemonize();
-#endif
-	}
-
+//#ifndef _WIN32
+//		std::cout << "Running in background" << std::endl;
+//		daemonize();
+//#endif
+//	}
+*/
 
 
 

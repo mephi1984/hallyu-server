@@ -2339,3 +2339,72 @@
 2018-May-16 09:21:28 OnReceive_RequestChineseNumberRecognize: 5
 2018-May-16 09:21:35 OnReceive_RequestChineseNumberRecognize begin
 2018-May-16 09:21:35 OnReceive_RequestChineseNumberRecognize: 100
+2018-May-17 08:09:04 Server started!
+2018-May-17 08:09:04 Server start step 1=
+2018-May-17 08:09:04 Server start step 2=
+2018-May-17 08:09:04 Server start step 2-2=
+2018-May-17 08:09:04 Server start step 2-3=
+2018-May-17 08:09:04 TImageDownloader::TImageDownloader
+2018-May-17 08:09:04 Server start step 2-4=
+2018-May-17 08:09:04 Server start step 2-5=
+2018-May-17 08:09:04 Server start step 3=
+2018-May-17 08:09:45 Error in inner HandleReadData: ptree_error exception caught: 0000022179AB0620
+2018-May-17 08:12:44 Server started!
+2018-May-17 08:12:44 Server start step 1=
+2018-May-17 08:12:44 Server start step 2=
+2018-May-17 08:12:44 Server start step 2-2=
+2018-May-17 08:12:44 Server start step 2-3=
+2018-May-17 08:12:44 TImageDownloader::TImageDownloader
+2018-May-17 08:12:44 Server start step 2-4=
+2018-May-17 08:12:44 Server start step 2-5=
+2018-May-17 08:12:44 Server start step 3=
+2018-May-17 08:13:47 OnReceive_RequestChineseNumberRecognize begin
+2018-May-17 08:13:47 OnReceive_RequestChineseNumberRecognize: 5
+2018-May-17 08:16:29 Server started!
+2018-May-17 08:16:29 Server start step 1=
+2018-May-17 08:16:29 Server start step 2=
+2018-May-17 08:16:29 Server start step 2-2=
+2018-May-17 08:16:29 Server start step 2-3=
+2018-May-17 08:16:29 TImageDownloader::TImageDownloader
+2018-May-17 08:16:29 Server start step 2-4=
+2018-May-17 08:16:29 Server start step 2-5=
+2018-May-17 08:16:29 Server start step 3=
+2018-May-17 08:26:13 Server started!
+2018-May-17 08:26:13 Server start step 1=
+2018-May-17 08:26:13 Server start step 2=
+2018-May-17 08:26:13 Server start step 2-2=
+2018-May-17 08:26:13 Server start step 2-3=
+2018-May-17 08:26:13 TImageDownloader::TImageDownloader
+2018-May-17 08:26:13 Server start step 2-4=
+2018-May-17 08:26:13 Server start step 2-5=
+2018-May-17 08:26:13 Server start step 3=
+2018-May-17 08:26:19 OnReceive_RequestChineseNumberRecognize begin
+2018-May-17 08:26:19 OnReceive_RequestChineseNumberRecognize: 5
+2018-May-17 08:26:21 Error in inner HandleReadData: ptree_error exception caught: 000001D8ECB22FC0
+2018-May-17 08:26:28 Error in inner HandleReadData: ptree_error exception caught: 000001D8ECB22FC0
+2018-May-17 08:26:31 OnReceive_RequestChineseNumberRecognize begin
+2018-May-17 08:26:31 OnReceive_RequestChineseNumberRecognize: 5
+2018-May-17 08:35:43 Server started!
+2018-May-17 08:35:43 Server start step 1=
+2018-May-17 08:35:43 Server start step 2=
+2018-May-17 08:35:43 Server start step 2-2=
+2018-May-17 08:35:43 Server start step 2-3=
+2018-May-17 08:35:43 TImageDownloader::TImageDownloader
+2018-May-17 08:35:43 Server start step 2-4=
+2018-May-17 08:35:43 Server start step 2-5=
+2018-May-17 08:35:43 Server start step 3=
+2018-May-17 08:35:51 Error in inner HandleReadData: ptree_error exception caught: 000001A708D8B860
+2018-May-17 08:35:58 OnReceive_RequestChineseNumberRecognize begin
+2018-May-17 08:35:58 OnReceive_RequestChineseNumberRecognize: 5
+2018-May-17 08:58:58 Server started!
+2018-May-17 08:58:58 Server start step 1=
+2018-May-17 08:58:58 Server start step 2=
+2018-May-17 08:58:58 Server start step 2-2=
+2018-May-17 08:58:58 Server start step 2-3=
+2018-May-17 08:58:58 TImageDownloader::TImageDownloader
+2018-May-17 08:58:58 Server start step 2-4=
+2018-May-17 08:58:58 Server start step 2-5=
+2018-May-17 08:58:58 Server start step 3=
+2018-May-17 08:59:05 OnReceive_RequestChineseNumberRecognize begin
+2018-May-17 08:59:05 OnReceive_RequestChineseNumberRecognize: 5
+2018-May-17 08:59:10 Error in inner HandleReadData: ptree_error exception caught: 00000233A113C0A0
