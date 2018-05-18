@@ -175,8 +175,11 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 {
 	boost::property_tree::ptree p;
 
-	std::vector<std::vector<std::string>> p_words;
-	std::vector<std::vector<std::string>> p_meanings;
+	std::vector<std::vector<std::string>> p_words; //		||:::::::::::::::::::||
+	std::vector<std::vector<std::string>> p_meanings; //	||::New data struct::||
+	std::vector<std::string> p_complex_words;//				||:::::::::::::::::::||
+	std::vector<std::string> p_complex_meanings;//			||:::::::::::::::::::||
+	LH::HangulResult result;
 
 	//boost::trim(wordToTranslate);
 
@@ -209,7 +212,7 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 		{
 			//HallyuSocketServer.HangulProcessor.RecognizeAndVerboseWords(wWordToTranslateArr, verboseResult, lessonSet);
 
-			LH::HangulResult result = luaHelper.ProcessString(wWordToTranslate);
+			result = luaHelper.ProcessString(wWordToTranslate);
 
 			p_words.resize(result.resultTable.size()); // ::::::::::::::::::::::::::::::
 			p_meanings.resize(result.resultTable.size()); // :::::::::::::::::::::::::::
@@ -241,37 +244,40 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 				}
 			}
 
-			// ==================== TRANSLATE LOG
-			std::ofstream trs;
-			trs.open("trans_stream.txt", std::ios::app);
-			trs << "===::WORDS::===" << std::endl;
-			for (int i = 0; i<p_words.size(); i++) {
-				trs << "i[" << i << "] " << std::endl;
-				for (int j = 0; j<p_words[i].size();j++) {
-					trs << "-" << p_words[i][j] << std::endl;
-				}
-			}
-			trs << "===::MEANINGS::===" << std::endl;
-			for (int i=0; i<p_meanings.size();i++) {
-				trs << "i[" << i << "]" << std::endl;
-				for (int j=0; j<p_meanings[i].size();j++) {
-					trs << "-" << p_meanings[i][j] << std::endl;
-				}
-			}
-
-			trs.close();
-			// ==================== TRANSLATE LOG
-
-
+			p_complex_meanings.resize(result.complexVerbResultArr.size());
 			for (int i = 0; i < result.complexVerbResultArr.size(); i++)
 			{
 				verboseResult += SE::wstring_to_string(result.complexVerbResultArr[i].verbose) + "\n";
+				
+				p_complex_meanings[i] = SE::wstring_to_string(result.complexVerbResultArr[i].verbose);
 
 				for (auto& lesson : result.complexVerbResultArr[i].lessons)
 				{
 					lessonSet.insert(lesson);
 				}
 			}
+
+			/*// ==================== TRANSLATE LOG 
+			std::ofstream trs;
+			trs.open("trans_stream.txt", std::ios::app);
+			trs << "===::WORDS::===" << std::endl;
+			for (int i = 0; i<p_words.size(); i++) {
+				trs << "i[" << i << "] " << std::endl;
+				for (int j = 0; j<p_words[i].size(); j++) {
+					trs << "-" << p_words[i][j] << std::endl;
+				}
+			}
+			trs << "===::MEANINGS::===" << std::endl;
+			for (int i = 0; i<p_meanings.size(); i++) {
+				trs << "i[" << i << "]" << std::endl;
+				for (int j = 0; j<p_meanings[i].size(); j++) {
+					trs << "-" << p_meanings[i][j] << std::endl;
+				}
+			}
+
+			trs.close();
+			// ==================== TRANSLATE LOG */
+
 
 		}
 		else
@@ -287,7 +293,8 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 
 	SE::WriteToLog("Verbose result size : " + boost::lexical_cast<std::string>(verboseResult.size()));
 
-
+//#define OLD_VER_PROC
+#ifdef OLD_VER_PROC
 	//p.put("OnRequestWordTranslation", verboseResult); // For andoid app version 5 or lower
 
 	p.put("OnRequestWordTranslation.Verbose", verboseResult);
@@ -301,6 +308,142 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 	p.add_child("OnRequestWordTranslation.LessonList", lesson_tree);
 
 	return p;
+#else
+	boost::property_tree::ptree result_data; // priority	 #1
+	boost::property_tree::ptree data_element; //			 #2
+	boost::property_tree::ptree compound_array; //			 #reserver#
+	boost::property_tree::ptree compound_data; //			 #reserved#
+	// ====================================
+	boost::property_tree::ptree result_element; //			 #3
+	boost::property_tree::ptree element_part; //			 #4
+	// ====================================
+	boost::property_tree::ptree array_data; //				 #5
+	boost::property_tree::ptree array_element; //			 #6
+
+	for (int i = 0; i < p_words.size(); i++)
+	{
+		// :::::::::::::::::::::::::::::::::::::::::::::
+		for (int j = 0; j < p_words[i].size(); j++) {
+			array_element.put("", p_words[i][j]);
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		element_part.add_child("Words", array_data);
+		array_data.clear();
+
+		for (int j = 0; j < p_meanings[i].size(); j++) {
+			array_element.put("", p_meanings[i][j]);
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		element_part.add_child("Meanings", array_data);
+		array_data.clear();
+		// :::::::::::::::::::::::::::::::::::::::::::::
+		result_element.push_back(std::make_pair("", element_part));
+	}
+	data_element.add_child("ResultTable", result_element);
+
+	// ======= clear =======
+	array_data.clear();
+	array_element.clear();
+	element_part.clear();
+	result_element.clear();
+	// ======= clear =======
+
+	/*..complex verb section..*///////////////////////////////////
+	for (int i = 0; i < result.complexVerbResultArr.size(); i++) {
+		// ================== main word
+		// :::::::::::::::::: dictStruct
+		element_part.put("base", SE::wstring_to_string(result.complexVerbResultArr[i].mainWordStruct.dictStruct.base));
+		for (int j = 0; j < result.complexVerbResultArr[i].mainWordStruct.dictStruct.words.size(); j++) {
+			array_element.put("", SE::wstring_to_string(result.complexVerbResultArr[i].mainWordStruct.dictStruct.words[j]));
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		element_part.add_child("words", array_data);
+		result_element.add_child("dictStruct", element_part);
+		array_data.clear();
+		element_part.clear();
+		// :::::::::::::::::: dictStruct
+		result_element.put("verbose", SE::wstring_to_string(result.complexVerbResultArr[i].mainWordStruct.verbose));
+		for (int j = 0; j < result.complexVerbResultArr[i].mainWordStruct.lessons.size(); j++) {
+			array_element.put("", SE::wstring_to_string(result.complexVerbResultArr[i].mainWordStruct.lessons[j]));
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		result_element.add_child("lessons", array_data);
+		array_data.clear();
+
+		for (int j = 0; j < result.complexVerbResultArr[i].mainWordStruct.modificators.size();j++) {
+			array_element.put("", SE::wstring_to_string(result.complexVerbResultArr[i].mainWordStruct.modificators[j]));
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		result_element.add_child("modificators", array_data);
+		compound_data.add_child("mainWordStruct", result_element);
+		result_element.clear();
+		array_data.clear();
+		// ================== main word
+		// ----------------------------
+		// ================== second word
+		element_part.put("base", SE::wstring_to_string(result.complexVerbResultArr[i].secondaryWordStruct.dictStruct.base));
+		for (int j = 0; j < result.complexVerbResultArr[i].secondaryWordStruct.dictStruct.words.size(); j++) {
+			array_element.put("", SE::wstring_to_string(result.complexVerbResultArr[i].secondaryWordStruct.dictStruct.words[j]));
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		element_part.add_child("words", array_data);
+		result_element.add_child("dictStruct", element_part);
+		array_data.clear();
+		element_part.clear();
+		// :::::::::::::::::: dictStruct
+		result_element.put("verbose", SE::wstring_to_string(result.complexVerbResultArr[i].secondaryWordStruct.verbose));
+		for (int j = 0; j < result.complexVerbResultArr[i].secondaryWordStruct.lessons.size(); j++) {
+			array_element.put("", SE::wstring_to_string(result.complexVerbResultArr[i].secondaryWordStruct.lessons[j]));
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		result_element.add_child("lessons", array_data);
+		array_data.clear();
+
+		for (int j = 0; j < result.complexVerbResultArr[i].secondaryWordStruct.modificators.size(); j++) {
+			array_element.put("", SE::wstring_to_string(result.complexVerbResultArr[i].secondaryWordStruct.modificators[j]));
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		result_element.add_child("modificators", array_data);
+		compound_data.add_child("secondaryWordStruct", result_element);
+		result_element.clear();
+		array_data.clear();
+		// ================== second word
+		compound_array.push_back(std::make_pair("", compound_data));
+		compound_data.clear();
+	}
+	data_element.add_child("ComplexVerbResultArr", compound_array);
+	compound_array.clear();
+	/*..complex verb section..*///////////////////////////////////
+
+	// ======= clear =======
+	array_data.clear();
+	array_element.clear();
+	element_part.clear();
+	result_element.clear();
+	// ======= clear =======
+
+	for (const std::wstring& lesson : lessonSet)
+	{
+		array_element.put("", SE::wstring_to_string(lesson));
+		array_data.push_back(std::make_pair("", array_element));
+		array_element.clear();
+	}
+	data_element.add_child("LessonList", array_data);
+
+	/*..last data process..*/
+	result_data.add_child("OnRequestWordTranslation", data_element);
+
+	return result_data;
+	
+#endif
 }
 
 boost::property_tree::ptree request_handler::http_receive_RequestCard(boost::property_tree::ptree propertyTree)
