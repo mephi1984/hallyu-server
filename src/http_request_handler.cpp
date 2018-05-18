@@ -84,27 +84,7 @@ void request_handler::handle_request(const request& req, reply& rep){
 
 }
 
-void request_handler::reply_store_ErrorPt(reply& rep, std::string err_s) {
 
-	// :::::::::::::::::::::::
-	boost::property_tree::ptree content;
-	content.put("result.error", err_s);
-
-	std::stringstream o_stream;
-
-	boost::property_tree::write_json(o_stream, content);
-
-	std::string data = o_stream.str();
-
-	// :::::::::::::::::::::::
-	rep.reply_status = "HTTP/1.0 400 Bad Request";
-	rep.reply_content = data;
-	rep.headers.resize(2);
-	rep.headers[0].name = "Content-Length";
-	rep.headers[0].value = std::to_string(rep.reply_content.size());
-	rep.headers[1].name = "Content-Type";
-	rep.headers[1].value = "application/json";
-}
 
 bool request_handler::url_decode(const std::string& in, std::string& out){
 	out.clear();
@@ -168,6 +148,10 @@ boost::property_tree::ptree request_handler::http_receive_RequestWordTranslation
 	catch (std::exception e)
 	{
 		SE::WriteToLog("Exception in connection::http_recieve_RequestWordTranslation");
+		// Temporary exception catch
+		boost::property_tree::ptree exc;
+		return exc;
+
 	}
 }
 
@@ -320,6 +304,11 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 	boost::property_tree::ptree array_data; //				 #5
 	boost::property_tree::ptree array_element; //			 #6
 
+	if (p_words.size() == 0) {
+		boost::property_tree::ptree exc;
+		return exc;
+	}
+
 	for (int i = 0; i < p_words.size(); i++)
 	{
 		// :::::::::::::::::::::::::::::::::::::::::::::
@@ -416,6 +405,18 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 		result_element.clear();
 		array_data.clear();
 		// ================== second word
+		// ------------------------------
+		// ================== other data
+		compound_data.put("verbose", SE::wstring_to_string(result.complexVerbResultArr[i].verbose));
+		for (int j = 0; j < result.complexVerbResultArr[i].lessons.size(); j++) {
+			array_element.put("", SE::wstring_to_string(result.complexVerbResultArr[i].lessons[j]));
+			array_data.push_back(std::make_pair("", array_element));
+			array_element.clear();
+		}
+		compound_data.add_child("lessons", array_data);
+		array_data.clear();
+		compound_data.put("complexVerbType", result.complexVerbResultArr[i].complexVerbType);
+		// ================== other data
 		compound_array.push_back(std::make_pair("", compound_data));
 		compound_data.clear();
 	}
@@ -439,6 +440,7 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 	data_element.add_child("LessonList", array_data);
 
 	/*..last data process..*/
+	result_data.put("relsult", true);
 	result_data.add_child("OnRequestWordTranslation", data_element);
 
 	return result_data;
@@ -535,8 +537,9 @@ void request_handler::reply_store_PropertyTree(reply& rep, boost::property_tree:
 
 		std::string data = o_stream.str();
 		int dataLength = data.size();
-		if (dataLength == 0) {
-			reply_store_ErrorPt(rep, "(something goes wrong)Empty reply!");
+
+		if (dataLength <= 8) {
+			reply_store_ErrorPt(rep, "wrong request(try another word)");
 		} else
 			rep.reply_content = data;
 			rep.reply_status = "HTTP/1.1 200 OK";
@@ -550,6 +553,29 @@ void request_handler::reply_store_PropertyTree(reply& rep, boost::property_tree:
 	{
 		SE::WriteToLog("Error in SendPropertyTree");
 	}
+}
+
+void request_handler::reply_store_ErrorPt(reply& rep, std::string err_s) {
+
+	// :::::::::::::::::::::::
+	boost::property_tree::ptree content;
+	content.put("result", false);
+	content.put("error", err_s);
+
+	std::stringstream o_stream;
+
+	boost::property_tree::write_json(o_stream, content);
+
+	std::string data = o_stream.str();
+
+	// :::::::::::::::::::::::
+	rep.reply_status = "HTTP/1.1 200 OK";
+	rep.reply_content = data;
+	rep.headers.resize(2);
+	rep.headers[0].name = "Content-Length";
+	rep.headers[0].value = std::to_string(rep.reply_content.size());
+	rep.headers[1].name = "Content-Type";
+	rep.headers[1].value = "application/json";
 }
 
 }
