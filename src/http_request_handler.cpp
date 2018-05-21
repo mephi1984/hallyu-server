@@ -440,7 +440,7 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 	data_element.add_child("LessonList", array_data);
 
 	/*..last data process..*/
-	result_data.put("relsult", true);
+	result_data.put("result", true);
 	result_data.add_child("OnRequestWordTranslation", data_element);
 
 	return result_data;
