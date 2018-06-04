@@ -6,6 +6,7 @@
 #include <string>
 #include <set>
 
+#include <boost/property_tree/ptree.hpp>
 
 #include "luabind/luabind.hpp"
 #include "HangulDictionary.h"
@@ -20,6 +21,8 @@ namespace LH
 	{
 		std::wstring base;
 		std::vector<std::wstring> words;
+
+		boost::property_tree::ptree Serialize();
 	};
 
 	struct WordStruct
@@ -28,6 +31,8 @@ namespace LH
 		std::wstring verbose;
 		std::vector<std::wstring> lessons;
 		std::vector<std::wstring> modificators;
+
+		boost::property_tree::ptree Serialize();
 	};
 
 	struct ComplexVerbTranslateResult
@@ -38,6 +43,7 @@ namespace LH
 		std::vector<std::wstring> lessons;
 		std::string complexVerbType;
 
+		boost::property_tree::ptree Serialize();
 	};
 
 
@@ -50,6 +56,8 @@ namespace LH
 		std::vector<std::vector<WordStruct>> resultTable;
 
 		std::vector<ComplexVerbTranslateResult> complexVerbResultArr;
+
+		boost::property_tree::ptree Serialize();
 	};
 
 	struct LuaHelper

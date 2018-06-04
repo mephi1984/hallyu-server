@@ -22,7 +22,7 @@
     <ProjectGuid>{086DBA7B-9D25-47EF-8371-0E4CE295FD3F}</ProjectGuid>
     <RootNamespace>k_observer_srv</RootNamespace>
     <ProjectName>hallyu_server</ProjectName>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -89,7 +89,7 @@
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -140,15 +140,15 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>C:\Work\boost_1_67_0;C:\Work\openssl-master;C:\Work\openssl-master\output64\include;C:\Work\AndroidStudioProjects\lua-5.3.1\luabind;C:\Work\AndroidStudioProjects\lua-5.3.1\src;C:/Workplace/boost_1_57_0;../../jni/network</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_WIN32_WINNT=0x0501;MYSQLCLIENT_STATIC_BINDING;CPPCONN_LIB_BUILD;_SCL_SECURE_NO_WARNINGS;OPENSSL_NO_SSL2;OPENSSL_USE_DEPRECATED;ZIP_STATIC</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\boost_1_67_0;..\..\lua-5.3.1\luabind;..\..\lua-5.3.1\src;../jni/network</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32_WINNT=0x0501;_SCL_SECURE_NO_WARNINGS;ZIP_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Workplace\libs\openssl-master\output\lib;C:/Workplace/boost_1_57_0/stage/lib;C:\Workplace\GPS\mysql-connector-c-6.1.5-src\out-win\libmysql\Release;C:/Workplace/GPS/mysql-connector-c++-1.1.4/out-win/driver/Release;C:\Workplace\libs\lua-5.3.1\Lua-windows\Release;C:\Workplace\libs\zlib-1.2.8\Release;C:\Workplace\libs\wbenny-ziplib\Bin\x86\Release</AdditionalLibraryDirectories>
-      <AdditionalDependencies>lzma.lib;bzip2.lib;ZipLib.lib;ssleay32.lib;libeay32.lib;Lua-windows.lib;mysqlclient.lib;mysqlcppconn-static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\boost_1_67_0/stage/lib;..\x64\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>luabind.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

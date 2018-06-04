@@ -155,6 +155,8 @@ boost::property_tree::ptree request_handler::http_receive_RequestWordTranslation
 	}
 }
 
+
+/*
 boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(std::string wordToTranslate)
 {
 	boost::property_tree::ptree p;
@@ -241,27 +243,7 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 				}
 			}
 
-			/*// ==================== TRANSLATE LOG 
-			std::ofstream trs;
-			trs.open("trans_stream.txt", std::ios::app);
-			trs << "===::WORDS::===" << std::endl;
-			for (int i = 0; i<p_words.size(); i++) {
-				trs << "i[" << i << "] " << std::endl;
-				for (int j = 0; j<p_words[i].size(); j++) {
-					trs << "-" << p_words[i][j] << std::endl;
-				}
-			}
-			trs << "===::MEANINGS::===" << std::endl;
-			for (int i = 0; i<p_meanings.size(); i++) {
-				trs << "i[" << i << "]" << std::endl;
-				for (int j = 0; j<p_meanings[i].size(); j++) {
-					trs << "-" << p_meanings[i][j] << std::endl;
-				}
-			}
-
-			trs.close();
-			// ==================== TRANSLATE LOG */
-
+	
 
 		}
 		else
@@ -339,7 +321,7 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 	result_element.clear();
 	// ======= clear =======
 
-	/*..complex verb section..*///////////////////////////////////
+	
 	for (int i = 0; i < result.complexVerbResultArr.size(); i++) {
 		// ================== main word
 		// :::::::::::::::::: dictStruct
@@ -422,7 +404,6 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 	}
 	data_element.add_child("ComplexVerbResultArr", compound_array);
 	compound_array.clear();
-	/*..complex verb section..*///////////////////////////////////
 
 	// ======= clear =======
 	array_data.clear();
@@ -439,14 +420,62 @@ boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(st
 	}
 	data_element.add_child("LessonList", array_data);
 
-	/*..last data process..*/
+
 	result_data.put("result", true);
 	result_data.add_child("OnRequestWordTranslation", data_element);
 
 	return result_data;
 	
 #endif
+}*/
+
+
+boost::property_tree::ptree request_handler::http_send_RequestWordTranslation(std::string wordToTranslate)
+{
+	boost::property_tree::ptree p;
+
+	LH::HangulResult result;
+
+	std::wstring wWordToTranslate = SE::string_to_wstring(wordToTranslate);
+
+	boost::trim(wWordToTranslate);
+
+	std::string verboseResult;
+
+	std::set<std::wstring> lessonSet;
+
+	if (wWordToTranslate.size() > 0)
+	{
+
+		//std::vector<std::wstring> wWordToTranslateArr;
+
+		//boost::split(wWordToTranslateArr, wWordToTranslate, boost::is_any_of(L" "), boost::token_compress_on);
+
+		bool hangulWord = true;
+
+		for (wchar_t& wc : wWordToTranslate)
+		{
+			if (!((wc >= 44032 && wc <= 55203) || (wc == L' ')))
+			{
+				hangulWord = false;
+			}
+		}
+
+		if (hangulWord)
+		{
+			result = luaHelper.ProcessString(wWordToTranslate);
+
+
+			p = result.Serialize();
+
+		}
+	}
+
+	return p;
+
+
 }
+
 
 boost::property_tree::ptree request_handler::http_receive_RequestCard(boost::property_tree::ptree propertyTree)
 {

@@ -11,6 +11,134 @@
 namespace LH
 {
 
+	boost::property_tree::ptree DictStruct::Serialize()
+	{
+
+		boost::property_tree::ptree result;
+
+		result.put("base", SE::wstring_to_string(base));
+
+		boost::property_tree::ptree wordsArray;
+
+		for (size_t i = 0; i < words.size(); i++) {
+
+			boost::property_tree::ptree node;
+			node.put("", SE::wstring_to_string(words[i]));
+			wordsArray.push_back(std::make_pair("", node));
+		}
+
+		result.add_child("words", wordsArray);
+
+
+		return result;
+	}
+
+	boost::property_tree::ptree WordStruct::Serialize()
+	{
+	
+		boost::property_tree::ptree result;
+
+		result.add_child("dictStruct", dictStruct.Serialize());
+
+		result.put("verbose", SE::wstring_to_string(verbose));
+
+
+		boost::property_tree::ptree lessonsArray;
+
+		for (size_t i = 0; i < lessons.size(); i++) {
+
+			boost::property_tree::ptree node;
+			node.put("", SE::wstring_to_string(lessons[i]));
+			lessonsArray.push_back(std::make_pair("", node));
+		}
+
+		result.add_child("lessons", lessonsArray);
+
+
+
+		boost::property_tree::ptree modificatorsArray;
+
+		for (size_t i = 0; i < modificators.size(); i++) {
+
+			boost::property_tree::ptree node;
+			node.put("", SE::wstring_to_string(modificators[i]));
+			lessonsArray.push_back(std::make_pair("", node));
+		}
+
+		result.add_child("modificators", modificatorsArray);
+
+		return result;
+	}
+
+	boost::property_tree::ptree ComplexVerbTranslateResult::Serialize()
+	{
+
+		boost::property_tree::ptree result;
+
+		result.add_child("mainWordStruct", mainWordStruct.Serialize());
+		result.add_child("secondaryWordStruct", secondaryWordStruct.Serialize());
+
+		result.put("verbose", SE::wstring_to_string(verbose));
+
+
+
+		boost::property_tree::ptree lessonsArray;
+
+		for (size_t i = 0; i < lessons.size(); i++) {
+
+			boost::property_tree::ptree node;
+			node.put("", SE::wstring_to_string(lessons[i]));
+			lessonsArray.push_back(std::make_pair("", node));
+		}
+
+		result.add_child("lessons", lessonsArray);
+
+		result.put("complexVerbType", complexVerbType);
+
+		return result;
+	}
+
+	boost::property_tree::ptree HangulResult::Serialize()
+	{
+
+		boost::property_tree::ptree result;
+
+
+		boost::property_tree::ptree resultTableArray;
+
+		for (size_t i = 0; i < resultTable.size(); i++) {
+
+			boost::property_tree::ptree node;
+
+			boost::property_tree::ptree resultListArray;
+
+			for (size_t j = 0; j < resultTable[i].size(); j++) {
+
+				resultListArray.push_back(std::make_pair("", resultTable[i][j].Serialize()));
+			}
+
+			node.add_child("words", resultListArray);
+
+			resultTableArray.push_back(std::make_pair("", node));
+		}
+
+		result.add_child("resultTable", resultTableArray);
+
+
+
+
+		boost::property_tree::ptree complexVerbResultArray;
+
+		for (size_t i = 0; i < complexVerbResultArr.size(); i++) {
+
+			complexVerbResultArray.push_back(std::make_pair("", complexVerbResultArr[i].Serialize()));
+		}
+
+		result.add_child("complexVerbResultArr", complexVerbResultArray);
+
+		return result;
+	}
+
 	void OutputPrint(std::string s)
 	{
 		std::wstring wordTypew = SE::string_to_wstring(s);

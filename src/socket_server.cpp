@@ -14,7 +14,7 @@
 #include "inner_base64.h"
 
 //For SHA1
-#include <openssl/sha.h>
+//#include <openssl/sha.h>
 
 
 const int CONST_DICTIONARY_CURRENT_VERSION = 1;
@@ -22,6 +22,7 @@ const int CONST_DICTIONARY_CURRENT_VERSION = 1;
 
 std::string CalcVkCheckCode(const std::string& vkLogin)
 {
+	/*
 	const std::string prefix = "db5543e6bf25f273f543e164955d0511cef6787b";
 
 	std::string str = prefix + vkLogin;
@@ -35,7 +36,9 @@ std::string CalcVkCheckCode(const std::string& vkLogin)
 
 	std::string result = B::base64_encode(&out[0], out.size());
 	
-	return result;
+	return result;*/
+
+	return "";
 
 }
 
@@ -43,6 +46,7 @@ std::string CalcVkCheckCode(const std::string& vkLogin)
 std::string CalcPurchaseCheckCode(int purchaseId, const std::string& username)
 {
 
+	/*
 	std::string str = (boost::lexical_cast<std::string>(purchaseId)+"yeogi isseo deo deo butak halkke deo deo jalhae julkke deo deo ajigeun mot bonaenikka" + username);
 
 	std::vector<unsigned char> out;
@@ -55,7 +59,8 @@ std::string CalcPurchaseCheckCode(int purchaseId, const std::string& username)
 	std::string result = B::base64_encode(&out[0], out.size());
 
 	return result;
-
+	*/
+	return "";
 }
 
 
