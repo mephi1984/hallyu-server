@@ -150,6 +150,8 @@ boost::property_tree::ptree request_handler::http_receive_RequestWordTranslation
 		SE::WriteToLog("Exception in connection::http_recieve_RequestWordTranslation");
 		// Temporary exception catch
 		boost::property_tree::ptree exc;
+		exc.put("result", false);
+		exc.put("error", "Exception in connection::http_recieve_RequestWordTranslation");
 		return exc;
 
 	}
@@ -567,9 +569,6 @@ void request_handler::reply_store_PropertyTree(reply& rep, boost::property_tree:
 		std::string data = o_stream.str();
 		int dataLength = data.size();
 
-		if (dataLength <= 8) {
-			reply_store_ErrorPt(rep, "wrong request(try another word)");
-		} else
 			rep.reply_content = data;
 			rep.reply_status = "HTTP/1.1 200 OK";
 			rep.headers.resize(2);

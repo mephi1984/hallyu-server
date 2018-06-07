@@ -31,6 +31,7 @@ namespace LH
 		std::wstring verbose;
 		std::vector<std::wstring> lessons;
 		std::vector<std::wstring> modificators;
+		std::string wordType;
 
 		boost::property_tree::ptree Serialize();
 	};

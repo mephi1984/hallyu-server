@@ -42,6 +42,11 @@ namespace LH
 
 		result.put("verbose", SE::wstring_to_string(verbose));
 
+		result.put("wordType", wordType);
+
+
+		
+
 
 		boost::property_tree::ptree lessonsArray;
 
@@ -353,7 +358,12 @@ namespace LH
 
 		WordStruct r;
 
-		r.verbose = SE::string_to_wstring(object_cast<std::string>(table["verbose"]));
+		luabind::object verbose = table["verbose"];
+
+		if (type(verbose) == LUA_TSTRING)
+		{
+			r.verbose = SE::string_to_wstring(object_cast<std::string>(verbose));
+		}
 
 		luabind::object lessons = table["lessons"];
 
@@ -363,6 +373,14 @@ namespace LH
 			{
 				r.lessons.push_back(SE::string_to_wstring(object_cast<std::string>((*j))));
 			}
+		}
+
+		luabind::object wordType = table["wordType"];
+
+		if (type(wordType) == LUA_TSTRING)
+		{
+			r.wordType = object_cast<std::string>((wordType));
+
 		}
 
 

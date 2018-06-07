@@ -2,6 +2,8 @@
 #include <fstream>
 #include "boost/algorithm/string.hpp"
 
+#include "boost/regex.hpp"
+
 
 //const std::vector<std::wstring> CONST_CHINESE_NUMBERS_ZERO{L"공", L"영", L"제로"};
 
@@ -308,12 +310,237 @@ std::wstring UintToAdjectiveKoreanNumberString(unsigned long long i)
 
 
 
+bool RecognizeChineseNumberDigit(std::wstring str, unsigned long long& result)
+{
+
+	if (str == L"일")
+	{
+
+		result = 1;
+
+		return true;
+	}
+
+	if (str == L"이")
+	{
+
+		result = 2;
+
+		return true;
+	}
+
+	if (str == L"삼")
+	{
+
+		result = 3;
+
+		return true;
+	}
+
+	if (str == L"사")
+	{
+
+		result = 4;
+
+		return true;
+	}
+
+	if (str == L"오")
+	{
+
+		result = 5;
+
+		return true;
+	}
+
+	if (str == L"육")
+	{
+
+		result = 6;
+
+		return true;
+	}
+
+	if (str == L"칠")
+	{
+
+		result = 7;
+
+		return true;
+	}
+
+	if (str == L"팔")
+	{
+
+		result = 8;
+
+		return true;
+	}
+
+	if (str == L"구")
+	{
+
+		result = 9;
+
+		return true;
+	}
+
+
+	return false;
+}
+
+bool RecognizeChineseNumberMultiplierAndDigit(std::wstring str, unsigned long long& result)
+{
+	if (str.size() == 0)
+	{
+		return false;
+	}
+
+	//([STR]?억)?([STR]?만)?([STR]?천)?([STR]?백)?([STR]?십)?([STR]?)
+
+	if (str[str.size() - 1] == L'십')
+	{
+		str.erase(str.end()-1);
+		result = 10;
+	}
+	else if (str[str.size() - 1] == L'백')
+	{
+		str.erase(str.end() - 1);
+		result = 100;
+	}
+	else if (str[str.size() - 1] == L'천')
+	{
+		str.erase(str.end() - 1);
+		result = 1000;
+	}
+	else if (str[str.size() - 1] == L'만')
+	{
+		str.erase(str.end() - 1);
+		result = 10000;
+	}
+	else if (str[str.size() - 1] == L'억')
+	{
+		str.erase(str.end() - 1);
+		result = (long long)10000 * (long long)10000;
+	}
+	else if (str[str.size() - 1] == L'조')
+	{
+		str.erase(str.end() - 1);
+		result = (long long)10000 * (long long)10000 * (long long)10000;
+	}
+	else
+	{
+		return false;
+	}
+
+
+	if (str.size() == 0)
+	{
+		return true;
+	}
+
+
+
+	unsigned long long leftover;
+
+	bool leftoverResult = RecognizeChineseNumberDigit(str, leftover);
+
+	if (leftoverResult)
+	{
+		result *= leftover;
+
+		return true;
+	}
+
+	return false;
+
+
+
+
+}
+
+
+
 bool RecognizeChineseNumber(std::wstring str, unsigned long long& result)
 {
+
+	static std::wstring CONST_CHINESE_ONE_TO_NINE = L"일이삼사오육칠팔구";
+
+	static std::wstring regexpStr = boost::replace_all_copy(std::wstring(L"([STR]?조)?([STR]?억)?([STR]?만)?([STR]?천)?([STR]?백)?([STR]?십)?([STR])?"), std::wstring(L"STR"), CONST_CHINESE_ONE_TO_NINE);
+
+	static boost::wregex xRegEx(regexpStr);
+
+
+	if (str.size() == 0)
+	{
+		return false;
+	}
+	
 	result = 0;
+
 	try
 	{
 
+		bool foundSomething = false;
+
+
+		/*
+		boost::wsmatch what;
+
+		if (boost::regex_match(str, what, xRegEx, boost::match_extra))
+		{
+
+			
+			for (size_t i = 0; i < what.size(); ++i)
+			{
+				std::cout << "      $" << i << "\n";
+				//std::cout << "      $" << i << " = \"" << SE::wstring_to_string(what[i]) << "\"\n";
+			}
+
+
+
+		}
+
+		return false;*/
+
+		const int subgroups[] = { 1,2,3,4,5,6, 7 };
+
+		boost::wsregex_token_iterator xItFull(str.begin(), str.end(), xRegEx, subgroups);
+		boost::wsregex_token_iterator xInvalidIt;
+
+		unsigned long long intermediateResult = 0;
+
+
+		while (xItFull != xInvalidIt)
+		{
+			std::wstring part = *xItFull;
+
+			xItFull++;
+
+			if (part.size() == 0)
+			{
+				continue;
+			}
+
+
+			if (RecognizeChineseNumberMultiplierAndDigit(part, intermediateResult) || RecognizeChineseNumberDigit(part, intermediateResult))
+			{
+				result += intermediateResult;
+				foundSomething = true;
+			}
+			else
+			{
+				return false;
+			}
+
+			
+		}
+
+		
+		return foundSomething;
+
+
+		/*
 		std::vector<std::wstring> availableChineseNumbersAfter10 = CONST_CHINESE_NUMBERS_AFTER_10;
 		std::vector<unsigned long long> availableChineseMultiplicator = CONST_CHINESE_NUMBER_MULTIPLICATOR;
 
@@ -322,6 +549,8 @@ bool RecognizeChineseNumber(std::wstring str, unsigned long long& result)
 		{
 			return false;
 		}
+
+		bool numberFound = false;
 
 		while (str.size() > 0)
 		{
@@ -337,6 +566,7 @@ bool RecognizeChineseNumber(std::wstring str, unsigned long long& result)
 
 			if (itr != CONST_CHINESE_NUMBERS_1_TO_9.end())
 			{
+				numberFound = true;
 				number = itr - CONST_CHINESE_NUMBERS_1_TO_9.begin();
 			}
 
@@ -348,15 +578,6 @@ bool RecognizeChineseNumber(std::wstring str, unsigned long long& result)
 
 				auto itr_ten = std::find(availableChineseNumbersAfter10.begin(), availableChineseNumbersAfter10.end(), std::wstring() + ch_ten);
 
-				/*
-				size_t number_ten = 1;
-
-				if (itr_ten != availableChineseNumbersAfter10.end())
-				{
-					number_ten = itr_ten - availableChineseNumbersAfter10.begin();
-				}
-
-				number *= availableChineseMultiplicator[number_ten];*/
 
 				if (itr_ten == availableChineseNumbersAfter10.end())
 				{
@@ -374,8 +595,7 @@ bool RecognizeChineseNumber(std::wstring str, unsigned long long& result)
 			result += number;
 
 		}
-
-		return true;
+*/
 	}
 	catch (std::exception e)
 	{

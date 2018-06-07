@@ -672,13 +672,13 @@ VerbMap[1]["VC_HONORIFIC_IRREGULAR_L"].lesson = ""
 
 VerbMap[1]["VC_HONORIFIC_QUESTION"] = {}
 VerbMap[1]["VC_HONORIFIC_QUESTION"].testFunc = TryExtractVerbModificator_HonorificQuestion
-VerbMap[1]["VC_HONORIFIC_QUESTION"].verbose = "VC_HONORIFIC_QUESTION"
-VerbMap[1]["VC_HONORIFIC_QUESTION"].lesson = "В почтительной форме, в виде вопроса"
+VerbMap[1]["VC_HONORIFIC_QUESTION"].verbose = "В почтительной форме, в виде вопроса"
+VerbMap[1]["VC_HONORIFIC_QUESTION"].lesson = ""
 
 VerbMap[1]["VC_HONORIFIC_QUESTION_IRREGULAR_L"] = {}
 VerbMap[1]["VC_HONORIFIC_QUESTION_IRREGULAR_L"].testFunc = TryExtractVerbModificator_HonorificQuestion_irregularL
-VerbMap[1]["VC_HONORIFIC_QUESTION_IRREGULAR_L"].verbose = "VC_HONORIFIC_QUESTION_IRREGULAR_L"
-VerbMap[1]["VC_HONORIFIC_QUESTION_IRREGULAR_L"].lesson = "В почтительной форме, в виде вопроса, после неправильного глагола ㄹ-типа"
+VerbMap[1]["VC_HONORIFIC_QUESTION_IRREGULAR_L"].verbose = "В почтительной форме, в виде вопроса, после неправильного глагола ㄹ-типа"
+VerbMap[1]["VC_HONORIFIC_QUESTION_IRREGULAR_L"].lesson = ""
 
 VerbMap[1]["VC_IF"] = {}
 VerbMap[1]["VC_IF"].testFunc = TryExtractVerbModificator_If
