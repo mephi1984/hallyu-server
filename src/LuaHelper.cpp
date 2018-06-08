@@ -122,7 +122,7 @@ namespace LH
 				resultListArray.push_back(std::make_pair("", resultTable[i][j].Serialize()));
 			}
 
-			node.add_child("words", resultListArray);
+			node.add_child("resultRecord", resultListArray);
 
 			resultTableArray.push_back(std::make_pair("", node));
 		}

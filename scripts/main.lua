@@ -1154,12 +1154,12 @@ function RecognizeVerb(verb)
 		
 			for k,v in pairs(VerbMap[i]) do
 			
-				--OutputPrint("Test new rule " .. k .. " for branch [" .. j .. "] with verb " .. oldBranches[j].verb:str() .. " begin" )
+				--OutputPrint("Test new rule " .. k .. " for branch [" .. j .. "] with verb begin" )
 			
 				local modVerb = v.testFunc(oldBranches[j].verb:clone())
 				
 				if (modVerb:isValid()) then
-					--OutputPrint("Rule is applied! Modverb : " .. modVerb:str())
+					--OutputPrint("Rule is applied! Modverb")
 					--modVerb:PrintOut()
 					
 					local c = #branches + 1
@@ -1186,7 +1186,7 @@ function RecognizeVerb(verb)
 					
 				end
 				
-				--OutputPrint("Test new rule " .. k .. " for branch [" .. j .. "] with verb " .. oldBranches[j].verb:str() .. " end" )
+				--OutputPrint("Test new rule " .. k .. " for branch [" .. j .. "] with verb  end" )
 			
 			
 			end
