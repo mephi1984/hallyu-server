@@ -8,8 +8,31 @@
 
 #include "NumbersProcessor.h"
 
+
+
+#include <sstream>
+#include <iomanip>
+
 namespace LH
 {
+
+	boost::property_tree::ptree lessonIdToLessonStruct(int lessonId)
+	{
+		boost::property_tree::ptree lessonNode;
+
+		lessonNode.put("id", lessonId);
+
+		std::stringstream ss;
+		ss << std::setw(3) << std::setfill('0') << lessonId;
+		std::string s = ss.str();
+		lessonNode.put("path", "http://api.hallyu.ru/lessons/korean" + s + ".html");
+
+		lessonNode.put("title", "Lesson test title " + s);
+
+		return lessonNode;
+	}
+
+
 
 	boost::property_tree::ptree DictStruct::Serialize()
 	{
@@ -47,14 +70,14 @@ namespace LH
 
 		
 
+		
 
 		boost::property_tree::ptree lessonsArray;
 
 		for (size_t i = 0; i < lessons.size(); i++) {
 
-			boost::property_tree::ptree node;
-			node.put("", SE::wstring_to_string(lessons[i]));
-			lessonsArray.push_back(std::make_pair("", node));
+
+			lessonsArray.push_back(std::make_pair("", lessonIdToLessonStruct(lessons[i])));
 		}
 
 		result.add_child("lessons", lessonsArray);
@@ -67,7 +90,7 @@ namespace LH
 
 			boost::property_tree::ptree node;
 			node.put("", SE::wstring_to_string(modificators[i]));
-			lessonsArray.push_back(std::make_pair("", node));
+			modificatorsArray.push_back(std::make_pair("", node));
 		}
 
 		result.add_child("modificators", modificatorsArray);
@@ -91,9 +114,8 @@ namespace LH
 
 		for (size_t i = 0; i < lessons.size(); i++) {
 
-			boost::property_tree::ptree node;
-			node.put("", SE::wstring_to_string(lessons[i]));
-			lessonsArray.push_back(std::make_pair("", node));
+
+			lessonsArray.push_back(std::make_pair("", lessonIdToLessonStruct(lessons[i])));
 		}
 
 		result.add_child("lessons", lessonsArray);
@@ -371,7 +393,7 @@ namespace LH
 		{
 			for (luabind::iterator j(lessons), end; j != end; ++j)
 			{
-				r.lessons.push_back(SE::string_to_wstring(object_cast<std::string>((*j))));
+				r.lessons.push_back(object_cast<int>((*j)));
 			}
 		}
 
@@ -433,7 +455,7 @@ namespace LH
 		{
 			for (luabind::iterator j(lessons), end; j != end; ++j)
 			{
-				r.lessons.push_back(SE::string_to_wstring(object_cast<std::string>((*j))));
+				r.lessons.push_back(object_cast<int>((*j)));
 			}
 		}
 

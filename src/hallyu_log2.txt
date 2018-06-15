@@ -3738,3 +3738,94 @@
 2018-Jun-08 12:33:31 http_recieve_RequestWordTranslation word: -22 -80 -128 -21 -91 -76 -20 -77 -92 -20 -106 -76 -20 -102 -108 
 2018-Jun-08 12:33:31 http_recieve_RequestWordTranslation word: 가르쳤어요
 2018-Jun-08 12:33:31 http_recieve_RequestWordTranslation end
+2018-Jun-15 10:22:00 Server started!
+2018-Jun-15 10:22:00 Server start step 1=
+2018-Jun-15 10:22:00 Server start step 2=
+2018-Jun-15 10:22:00 Server start step 2-2=
+2018-Jun-15 10:22:00 Server start step 2-3=
+2018-Jun-15 10:22:00 TImageDownloader::TImageDownloader
+2018-Jun-15 10:22:00 Server start step 2-4=
+2018-Jun-15 10:22:00 Server start step 2-5=
+2018-Jun-15 10:22:00 Server start step 3=
+2018-Jun-15 10:23:11 http_recieve_RequestWordTranslation begin
+2018-Jun-15 10:23:11 http_recieve_RequestWordTranslation word: -21 -84 -76 -20 -105 -121 
+2018-Jun-15 10:23:11 http_recieve_RequestWordTranslation word: 무엇
+2018-Jun-15 10:23:11 http_recieve_RequestWordTranslation end
+2018-Jun-15 10:23:32 http_recieve_RequestWordTranslation begin
+2018-Jun-15 10:23:32 http_recieve_RequestWordTranslation word: -21 -123 -72 -21 -98 -104 -19 -106 -120 -20 -106 -76 -20 -102 -108 
+2018-Jun-15 10:23:32 http_recieve_RequestWordTranslation word: 노래했어요
+2018-Jun-15 10:23:32 http_recieve_RequestWordTranslation end
+2018-Jun-15 10:46:25 Server started!
+2018-Jun-15 10:46:25 Server start step 1=
+2018-Jun-15 10:46:25 Server start step 2=
+2018-Jun-15 10:46:25 Server start step 2-2=
+2018-Jun-15 10:46:25 Server start step 2-3=
+2018-Jun-15 10:46:25 TImageDownloader::TImageDownloader
+2018-Jun-15 10:46:25 Server start step 2-4=
+2018-Jun-15 10:46:25 Server start step 2-5=
+2018-Jun-15 10:46:25 Server start step 3=
+2018-Jun-15 10:46:46 http_recieve_RequestWordTranslation begin
+2018-Jun-15 10:46:46 http_recieve_RequestWordTranslation word: -21 -123 -72 -21 -98 -104 -19 -106 -120 -20 -106 -76 -20 -102 -108 
+2018-Jun-15 10:46:46 http_recieve_RequestWordTranslation word: 노래했어요
+2018-Jun-15 10:46:46 http_recieve_RequestWordTranslation end
+2018-Jun-15 10:48:55 Server started!
+2018-Jun-15 10:48:55 Server start step 1=
+2018-Jun-15 10:48:55 Server start step 2=
+2018-Jun-15 10:48:55 Server start step 2-2=
+2018-Jun-15 10:48:55 Server start step 2-3=
+2018-Jun-15 10:48:55 TImageDownloader::TImageDownloader
+2018-Jun-15 10:48:55 Server start step 2-4=
+2018-Jun-15 10:48:55 Server start step 2-5=
+2018-Jun-15 10:48:55 Server start step 3=
+2018-Jun-15 10:49:32 http_recieve_RequestWordTranslation begin
+2018-Jun-15 10:49:32 http_recieve_RequestWordTranslation word: -21 -123 -72 -21 -98 -104 -19 -106 -120 -20 -106 -76 -20 -102 -108 
+2018-Jun-15 10:49:32 http_recieve_RequestWordTranslation word: 노래했어요
+2018-Jun-15 10:49:32 http_recieve_RequestWordTranslation end
+2018-Jun-15 10:52:10 Server started!
+2018-Jun-15 10:52:10 Server start step 1=
+2018-Jun-15 10:52:10 Server start step 2=
+2018-Jun-15 10:52:10 Server start step 2-2=
+2018-Jun-15 10:52:10 Server start step 2-3=
+2018-Jun-15 10:52:10 TImageDownloader::TImageDownloader
+2018-Jun-15 10:52:10 Server start step 2-4=
+2018-Jun-15 10:52:10 Server start step 2-5=
+2018-Jun-15 10:52:10 Server start step 3=
+2018-Jun-15 10:52:35 http_recieve_RequestWordTranslation begin
+2018-Jun-15 10:52:35 http_recieve_RequestWordTranslation word: -21 -123 -72 -21 -98 -104 -19 -106 -120 -20 -106 -76 -20 -102 -108 
+2018-Jun-15 10:52:35 http_recieve_RequestWordTranslation word: 노래했어요
+2018-Jun-15 10:52:35 http_recieve_RequestWordTranslation end
+2018-Jun-15 10:53:35 Server started!
+2018-Jun-15 10:53:35 Server start step 1=
+2018-Jun-15 10:53:35 Server start step 2=
+2018-Jun-15 10:53:35 Server start step 2-2=
+2018-Jun-15 10:53:35 Server start step 2-3=
+2018-Jun-15 10:53:35 TImageDownloader::TImageDownloader
+2018-Jun-15 10:53:35 Server start step 2-4=
+2018-Jun-15 10:53:35 Server start step 2-5=
+2018-Jun-15 10:53:35 Server start step 3=
+2018-Jun-15 10:54:47 http_recieve_RequestWordTranslation begin
+2018-Jun-15 10:54:47 http_recieve_RequestWordTranslation word: -21 -123 -72 -21 -98 -104 -19 -106 -120 -20 -106 -76 -20 -102 -108 
+2018-Jun-15 10:54:47 http_recieve_RequestWordTranslation word: 노래했어요
+2018-Jun-15 10:54:47 http_recieve_RequestWordTranslation end
+2018-Jun-15 10:55:23 Server started!
+2018-Jun-15 10:55:23 Server start step 1=
+2018-Jun-15 10:55:23 Server start step 2=
+2018-Jun-15 10:55:23 Server start step 2-2=
+2018-Jun-15 10:55:23 Server start step 2-3=
+2018-Jun-15 10:55:23 TImageDownloader::TImageDownloader
+2018-Jun-15 10:55:23 Server start step 2-4=
+2018-Jun-15 10:55:23 Server start step 2-5=
+2018-Jun-15 10:55:23 Server start step 3=
+2018-Jun-15 10:59:26 Server started!
+2018-Jun-15 10:59:26 Server start step 1=
+2018-Jun-15 10:59:26 Server start step 2=
+2018-Jun-15 10:59:26 Server start step 2-2=
+2018-Jun-15 10:59:26 Server start step 2-3=
+2018-Jun-15 10:59:26 TImageDownloader::TImageDownloader
+2018-Jun-15 10:59:26 Server start step 2-4=
+2018-Jun-15 10:59:26 Server start step 2-5=
+2018-Jun-15 10:59:26 Server start step 3=
+2018-Jun-15 10:59:37 http_recieve_RequestWordTranslation begin
+2018-Jun-15 10:59:37 http_recieve_RequestWordTranslation word: -21 -123 -72 -21 -98 -104 -19 -106 -120 -20 -106 -76 -20 -102 -108 
+2018-Jun-15 10:59:37 http_recieve_RequestWordTranslation word: 노래했어요
+2018-Jun-15 10:59:37 http_recieve_RequestWordTranslation end

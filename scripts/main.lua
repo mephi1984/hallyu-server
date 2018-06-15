@@ -96,28 +96,28 @@ NounMap[1] = {}
 NounMap[1]["NA_TOO"] = {}
 NounMap[1]["NA_TOO"].testFunc = TryExtractNounModificator_Too
 NounMap[1]["NA_TOO"].verbose = "С модификатором 'тоже', 'также'"
-NounMap[1]["NA_TOO"].lesson = "lessons/korean032.html"
+NounMap[1]["NA_TOO"].lesson = 12
 
 NounMap[2] = {}
 NounMap[2]["NC_SUBJECT"] = {}
 NounMap[2]["NC_SUBJECT"].testFunc = TryExtractNounModificator_CaseSubject
 NounMap[2]["NC_SUBJECT"].verbose = "В именительном падеже в роли субъекта"
-NounMap[2]["NC_SUBJECT"].lesson = "lessons/korean009.html"
+NounMap[2]["NC_SUBJECT"].lesson = 19
 
 NounMap[2]["NC_TOPIC"] = {}
 NounMap[2]["NC_TOPIC"].testFunc = TryExtractNounModificator_CaseTopic
 NounMap[2]["NC_TOPIC"].verbose = "В именительном падеже в роли темы"
-NounMap[2]["NC_TOPIC"].lesson = "lessons/korean009.html"
+NounMap[2]["NC_TOPIC"].lesson = 19
 
 NounMap[2]["NC_GENITIVE"] = {}
 NounMap[2]["NC_GENITIVE"].testFunc = TryExtractNounModificator_CaseGenitive
 NounMap[2]["NC_GENITIVE"].verbose = "В родительном падеже (кого? чего? Чей?)"
-NounMap[2]["NC_GENITIVE"].lesson = "lessons/korean028.html"
+NounMap[2]["NC_GENITIVE"].lesson = 18
 
 NounMap[2]["NC_ACCUSATIVE"] = {}
 NounMap[2]["NC_ACCUSATIVE"].testFunc = TryExtractNounModificator_CaseAccusative
 NounMap[2]["NC_ACCUSATIVE"].verbose = "В винительном падеже (кого? что?)"
-NounMap[2]["NC_ACCUSATIVE"].lesson = "lessons/korean013.html"
+NounMap[2]["NC_ACCUSATIVE"].lesson = 13
 
 NounMap[2]["NC_LIKE"] = {}
 NounMap[2]["NC_LIKE"].testFunc = TryExtractNounModificator_CaseLike
@@ -127,17 +127,17 @@ NounMap[2]["NC_LIKE"].lesson = ""
 NounMap[2]["NC_AND"] = {}
 NounMap[2]["NC_AND"].testFunc = TryExtractNounModificator_CaseAnd
 NounMap[2]["NC_AND"].verbose = "С союзом объединения И, в письменной форме"
-NounMap[2]["NC_AND"].lesson = "lessons/korean031.html"
+NounMap[2]["NC_AND"].lesson = 11
 
 NounMap[2]["NC_AND_VERBAL"] = {}
 NounMap[2]["NC_AND_VERBAL"].testFunc = TryExtractNounModificator_CaseAndVerbal
 NounMap[2]["NC_AND_VERBAL"].verbose = "С союзом объединения И, в разговорной форме"
-NounMap[2]["NC_AND_VERBAL"].lesson = "lessons/korean031.html"
+NounMap[2]["NC_AND_VERBAL"].lesson = 11
 
 NounMap[2]["NC_WITH"] = {}
 NounMap[2]["NC_WITH"].testFunc = TryExtractNounModificator_CaseWith
 NounMap[2]["NC_WITH"].verbose = "С союзом объединения (с кем? с чем?)"
-NounMap[2]["NC_WITH"].lesson = "lessons/korean031.html"
+NounMap[2]["NC_WITH"].lesson = 11
 
 
 NounMap[3] = {}
@@ -150,48 +150,48 @@ NounMap[4] = {}
 NounMap[4]["NM_ONLY"] = {}
 NounMap[4]["NM_ONLY"].testFunc = TryExtractNounModificator_Only
 NounMap[4]["NM_ONLY"].verbose = "С модификатором 'только', 'лишь'"
-NounMap[4]["NM_ONLY"].lesson = "lessons/korean033.html"
+NounMap[4]["NM_ONLY"].lesson = 13
 
 NounMap[5] = {}
 NounMap[5]["ND_DATIVE_PLACE"] = {}
 NounMap[5]["ND_DATIVE_PLACE"].testFunc = TryExtractNounModificator_DativePlace
 NounMap[5]["ND_DATIVE_PLACE"].verbose = "В местном падеже (куда? где?)"
-NounMap[5]["ND_DATIVE_PLACE"].lesson = "lessons/korean017.html"
+NounMap[5]["ND_DATIVE_PLACE"].lesson = 17
 
 NounMap[5]["ND_DATIVE_PERSON"] = {}
 NounMap[5]["ND_DATIVE_PERSON"].testFunc = TryExtractNounModificator_DativePerson
 NounMap[5]["ND_DATIVE_PERSON"].verbose = "В местном падеже лица (кому? К кому? Для кого?) в письменной форме"
-NounMap[5]["ND_DATIVE_PERSON"].lesson = "lessons/korean030.html"
+NounMap[5]["ND_DATIVE_PERSON"].lesson = 10
 
 NounMap[5]["ND_DATIVE_PERSON_VERBAL"] = {}
 NounMap[5]["ND_DATIVE_PERSON_VERBAL"].testFunc = TryExtractNounModificator_DativePersonVerbal
 NounMap[5]["ND_DATIVE_PERSON_VERBAL"].verbose = "В местном падеже лица (кому? К кому? Для кого?) в разговорной форме"
-NounMap[5]["ND_DATIVE_PERSON_VERBAL"].lesson = "lessons/korean030.html"
+NounMap[5]["ND_DATIVE_PERSON_VERBAL"].lesson = 10
 
 NounMap[5]["ND_DATIVE_PLACE_FROM"] = {}
 NounMap[5]["ND_DATIVE_PLACE_FROM"].testFunc = TryExtractNounModificator_DativePlaceFrom
 NounMap[5]["ND_DATIVE_PLACE_FROM"].verbose = "В местном исходящем падеже (откуда? где?)"
-NounMap[5]["ND_DATIVE_PLACE_FROM"].lesson = "lessons/korean017.html"
+NounMap[5]["ND_DATIVE_PLACE_FROM"].lesson = 17
 
 NounMap[5]["ND_DATIVE_PERSON_FROM"] = {}
 NounMap[5]["ND_DATIVE_PERSON_FROM"].testFunc = TryExtractNounModificator_DativePersonFrom
 NounMap[5]["ND_DATIVE_PERSON_FROM"].verbose = "В местном исходящем падеже лица (от кого?) в письменной форме"
-NounMap[5]["ND_DATIVE_PERSON_FROM"].lesson = "lessons/korean030.html"
+NounMap[5]["ND_DATIVE_PERSON_FROM"].lesson = 10
 
 NounMap[5]["ND_DATIVE_PERSON_FROM_VERBAL"] = {}
 NounMap[5]["ND_DATIVE_PERSON_FROM_VERBAL"].testFunc = TryExtractNounModificator_DativePersonFromVerbal
 NounMap[5]["ND_DATIVE_PERSON_FROM_VERBAL"].verbose = "В местном исходящем падеже лица (от кого?) в разговорной форме"
-NounMap[5]["ND_DATIVE_PERSON_FROM_VERBAL"].lesson = "lessons/korean030.html"
+NounMap[5]["ND_DATIVE_PERSON_FROM_VERBAL"].lesson = 10
 
 NounMap[5]["ND_DATIVE_PLACE_START_FROM"] = {}
 NounMap[5]["ND_DATIVE_PLACE_START_FROM"].testFunc = TryExtractNounModificator_DativePlaceStartFrom
 NounMap[5]["ND_DATIVE_PLACE_START_FROM"].verbose = "В местном падеже с обозначением места начала (откуда? От чего?)"
-NounMap[5]["ND_DATIVE_PLACE_START_FROM"].lesson = "lessons/korean024.html"
+NounMap[5]["ND_DATIVE_PLACE_START_FROM"].lesson = 14
 
 NounMap[5]["ND_DATIVE_PLACE_END_TO"] = {}
 NounMap[5]["ND_DATIVE_PLACE_END_TO"].testFunc = TryExtractNounModificator_DativePlaceEndTo
 NounMap[5]["ND_DATIVE_PLACE_END_TO"].verbose = "В местном падеже с обозначением места конца (докуда? До чего?)"
-NounMap[5]["ND_DATIVE_PLACE_END_TO"].lesson = "lessons/korean024.html"
+NounMap[5]["ND_DATIVE_PLACE_END_TO"].lesson = 14
 
 function UnGlueEndingForVerbInSecondFormIfPossible(verb)
 
@@ -648,7 +648,7 @@ VerbMap[1] = {}
 VerbMap[1]["VC_INFINITIVE"] = {}
 VerbMap[1]["VC_INFINITIVE"].testFunc = TryExtractVerbModificator_Infinitive
 VerbMap[1]["VC_INFINITIVE"].verbose = "В инфинитиве"
-VerbMap[1]["VC_INFINITIVE"].lesson = "lessons/korean010.html"
+VerbMap[1]["VC_INFINITIVE"].lesson = 10
 
 VerbMap[1]["VC_PANMAL"] = {}
 VerbMap[1]["VC_PANMAL"].testFunc = TryExtractVerbModificator_Panmal
@@ -658,7 +658,7 @@ VerbMap[1]["VC_PANMAL"].lesson = ""
 VerbMap[1]["VC_POLITE"] = {}
 VerbMap[1]["VC_POLITE"].testFunc = TryExtractVerbModificator_Polite
 VerbMap[1]["VC_POLITE"].verbose = "В простой вежливой форме"
-VerbMap[1]["VC_POLITE"].lesson = "lessons/korean011.html"
+VerbMap[1]["VC_POLITE"].lesson = 11
 
 VerbMap[1]["VC_HONORIFIC"] = {}
 VerbMap[1]["VC_HONORIFIC"].testFunc = TryExtractVerbModificator_Honorific
@@ -683,7 +683,7 @@ VerbMap[1]["VC_HONORIFIC_QUESTION_IRREGULAR_L"].lesson = ""
 VerbMap[1]["VC_IF"] = {}
 VerbMap[1]["VC_IF"].testFunc = TryExtractVerbModificator_If
 VerbMap[1]["VC_IF"].verbose = "В форме условия (если <глагол> ...)"
-VerbMap[1]["VC_IF"].lesson = "lessons/korean036.html"
+VerbMap[1]["VC_IF"].lesson = 16
 
 VerbMap[1]["VC_AND"] = {}
 VerbMap[1]["VC_AND"].testFunc = TryExtractVerbModificator_And
@@ -708,41 +708,41 @@ VerbMap[1]["VC_ALTHOUGH"].lesson = ""
 VerbMap[1]["VC_PAST_PARTICIPLE"] = {}
 VerbMap[1]["VC_PAST_PARTICIPLE"].testFunc = TryExtractVerbModificator_PastParticiple
 VerbMap[1]["VC_PAST_PARTICIPLE"].verbose = "В форме причастия прошедшего времени"
-VerbMap[1]["VC_PAST_PARTICIPLE"].lesson = "lessons/korean041.html"
+VerbMap[1]["VC_PAST_PARTICIPLE"].lesson = 11
 
 VerbMap[1]["VC_PAST_PARTICIPLE_IRREGULAR_L"] = {}
 VerbMap[1]["VC_PAST_PARTICIPLE_IRREGULAR_L"].testFunc = TryExtractVerbModificator_PastParticiple_irregularL
 VerbMap[1]["VC_PAST_PARTICIPLE_IRREGULAR_L"].verbose = "В форме причастия прошедшего времени, после неправильного глагола ㄹ-типа"
-VerbMap[1]["VC_PAST_PARTICIPLE_IRREGULAR_L"].lesson = "lessons/korean041.html"
+VerbMap[1]["VC_PAST_PARTICIPLE_IRREGULAR_L"].lesson = 11
 
 VerbMap[1]["VC_PRESENT_PARTICIPLE"] = {}
 VerbMap[1]["VC_PRESENT_PARTICIPLE"].testFunc = TryExtractVerbModificator_PresentParticiple
 VerbMap[1]["VC_PRESENT_PARTICIPLE"].verbose = "В форме причастия настоящего времени"
-VerbMap[1]["VC_PRESENT_PARTICIPLE"].lesson = "lessons/korean041.html"
+VerbMap[1]["VC_PRESENT_PARTICIPLE"].lesson = 11
 
 VerbMap[1]["VC_PRESENT_PARTICIPLE_IRREGULAR_L"] = {}
 VerbMap[1]["VC_PRESENT_PARTICIPLE_IRREGULAR_L"].testFunc = TryExtractVerbModificator_PresentParticiple_irregularL
 VerbMap[1]["VC_PRESENT_PARTICIPLE_IRREGULAR_L"].verbose = "В форме причастия прошедшего времени, после неправильного глагола ㄹ-типа"
-VerbMap[1]["VC_PRESENT_PARTICIPLE_IRREGULAR_L"].lesson = "lessons/korean041.html"
+VerbMap[1]["VC_PRESENT_PARTICIPLE_IRREGULAR_L"].lesson = 11
 
 
 VerbMap[1]["VC_FUTURE_PARTICIPLE"] = {}
 VerbMap[1]["VC_FUTURE_PARTICIPLE"].testFunc = TryExtractVerbModificator_FutureParticiple
 VerbMap[1]["VC_FUTURE_PARTICIPLE"].verbose = "В форме причастия будущего времени"
-VerbMap[1]["VC_FUTURE_PARTICIPLE"].lesson = "lessons/korean041.html"
+VerbMap[1]["VC_FUTURE_PARTICIPLE"].lesson = 11
 
 
 VerbMap[1]["VC_FUTURE_PARTICIPLE_IRREGULAR_L"] = {}
 VerbMap[1]["VC_FUTURE_PARTICIPLE_IRREGULAR_L"].testFunc = TryExtractVerbModificator_FutureParticiple_irregularL
 VerbMap[1]["VC_FUTURE_PARTICIPLE_IRREGULAR_L"].verbose = "В форме причастия будущего времени, после неправильного глагола ㄹ-типа"
-VerbMap[1]["VC_FUTURE_PARTICIPLE_IRREGULAR_L"].lesson = "lessons/korean041.html"
+VerbMap[1]["VC_FUTURE_PARTICIPLE_IRREGULAR_L"].lesson = 11
 
 
 
 VerbMap[1]["VC_TOO"] = {}
 VerbMap[1]["VC_TOO"].testFunc = TryExtractVerbModificator_Too
 VerbMap[1]["VC_TOO"].verbose = "С окончанием 'тоже', 'также'"
-VerbMap[1]["VC_TOO"].lesson = "lessons/korean032.html"
+VerbMap[1]["VC_TOO"].lesson = 12
 
 VerbMap[1]["VC_REASON"] = {}
 VerbMap[1]["VC_REASON"].testFunc = TryExtractVerbModificator_Reason
@@ -876,7 +876,7 @@ VerbMap[1]["VC_POLITE_SURE_SHORT"].lesson = ""
 VerbMap[1]["VC_IMPERATIVE_POLITE"] = {}
 VerbMap[1]["VC_IMPERATIVE_POLITE"].testFunc = TryExtractVerbModificator_ImperativePolite
 VerbMap[1]["VC_IMPERATIVE_POLITE"].verbose = "В вежливой форме, в повелительном наклонении"
-VerbMap[1]["VC_IMPERATIVE_POLITE"].lesson = "lessons/korean034.html"
+VerbMap[1]["VC_IMPERATIVE_POLITE"].lesson = 14
 
 
 VerbMap[1]["VC_IMPERATIVE_PANMAL"] = {}
@@ -898,19 +898,19 @@ VerbMap[1]["VC_ACTION_AS_RESULT_IRREGULAR_L"].lesson = ""
 VerbMap[1]["VC_FORBID_SHORT_PANMAL"] = {}
 VerbMap[1]["VC_FORBID_SHORT_PANMAL"].testFunc = TryExtractVerbModificator_ForbidShortPanmal
 VerbMap[1]["VC_FORBID_SHORT_PANMAL"].verbose = "В просторечной (панмаль) форме, в виде запрета 'не делай это', в сокращенном виде"
-VerbMap[1]["VC_FORBID_SHORT_PANMAL"].lesson = "lessons/korean038.html"
+VerbMap[1]["VC_FORBID_SHORT_PANMAL"].lesson = 18
 
 --Xperimental -- maybe not exist at all???
 VerbMap[1]["VC_FORBID_SHORT_POLITE"] = {}
 VerbMap[1]["VC_FORBID_SHORT_POLITE"].testFunc = TryExtractVerbModificator_ForbidShortPolite
 VerbMap[1]["VC_FORBID_SHORT_POLITE"].verbose = "В вежливой форме, в виде запрета 'не делай это', в сокращенном виде"
-VerbMap[1]["VC_FORBID_SHORT_POLITE"].lesson = "lessons/korean038.html"
+VerbMap[1]["VC_FORBID_SHORT_POLITE"].lesson = 18
 
 
 VerbMap[1]["VC_FORBID_SHORT_IMPERATIVE_POLITE"] = {}
 VerbMap[1]["VC_FORBID_SHORT_IMPERATIVE_POLITE"].testFunc = TryExtractVerbModificator_ForbidShortImperativePolite
 VerbMap[1]["VC_FORBID_SHORT_IMPERATIVE_POLITE"].verbose = "В вежливой форме, в виде запрета 'не делай это', в сокращенном виде"
-VerbMap[1]["VC_FORBID_SHORT_IMPERATIVE_POLITE"].lesson = "lessons/korean038.html"
+VerbMap[1]["VC_FORBID_SHORT_IMPERATIVE_POLITE"].lesson = 18
 
 VerbMap[1]["VC_GERUND"] = {}
 VerbMap[1]["VC_GERUND"].testFunc = TryExtractVerbModificator_Gerund
@@ -921,30 +921,30 @@ VerbMap[1]["VC_GERUND"].lesson = ""
 VerbMap[1]["VC_GERUND_TOO"] = {}
 VerbMap[1]["VC_GERUND_TOO"].testFunc = TryExtractVerbModificator_GerundToo
 VerbMap[1]["VC_GERUND_TOO"].verbose = "В форме герундия с модификатором 'тоже', 'также'"
-VerbMap[1]["VC_GERUND_TOO"].lesson = "lessons/korean032.html"
+VerbMap[1]["VC_GERUND_TOO"].lesson = 12
 
 
 VerbMap[1]["VC_GERUND_ONLY"] = {}
 VerbMap[1]["VC_GERUND_ONLY"].testFunc = TryExtractVerbModificator_GerundOnly
 VerbMap[1]["VC_GERUND_ONLY"].verbose = "В форме герундия с модификатором 'только', 'лишь'"
-VerbMap[1]["VC_GERUND_ONLY"].lesson = "lessons/korean033.html"
+VerbMap[1]["VC_GERUND_ONLY"].lesson = 13
 
 
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_PANMAL"] = {}
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_PANMAL"].testFunc = TryExtractVerbModificator_DoItForMeShortPanmal
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_PANMAL"].verbose = "В просторечной (панмаль) форме, с модификатором 'сделай это для меня'"
-VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_PANMAL"].lesson = "lessons/korean035.html"
+VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_PANMAL"].lesson = 15
 
 --Xperimental, maybe not exist at all?
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_POLITE"] = {}
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_POLITE"].testFunc = TryExtractVerbModificator_DoItForMeShortPolite
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_POLITE"].verbose = "В вежливой форме, с модификатором 'сделай это для меня'"
-VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_POLITE"].lesson = "lessons/korean035.html"
+VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_POLITE"].lesson = 15
 
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_IMPERATIVE_POLITE"] = {}
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_IMPERATIVE_POLITE"].testFunc = TryExtractVerbModificator_DoItForMeShortImperativePolite
 VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_IMPERATIVE_POLITE"].verbose = "В вежливой форме, с модификатором 'сделай это для меня'"
-VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_IMPERATIVE_POLITE"].lesson = "lessons/korean035.html"
+VerbMap[1]["VC_DO_IT_FOR_ME_SHORT_IMPERATIVE_POLITE"].lesson = 15
 
 --Xperimental
 VerbMap[1]["VC_YA"] = {}
@@ -965,12 +965,12 @@ VerbMap[3] = {}
 VerbMap[3]["VB_PAST_TENSE"] = {}
 VerbMap[3]["VB_PAST_TENSE"].testFunc = TryExtractVerbModificator_PastTense
 VerbMap[3]["VB_PAST_TENSE"].verbose = "В прошедшем времени"
-VerbMap[3]["VB_PAST_TENSE"].lesson = "lessons/korean015.html"
+VerbMap[3]["VB_PAST_TENSE"].lesson = 15
 
 VerbMap[3]["VB_DOUBLE_PAST_TENSE"] = {}
 VerbMap[3]["VB_DOUBLE_PAST_TENSE"].testFunc = TryExtractVerbModificator_DoublePastTense
 VerbMap[3]["VB_DOUBLE_PAST_TENSE"].verbose = "С удвоенным модификатором прошедшего времени"
-VerbMap[3]["VB_DOUBLE_PAST_TENSE"].lesson = "lessons/korean015.html"
+VerbMap[3]["VB_DOUBLE_PAST_TENSE"].lesson = 15
 
 
 
@@ -992,12 +992,12 @@ VerbMap[5] = {}
 VerbMap[5]["VP_NOT"] = {}
 VerbMap[5]["VP_NOT"].testFunc = TryExtractVerbModificator_Not
 VerbMap[5]["VP_NOT"].verbose = "С отрицанием"
-VerbMap[5]["VP_NOT"].lesson = "lessons/korean018.html"
+VerbMap[5]["VP_NOT"].lesson = 18
 
 VerbMap[5]["VP_CAN_NOT"] = {}
 VerbMap[5]["VP_CAN_NOT"].testFunc = TryExtractVerbModificator_CanNot
 VerbMap[5]["VP_CAN_NOT"].verbose = "С отрицанием в смысле не мочь сделать"
-VerbMap[5]["VP_CAN_NOT"].lesson = "lessons/korean043.html"
+VerbMap[5]["VP_CAN_NOT"].lesson = 13
 
 
 function RecognizeNoun(noun)
@@ -1226,7 +1226,7 @@ function RecognizeChineseNumber(word)
 		wordStruct.wordType = "CHINESE_NUMBER"
 		wordStruct.dictStruct = dictStruct
 		wordStruct.verbose = { "Число, записанное китайскими числительными" }
-		wordStruct.lessons = { "lessons/korean014.html" }
+		wordStruct.lessons = { 014 }
 		wordStruct.modificators = {}
 
 			
@@ -1386,43 +1386,43 @@ ComplexVerbMap["COMPLEX_VERB_NO"] = {}
 ComplexVerbMap["COMPLEX_VERB_NO"].mainVerbFunc = RecognizeMainVerb_No
 ComplexVerbMap["COMPLEX_VERB_NO"].secondaryVerbFunc = RecognizeSecondaryVerb_Chi
 ComplexVerbMap["COMPLEX_VERB_NO"].verbose = "Составной глагол, с смыслом отрицания (не <глагол>)"
-ComplexVerbMap["COMPLEX_VERB_NO"].lesson = "lessons/korean018.html"
+ComplexVerbMap["COMPLEX_VERB_NO"].lesson = 18
 
 ComplexVerbMap["COMPLEX_VERB_WANT"] = {}
 ComplexVerbMap["COMPLEX_VERB_WANT"].mainVerbFunc = RecognizeMainVerb_Want
 ComplexVerbMap["COMPLEX_VERB_WANT"].secondaryVerbFunc = RecognizeSecondaryVerb_And
 ComplexVerbMap["COMPLEX_VERB_WANT"].verbose = "Составной глагол, с смыслом желания (хотеть <глагол>)"
-ComplexVerbMap["COMPLEX_VERB_WANT"].lesson = "lessons/korean020.html"
+ComplexVerbMap["COMPLEX_VERB_WANT"].lesson = 10
 
 ComplexVerbMap["COMPLEX_CONTINUOUS"] = {}
 ComplexVerbMap["COMPLEX_CONTINUOUS"].mainVerbFunc = RecognizeMainVerb_Exist
 ComplexVerbMap["COMPLEX_CONTINUOUS"].secondaryVerbFunc = RecognizeSecondaryVerb_And
 ComplexVerbMap["COMPLEX_CONTINUOUS"].verbose = "Составной глагол, с смыслом настоящего продолженного времени"
-ComplexVerbMap["COMPLEX_CONTINUOUS"].lesson = "lessons/korean029.html"
+ComplexVerbMap["COMPLEX_CONTINUOUS"].lesson = 19
 
 ComplexVerbMap["COMPLEX_CONTINUOUS_NEGATIVE"] = {}
 ComplexVerbMap["COMPLEX_CONTINUOUS_NEGATIVE"].mainVerbFunc = RecognizeMainVerb_NotExist
 ComplexVerbMap["COMPLEX_CONTINUOUS_NEGATIVE"].secondaryVerbFunc = RecognizeSecondaryVerb_And
 ComplexVerbMap["COMPLEX_CONTINUOUS_NEGATIVE"].verbose = "Составной глагол, с смыслом настоящего продолженного времени, с отрицанием"
-ComplexVerbMap["COMPLEX_CONTINUOUS_NEGATIVE"].lesson = "lessons/korean029.html"
+ComplexVerbMap["COMPLEX_CONTINUOUS_NEGATIVE"].lesson = 19
 
 ComplexVerbMap["COMPLEX_FORBID"] = {}
 ComplexVerbMap["COMPLEX_FORBID"].mainVerbFunc = RecognizeMainVerb_DontDo
 ComplexVerbMap["COMPLEX_FORBID"].secondaryVerbFunc = RecognizeSecondaryVerb_Chi
 ComplexVerbMap["COMPLEX_FORBID"].verbose = "Составной глагол, с смыслом отрицания (не делай <глагол>)"
-ComplexVerbMap["COMPLEX_FORBID"].lesson = "lessons/korean029.html"
+ComplexVerbMap["COMPLEX_FORBID"].lesson = 19
 
 ComplexVerbMap["COMPLEX_GERUND_TOO"] = {}
 ComplexVerbMap["COMPLEX_GERUND_TOO"].mainVerbFunc = RecognizeMainVerb_Do
 ComplexVerbMap["COMPLEX_GERUND_TOO"].secondaryVerbFunc = RecognizeSecondaryVerb_GerundToo
 ComplexVerbMap["COMPLEX_GERUND_TOO"].verbose = "Составной глагол, c смыслом 'тоже', 'также' (<глагол> тоже)"
-ComplexVerbMap["COMPLEX_GERUND_TOO"].lesson = "lessons/korean032.html"
+ComplexVerbMap["COMPLEX_GERUND_TOO"].lesson = 12
 
 ComplexVerbMap["COMPLEX_GERUND_ONLY"] = {}
 ComplexVerbMap["COMPLEX_GERUND_ONLY"].mainVerbFunc = RecognizeMainVerb_Do
 ComplexVerbMap["COMPLEX_GERUND_ONLY"].secondaryVerbFunc = RecognizeSecondaryVerb_GerundOnly
 ComplexVerbMap["COMPLEX_GERUND_ONLY"].verbose = "Составной глагол, c смыслом 'только', 'лишь' (только <глагол>)"
-ComplexVerbMap["COMPLEX_GERUND_ONLY"].lesson = "lessons/korean033.html"
+ComplexVerbMap["COMPLEX_GERUND_ONLY"].lesson = 13
 
 ComplexVerbMap["COMPLEX_DO_IT_FOR_ME"] = {}
 ComplexVerbMap["COMPLEX_DO_IT_FOR_ME"].mainVerbFunc = RecognizeMainVerb_Give

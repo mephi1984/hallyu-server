@@ -22,7 +22,7 @@
     <ProjectGuid>{086DBA7B-9D25-47EF-8371-0E4CE295FD3F}</ProjectGuid>
     <RootNamespace>k_observer_srv</RootNamespace>
     <ProjectName>hallyu_server</ProjectName>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -108,7 +108,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\boost_1_67_0;..\..\lua-5.3.1\luabind;..\..\lua-5.3.1\src;../jni/network</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\boost_1_67_0;..\..\lua5.3.1-luabind\luabind;..\..\lua5.3.1-luabind\src;../jni/network</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0501;_SCL_SECURE_NO_WARNINGS;ZIP_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -140,7 +140,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>..\..\boost_1_67_0;..\..\lua-5.3.1\luabind;..\..\lua-5.3.1\src;../jni/network</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\boost_1_67_0;..\..\lua5.3.1-luabind\luabind;..\..\lua5.3.1-luabind\src;../jni/network</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0501;_SCL_SECURE_NO_WARNINGS;ZIP_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>

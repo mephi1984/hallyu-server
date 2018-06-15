@@ -17,6 +17,11 @@
 //#include <openssl/sha.h>
 
 
+
+#include <sstream>
+#include <iomanip>
+
+
 const int CONST_DICTIONARY_CURRENT_VERSION = 1;
 
 
@@ -762,7 +767,7 @@ void TUser::Send_OnRequestWordTranslation(std::string wordToTranslate)
 
 	std::string verboseResult;
 
-	std::set<std::wstring> lessonSet;
+	std::set<int> lessonSet;
 
 	if (wWordToTranslate.size() > 0)
 	{
@@ -838,12 +843,27 @@ void TUser::Send_OnRequestWordTranslation(std::string wordToTranslate)
 
 	p.put("OnRequestWordTranslation.Verbose", verboseResult);
 
+
 	boost::property_tree::ptree lesson_tree;
 
-	for (const std::wstring& lesson : lessonSet)
+	for (int lesson : lessonSet)
 	{
-		lesson_tree.add("Lesson", SE::wstring_to_string(lesson));
+		boost::property_tree::ptree lessonNode;
+
+		lessonNode.put("id", lesson);
+
+		std::stringstream ss;
+		ss << std::setw(3) << std::setfill('0') << lesson;
+		std::string s = ss.str();
+		lessonNode.put("path", "http://api.hallyu.ru/lessons/korean" + s + ".html");
+
+		lessonNode.put("title", "Lesson test title " + s);
+
+
+		lesson_tree.push_back(std::make_pair("", lessonNode));
+		
 	}
+
 	p.add_child("OnRequestWordTranslation.LessonList", lesson_tree);
 
 	SendPropertyTree(p);

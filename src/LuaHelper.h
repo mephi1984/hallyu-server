@@ -29,7 +29,7 @@ namespace LH
 	{
 		DictStruct dictStruct;
 		std::wstring verbose;
-		std::vector<std::wstring> lessons;
+		std::vector<int> lessons;
 		std::vector<std::wstring> modificators;
 		std::string wordType;
 
@@ -41,7 +41,7 @@ namespace LH
 		WordStruct mainWordStruct;
 		WordStruct secondaryWordStruct;
 		std::wstring verbose;
-		std::vector<std::wstring> lessons;
+		std::vector<int> lessons;
 		std::string complexVerbType;
 
 		boost::property_tree::ptree Serialize();
