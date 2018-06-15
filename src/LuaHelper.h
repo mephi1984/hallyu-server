@@ -32,6 +32,7 @@ namespace LH
 		std::vector<int> lessons;
 		std::vector<std::wstring> modificators;
 		std::string wordType;
+		std::wstring originalWord;
 
 		boost::property_tree::ptree Serialize();
 	};
@@ -41,6 +42,7 @@ namespace LH
 		WordStruct mainWordStruct;
 		WordStruct secondaryWordStruct;
 		std::wstring verbose;
+		std::wstring originalPhrase;
 		std::vector<int> lessons;
 		std::string complexVerbType;
 

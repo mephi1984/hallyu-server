@@ -41,17 +41,21 @@ namespace LH
 
 		result.put("base", SE::wstring_to_string(base));
 
-		boost::property_tree::ptree wordsArray;
 
-		for (size_t i = 0; i < words.size(); i++) {
+		if (words.size() > 0)
+		{
+			boost::property_tree::ptree wordsArray;
 
-			boost::property_tree::ptree node;
-			node.put("", SE::wstring_to_string(words[i]));
-			wordsArray.push_back(std::make_pair("", node));
+			for (size_t i = 0; i < words.size(); i++) {
+
+				boost::property_tree::ptree node;
+				node.put("", SE::wstring_to_string(words[i]));
+				wordsArray.push_back(std::make_pair("", node));
+			}
+
+			result.add_child("words", wordsArray);
+
 		}
-
-		result.add_child("words", wordsArray);
-
 
 		return result;
 	}
@@ -65,6 +69,9 @@ namespace LH
 
 		result.put("verbose", SE::wstring_to_string(verbose));
 
+		result.put("originalWord", SE::wstring_to_string(originalWord));
+
+
 		result.put("wordType", wordType);
 
 
@@ -72,28 +79,38 @@ namespace LH
 
 		
 
-		boost::property_tree::ptree lessonsArray;
+		
+		if (lessons.size() > 0)
+		{
 
-		for (size_t i = 0; i < lessons.size(); i++) {
+			boost::property_tree::ptree lessonsArray;
+
+			for (size_t i = 0; i < lessons.size(); i++) {
 
 
-			lessonsArray.push_back(std::make_pair("", lessonIdToLessonStruct(lessons[i])));
+				lessonsArray.push_back(std::make_pair("", lessonIdToLessonStruct(lessons[i])));
+			}
+
+			result.add_child("lessons", lessonsArray);
+
 		}
 
-		result.add_child("lessons", lessonsArray);
 
 
+		if (modificators.size() > 0)
+		{
+			boost::property_tree::ptree modificatorsArray;
 
-		boost::property_tree::ptree modificatorsArray;
+			for (size_t i = 0; i < modificators.size(); i++) {
 
-		for (size_t i = 0; i < modificators.size(); i++) {
+				boost::property_tree::ptree node;
+				node.put("", SE::wstring_to_string(modificators[i]));
+				modificatorsArray.push_back(std::make_pair("", node));
+			}
 
-			boost::property_tree::ptree node;
-			node.put("", SE::wstring_to_string(modificators[i]));
-			modificatorsArray.push_back(std::make_pair("", node));
+			result.add_child("modificators", modificatorsArray);
+
 		}
-
-		result.add_child("modificators", modificatorsArray);
 
 		return result;
 	}
@@ -108,17 +125,22 @@ namespace LH
 
 		result.put("verbose", SE::wstring_to_string(verbose));
 
+		result.put("originalPhrase", SE::wstring_to_string(originalPhrase));
 
 
-		boost::property_tree::ptree lessonsArray;
+		if (lessons.size() > 0)
+		{
+			boost::property_tree::ptree lessonsArray;
 
-		for (size_t i = 0; i < lessons.size(); i++) {
+			for (size_t i = 0; i < lessons.size(); i++) {
 
 
-			lessonsArray.push_back(std::make_pair("", lessonIdToLessonStruct(lessons[i])));
+				lessonsArray.push_back(std::make_pair("", lessonIdToLessonStruct(lessons[i])));
+			}
+
+			result.add_child("lessons", lessonsArray);
+
 		}
-
-		result.add_child("lessons", lessonsArray);
 
 		result.put("complexVerbType", complexVerbType);
 
@@ -131,37 +153,55 @@ namespace LH
 		boost::property_tree::ptree result;
 
 
-		boost::property_tree::ptree resultTableArray;
+		if (resultTable.size() > 0)
+		{
 
-		for (size_t i = 0; i < resultTable.size(); i++) {
+			boost::property_tree::ptree resultTableArray;
 
-			boost::property_tree::ptree node;
 
-			boost::property_tree::ptree resultListArray;
 
-			for (size_t j = 0; j < resultTable[i].size(); j++) {
+			for (size_t i = 0; i < resultTable.size(); i++) {
 
-				resultListArray.push_back(std::make_pair("", resultTable[i][j].Serialize()));
+				
+				
+				if (resultTable[i].size() > 0)
+				{
+					boost::property_tree::ptree node;
+
+					boost::property_tree::ptree resultListArray;
+
+					for (size_t j = 0; j < resultTable[i].size(); j++) {
+
+						resultListArray.push_back(std::make_pair("", resultTable[i][j].Serialize()));
+					}
+
+					node.add_child("resultRecord", resultListArray);
+
+					resultTableArray.push_back(std::make_pair("", node));
+				}
+
+				
 			}
 
-			node.add_child("resultRecord", resultListArray);
+			result.add_child("resultTable", resultTableArray);
 
-			resultTableArray.push_back(std::make_pair("", node));
+
 		}
 
-		result.add_child("resultTable", resultTableArray);
 
+		if (complexVerbResultArr.size() > 0)
+		{
 
+			boost::property_tree::ptree complexVerbResultArray;
 
+			for (size_t i = 0; i < complexVerbResultArr.size(); i++) {
 
-		boost::property_tree::ptree complexVerbResultArray;
+				complexVerbResultArray.push_back(std::make_pair("", complexVerbResultArr[i].Serialize()));
+			}
 
-		for (size_t i = 0; i < complexVerbResultArr.size(); i++) {
+			result.add_child("complexVerbResultArr", complexVerbResultArray);
 
-			complexVerbResultArray.push_back(std::make_pair("", complexVerbResultArr[i].Serialize()));
 		}
-
-		result.add_child("complexVerbResultArr", complexVerbResultArray);
 
 		return result;
 	}
@@ -387,6 +427,14 @@ namespace LH
 			r.verbose = SE::string_to_wstring(object_cast<std::string>(verbose));
 		}
 
+
+		luabind::object originalWord = table["originalWord"];
+
+		if (type(originalWord) == LUA_TSTRING)
+		{
+			r.originalWord = SE::string_to_wstring(object_cast<std::string>(originalWord));
+		}
+
 		luabind::object lessons = table["lessons"];
 
 		if (type(lessons) == LUA_TTABLE)
@@ -434,6 +482,8 @@ namespace LH
 		}
 
 
+
+
 		return r;
 	}
 
@@ -448,6 +498,8 @@ namespace LH
 		r.secondaryWordStruct = ConvertToWordStruct(table["secondaryWordStruct"]);
 
 		r.verbose = SE::string_to_wstring(object_cast<std::string>(table["verbose"]));
+
+		r.originalPhrase = SE::string_to_wstring(object_cast<std::string>(table["originalPhrase"]));
 
 		luabind::object lessons = table["lessons"];
 

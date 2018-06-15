@@ -1100,6 +1100,7 @@ function RecognizeNoun(noun)
 			wordStruct.verbose = branches[i].verbose
 			wordStruct.lessons = branches[i].lessons
 			wordStruct.modificators = branches[i].modificators
+			wordStruct.originalWord = noun:str()
 
 			table.insert(result, wordStruct)
 		end
@@ -1207,7 +1208,7 @@ function RecognizeVerb(verb)
 			wordStruct.verbose = branches[i].verbose
 			wordStruct.lessons = branches[i].lessons
 			wordStruct.modificators = branches[i].modificators
-
+			wordStruct.originalWord = verb:str()
 			
 			table.insert(result, wordStruct)
 		end
@@ -1226,8 +1227,9 @@ function RecognizeChineseNumber(word)
 		wordStruct.wordType = "CHINESE_NUMBER"
 		wordStruct.dictStruct = dictStruct
 		wordStruct.verbose = { "Число, записанное китайскими числительными" }
-		wordStruct.lessons = { 014 }
+		wordStruct.lessons = { 14 }
 		wordStruct.modificators = {}
+		wordStruct.originalWord = word:str()
 
 			
 		table.insert(result, wordStruct)
@@ -1267,6 +1269,7 @@ function RecognizeWord(word)
 		wordStruct.verbose = ""
 		wordStruct.lessons = {}
 		wordStruct.modificators = {}
+		wordStruct.originalWord = word:str()
 		table.insert(wordArr, wordStruct)
 	end
 	
@@ -1279,6 +1282,7 @@ function RecognizeWord(word)
 		wordStruct.verbose = ""
 		wordStruct.lessons = {}
 		wordStruct.modificators = {}
+		wordStruct.originalWord = word:str()
 		table.insert(wordArr, wordStruct)
 	end
 	
@@ -1465,6 +1469,7 @@ function RecognizeChainedVerb(phraseTable)
 						wordStruct.secondaryWordStruct = firstWordArr[j]
 						wordStruct.verbose = value.verbose
 						wordStruct.lessons = { }
+						wordStruct.originalPhrase = firstWordArr[j].originalWord .. " " .. lastWordArr[i].originalWord
 						if value.lesson ~= "" then
 							table.insert(wordStruct.lessons, value.lesson)
 						end
